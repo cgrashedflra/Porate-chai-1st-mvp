@@ -1,4 +1,4 @@
-import { GraduationCap, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { NAVBAR_LINKS } from '@/constants/navigation';
 import ROUTES from '@/constants/routes';
 
@@ -11,11 +11,11 @@ export const Navbar = () => {
                 {/* Brand */}
                 <a
                     href={ROUTES.HOME}
-                    className="group flex items-center gap-2.5"
+                    className="group flex items-center gap-1.5"
                     aria-label="PorateChai home"
                 >
-                    <div className="flex h-8 w-8 items-center justify-center rounded bg-indigo-600 text-white transition-colors group-hover:bg-indigo-700">
-                        <GraduationCap className="h-4 w-4" aria-hidden="true" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded">
+                        <img src="/academic-cap.svg" alt="logo" className="h-10 w-10" aria-hidden="true" />
                     </div>
 
                     <div className="flex items-baseline gap-1.5">

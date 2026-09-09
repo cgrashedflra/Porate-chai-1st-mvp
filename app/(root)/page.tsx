@@ -1,13 +1,23 @@
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
-import Image from "next/image";
+import CTASection from "@/components/home/CTASection";
+import FeaturedClasses from "@/components/home/FeaturedClasses";
+import FeaturedMentors from "@/components/home/FeaturedMentors";
+import ForMentorsSection from "@/components/home/ForMentorsSection";
+import Herosection from "@/components/home/Herosection";
+import HowItWorks from "@/components/home/HowItWorks";
+import PopularSubjects from "@/components/home/PopularSubjects";
+import ValueFeatures from "@/components/home/ValueFeatures";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <div className="min-h-screen">backgroundChecked</div>
-      <Footer />
+    <div id="homepage-root" className="min-h-screen">
+      <Herosection />
+      <ValueFeatures />
+      <HowItWorks />
+      <FeaturedMentors />
+      <PopularSubjects />
+      <FeaturedClasses />
+      <ForMentorsSection />
+      <CTASection />
     </div>
   );
 }

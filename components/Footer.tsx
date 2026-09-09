@@ -4,7 +4,7 @@ import {
     EDUCATOR_NAV,
     COMPANY_NAV,
 } from "@/constants/navigation";
-import { GraduationCap, Shield, Award } from "lucide-react";
+import { Shield, Award } from "lucide-react";
 
 type FooterLink = {
     label: string;
@@ -61,8 +61,10 @@ export function Footer() {
                             className="inline-flex items-center gap-2.5"
                             aria-label="Pirate Chai home"
                         >
-                            <span className="flex h-8 w-8 items-center justify-center text-indigo-400">
-                                <GraduationCap
+                            <span className="flex h-8 w-8 items-center justify-center">
+                                <img
+                                    src="/academic-cap.svg"
+                                    alt=""
                                     className="h-7 w-7"
                                     aria-hidden="true"
                                 />
