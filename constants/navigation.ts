@@ -1,5 +1,12 @@
 import ROUTES from "./routes";
 
+export const NAVBAR_LINKS = [
+  { label: 'Explore', href: ROUTES.HOME },
+  { label: 'Find Mentors', href: ROUTES.MENTORS },
+  { label: 'Classes', href: ROUTES.CLASSES },
+  { label: 'How It Works', href: ROUTES.HOW_IT_WORKS_SECTION },
+] as const;
+
 export const STUDENT_NAV = [
   {
     label: "Find Mentors",
@@ -61,3 +68,4 @@ export const COMPANY_NAV = [
     admin: true,
   },
 ] as const;
+
