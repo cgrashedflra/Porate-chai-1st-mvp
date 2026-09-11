@@ -59,7 +59,7 @@ export function Footer() {
                         <Link
                             href="/"
                             className="inline-flex items-center gap-2.5"
-                            aria-label="Pirate Chai home"
+                            aria-label="Porate Chai home"
                         >
                             <span className="flex h-8 w-8 items-center justify-center">
                                 <img
@@ -71,7 +71,7 @@ export function Footer() {
                             </span>
 
                             <span className="text-lg font-bold tracking-tight text-white">
-                                Pirate<span className="text-indigo-400">Chai</span>
+                                Porate<span className="text-indigo-400">Chai</span>
                             </span>
                         </Link>
 
