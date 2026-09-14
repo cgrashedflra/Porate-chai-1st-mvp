@@ -10,18 +10,18 @@ export interface SubjectBadgeProps {
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
-    blue: 'bg-blue-50/80 text-blue-600 hover:bg-blue-100',
-    purple: 'bg-purple-50/80 text-purple-600 hover:bg-purple-100',
-    green: 'bg-emerald-50/80 text-emerald-600 hover:bg-emerald-100',
-    orange: 'bg-amber-50/80 text-amber-600 hover:bg-amber-100',
+    blue: 'bg-primary-50/80 text-primary-500 hover:bg-primary-100',
+    purple: 'bg-deep-blue-50/80 text-deep-blue-600 hover:bg-deep-blue-100',
+    green: 'bg-green-50/80 text-green-600 hover:bg-green-100',
+    orange: 'bg-orange-50/80 text-orange-600 hover:bg-orange-100',
 };
 
-export const SubjectBadge: React.FC<SubjectBadgeProps> = ({
+export const SubjectBadge = ({
     label,
     variant = 'blue',
     onClick,
     className = '',
-}) => {
+}: SubjectBadgeProps) => {
     return (
         <button
             onClick={onClick}

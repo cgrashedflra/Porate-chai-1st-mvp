@@ -209,7 +209,7 @@ const initialEnrollments: EnrollmentRecord[] = [
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const AppProvider = ({ children }: { children: React.ReactNode }) => {
     const [educators, setEducators] = useState<Educator[]>(() => {
         const loaded = safeGetJSON<Educator[]>('pc_educators', initialEducators);
         // Ensure all have verificationStatus
