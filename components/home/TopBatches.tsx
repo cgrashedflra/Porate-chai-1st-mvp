@@ -76,7 +76,7 @@ export const TopBatches = () => {
                 </div>
 
                 {/* Batches Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch mb-12">
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 items-stretch mb-12">
                     {homeBatches
                         .filter((batch) => activeCategory === 'All' || categoryGroups[activeCategory]?.includes(batch.category))
                         .map((batch) => (
