@@ -22,9 +22,7 @@ function FooterSection({
 }) {
     return (
         <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wide text-neutral-300">
-                {title}
-            </h3>
+            <h3 className="overline mb-4 text-neutral-20">{title}</h3>
 
             <ul className="space-y-2.5">
                 {links.map((link) => (
@@ -33,8 +31,8 @@ function FooterSection({
                             href={link.href}
                             className={
                                 link.featured
-                                    ? "text-sm font-medium text-primary-300 transition-colors hover:text-primary-200"
-                                    : "text-sm text-neutral-400 transition-colors hover:text-neutral-0"
+                                    ? "body-sm font-medium text-primary-300 transition-colors hover:text-primary-200"
+                                    : "body-sm text-neutral-100 transition-colors hover:text-neutral-0"
                             }
                         >
                             {link.label}
@@ -50,9 +48,11 @@ export function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="border-t border-neutral-800 bg-neutral-900 text-neutral-400">
-            <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 gap-10 border-b border-neutral-800 pb-10 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
+        <footer className="border-t border-deep-blue-800 bg-neutral-900">
+            <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+                {/* Main footer content */}
+                <div className="grid grid-cols-1 gap-10 border-b border-deep-blue-800 pb-10 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
+                    {/* Brand */}
                     <div className="lg:col-span-2">
                         <Link
                             href="/"
@@ -69,54 +69,89 @@ export function Footer() {
                             </span>
 
                             <span className="text-lg font-bold tracking-tight text-neutral-0">
-                                Porate<span className="text-primary-400">Chai</span>
+                                Porate
+                                <span className="text-primary-400">Chai</span>
                             </span>
                         </Link>
 
-                        <p className="mt-4 max-w-sm text-sm leading-6 text-neutral-400">
+                        <p className="body-sm mt-4 max-w-sm text-neutral-100">
                             Connect with qualified educators and academic mentors for
-                            personalized 1-on-1 tutoring, syllabus guidance, and structured
-                            cohort classes.
+                            personalized 1-on-1 tutoring, syllabus guidance, and
+                            structured cohort classes.
                         </p>
 
+                        {/* Trust badges */}
                         <div className="mt-5 flex flex-wrap gap-2">
-                            <span className="inline-flex items-center gap-1.5 rounded-md border border-neutral-700 bg-neutral-800 px-2.5 py-1 text-xs font-medium text-green-400">
-                                <Shield className="h-3.5 w-3.5" aria-hidden="true" />
+                            <span className="inline-flex items-center gap-1.5 rounded-md bg-deep-blue-800 px-2.5 py-1 text-xs font-medium text-green-300">
+                                <Shield
+                                    className="h-3.5 w-3.5"
+                                    aria-hidden="true"
+                                />
                                 Verified Faculty
                             </span>
 
-                            <span className="inline-flex items-center gap-1.5 rounded-md border border-neutral-700 bg-neutral-800 px-2.5 py-1 text-xs font-medium text-primary-300">
-                                <Award className="h-3.5 w-3.5" aria-hidden="true" />
+                            <span className="inline-flex items-center gap-1.5 rounded-md bg-deep-blue-800 px-2.5 py-1 text-xs font-medium text-primary-200">
+                                <Award
+                                    className="h-3.5 w-3.5"
+                                    aria-hidden="true"
+                                />
                                 Direct Booking
                             </span>
                         </div>
                     </div>
 
-                    <FooterSection title="For Students" links={STUDENT_NAV} />
-                    <FooterSection title="For Educators" links={EDUCATOR_NAV} />
-                    <FooterSection title="Company" links={COMPANY_NAV} />
+                    {/* Navigation */}
+                    <FooterSection
+                        title="For Students"
+                        links={STUDENT_NAV}
+                    />
+
+                    <FooterSection
+                        title="For Educators"
+                        links={EDUCATOR_NAV}
+                    />
+
+                    <FooterSection
+                        title="Company"
+                        links={COMPANY_NAV}
+                    />
                 </div>
 
-                <div className="flex flex-col gap-3 pt-6 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
-                    <span>© {year} Pirate Chai Network</span>
+                {/* Bottom bar */}
+                <div className="flex flex-col gap-3 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="caption text-neutral-300">
+                        © {year} Porate Chai Network
+                    </span>
 
                     <nav
                         aria-label="Footer navigation"
-                        className="flex items-center gap-5"
+                        className="flex flex-wrap items-center gap-x-5 gap-y-2"
                     >
-                        <Link href="/how-it-works" className="transition-colors hover:text-neutral-0">
+                        <Link
+                            href="/how-it-works"
+                            className="caption text-neutral-300 transition-colors hover:text-neutral-0"
+                        >
                             How It Works
                         </Link>
 
-                        <Link href="/faq" className="transition-colors hover:text-neutral-0">
+                        <Link
+                            href="/faq"
+                            className="caption text-neutral-300 transition-colors hover:text-neutral-0"
+                        >
                             Support
                         </Link>
 
-                        <Link href="/privacy" className="transition-colors hover:text-neutral-0">
+                        <Link
+                            href="/privacy"
+                            className="caption text-neutral-300 transition-colors hover:text-neutral-0"
+                        >
                             Privacy
                         </Link>
 
-                        <Link href="/terms" className="transition-colors hover:text-neutral-0">
+                        <Link
+                            href="/terms"
+                            className="caption text-neutral-300 transition-colors hover:text-neutral-0"
+                        >
                             Terms
                         </Link>
                     </nav>

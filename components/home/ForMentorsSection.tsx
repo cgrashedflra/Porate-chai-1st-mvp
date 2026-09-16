@@ -108,9 +108,9 @@ export default function ForMentorsSection() {
 
                         {/* Background Backdrop Shape */}
                         <div className="relative w-full max-w-lg">
-                            <div className="absolute inset-0 bg-primary-100/60 rounded-3xl transform rotate-2 scale-95 -z-10"></div>
+                            <div className="absolute inset-0 rounded-3xl transform rotate-2 scale-95 -z-10"></div>
 
-                            <div className="bg-linear-to-b from-primary-50/80 to-deep-blue-50/50 rounded-3xl p-6 relative">
+                            <div className="rounded-3xl p-6 relative">
 
                                 {/* Online Tag */}
                                 <div className="absolute top-4 right-4 z-20 bg-green-50 text-green-600 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 border border-green-100">
