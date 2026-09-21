@@ -8,13 +8,13 @@ import { getNavConfig } from "@/config/nav";
 import { marketingNav } from "@/config/nav/marketing";
 import type { NavItem } from "@/config/nav/types";
 import type { NavUser } from "@/types/user";
-import { ButtonLink } from "../primitives/ButtonLink";
-import { Icon } from "../primitives/Icon";
-import { Logo } from "../primitives/Logo";
+import { ButtonLink } from "../../ui/ButtonLink";
+import { Icon } from "../../ui/Icon";
+import { Logo } from "../../ui/Logo";
 import { NavLink } from "../primitives/NavLink";
 import { NotificationBell } from "../primitives/NotificationBell";
-import { SearchBar } from "../primitives/SearchBar";
-import { UserMenu } from "../app/UserMenu";
+import { SearchBar } from "../../ui/SearchBar";
+import { UserMenu } from "../dashboard/UserMenu";
 import { MobileMenu } from "./MobileMenu";
 
 type Props = {
@@ -23,7 +23,7 @@ type Props = {
   items?: NavItem[];
 };
 
-export function MarketingNavbar({ user = null, items = marketingNav.items }: Props) {
+export function Navbar({ user = null, items = marketingNav.items }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
