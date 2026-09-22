@@ -1,9 +1,5 @@
-import { Children } from "react"
+import type { ReactNode } from "react";
 
-const layout = () => {
-    return (
-        { Children }
-    )
+export default function AuthLayout({ children }: { children: ReactNode }) {
+    return <main className="min-h-screen">{children}</main>;
 }
-
-export default layout

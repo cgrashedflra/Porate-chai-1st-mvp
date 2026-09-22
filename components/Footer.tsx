@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
-    STUDENT_NAV,
-    EDUCATOR_NAV,
-    COMPANY_NAV,
-} from "@/constants/navigation";
+    STUDENT_FOOTER,
+    EDUCATOR_FOOTER,
+    COMPANY_FOOTER,
+} from "@/config/nav/footer";
 import { Shield, Award } from "lucide-react";
+import academicCap from "@/public/academic-cap.svg";
 
 type FooterLink = {
     label: string;
@@ -60,10 +62,12 @@ export function Footer() {
                             aria-label="Porate Chai home"
                         >
                             <span className="flex h-8 w-8 items-center justify-center">
-                                <img
-                                    src="/academic-cap.svg"
+                                <Image
+                                    src={academicCap}
                                     alt=""
                                     className="h-7 w-7"
+                                    width={28}
+                                    height={28}
                                     aria-hidden="true"
                                 />
                             </span>
@@ -103,17 +107,17 @@ export function Footer() {
                     {/* Navigation */}
                     <FooterSection
                         title="For Students"
-                        links={STUDENT_NAV}
+                        links={STUDENT_FOOTER}
                     />
 
                     <FooterSection
                         title="For Educators"
-                        links={EDUCATOR_NAV}
+                        links={EDUCATOR_FOOTER}
                     />
 
                     <FooterSection
                         title="Company"
-                        links={COMPANY_NAV}
+                        links={COMPANY_FOOTER}
                     />
                 </div>
 
@@ -128,7 +132,7 @@ export function Footer() {
                         className="flex flex-wrap items-center gap-x-5 gap-y-2"
                     >
                         <Link
-                            href="/how-it-works"
+                            href="/#how-it-works"
                             className="caption text-neutral-300 transition-colors hover:text-neutral-0"
                         >
                             How It Works

@@ -1,4 +1,4 @@
-import { ClassItem } from '@/types';
+import { ClassItem } from '@/types/types';
 
 export const initialClasses: ClassItem[] = [
     {

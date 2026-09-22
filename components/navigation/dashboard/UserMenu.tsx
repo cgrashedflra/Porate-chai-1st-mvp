@@ -25,8 +25,13 @@ export function UserMenu({ user, items, showLabel = true }: Props) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const menuId = useId();
   const pathname = usePathname();
+  const [lastPathname, setLastPathname] = useState(pathname);
 
-  useEffect(() => setOpen(false), [pathname]);
+  // Close the menu on route change (adjust state during render)
+  if (lastPathname !== pathname) {
+    setLastPathname(pathname);
+    setOpen(false);
+  }
 
   useEffect(() => {
     if (!open) return;

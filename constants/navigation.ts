@@ -2,19 +2,19 @@ import ROUTES from "./routes";
 
 export const NAVBAR_LINKS = [
   { label: 'Explore', href: ROUTES.HOME },
-  { label: 'Find Mentors', href: ROUTES.MENTORS },
-  { label: 'Classes', href: ROUTES.CLASSES },
+  { label: 'Find Educators', href: ROUTES.EDUCATORS },
+  { label: 'Batches', href: ROUTES.LIVE_BATCHES },
   { label: 'How It Works', href: ROUTES.HOW_IT_WORKS_SECTION },
 ] as const;
 
 export const STUDENT_NAV = [
   {
-    label: "Find Mentors",
-    href: ROUTES.MENTORS,
+    label: "Find Educators",
+    href: ROUTES.EDUCATORS,
   },
   {
-    label: "Explore Classes",
-    href: ROUTES.CLASSES,
+    label: "Explore Batches",
+    href: ROUTES.LIVE_BATCHES,
   },
   {
     label: "How It Works",
@@ -37,7 +37,7 @@ export const EDUCATOR_NAV = [
   },
   {
     label: "Publish a Class",
-    href: ROUTES.EDUCATOR.NEW_CLASS,
+    href: ROUTES.EDUCATOR.MY_CLASSES,
   },
   {
     label: "Educator Dashboard",
@@ -52,7 +52,7 @@ export const COMPANY_NAV = [
   },
   {
     label: "FAQ & Support",
-    href: ROUTES.FAQ,
+    href: ROUTES.SUPPORT,
   },
   {
     label: "Terms of Service",
@@ -64,8 +64,7 @@ export const COMPANY_NAV = [
   },
   {
     label: "Admin Console",
-    href: ROUTES.ADMIN.ROOT,
+    href: ROUTES.ADMIN.DASHBOARD,
     admin: true,
   },
 ] as const;
-

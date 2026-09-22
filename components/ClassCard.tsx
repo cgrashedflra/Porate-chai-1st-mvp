@@ -1,6 +1,7 @@
 "use client";
 
 import { Calendar, Clock, Users, ArrowRight, BookOpen } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import ROUTES from '@/constants/routes';
 
@@ -77,7 +78,7 @@ export const ClassCard = ({
             <ArrowRight className="w-3.5 h-3.5" />
         </button>
     ) : (
-        <Link href={ROUTES.CLASS(id)} className={actionClassName}>
+        <Link href={ROUTES.LIVE_BATCH(id)} className={actionClassName}>
             {primaryButtonText}
             <ArrowRight className="w-3.5 h-3.5" />
         </Link>
@@ -115,7 +116,7 @@ export const ClassCard = ({
 
             <div className="flex flex-1 flex-col p-4">
                 <div>
-                    <Link href={ROUTES.CLASS(id)} className="block">
+                    <Link href={ROUTES.LIVE_BATCH(id)} className="block">
                         <h3 className="mb-2 line-clamp-2 text-base font-bold leading-snug text-neutral-900 transition-colors group-hover:text-primary-500">
                             {title}
                         </h3>
@@ -124,7 +125,7 @@ export const ClassCard = ({
                     <div className="mb-3 flex items-center gap-2">
                         <div className="flex -space-x-2 overflow-hidden">
                             {mentors.slice(0, 3).map((mentor) => (
-                                <img key={mentor.id} src={mentor.image} alt={mentor.name} className="h-7 w-7 rounded-full border-2 border-neutral-0 object-cover" />
+                                <Image key={mentor.id} src={mentor.image} alt={mentor.name} width={28} height={28} className="h-7 w-7 rounded-full border-2 border-neutral-0 object-cover" />
                             ))}
                         </div>
                         <span className="truncate text-xs font-semibold text-neutral-600">{mentors.length} {mentorsCountText}</span>

@@ -1,7 +1,9 @@
 import { ArrowRight, Search, Video } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { heroTopics } from '@/data/home/features';
 import ROUTES from '@/constants/routes';
+import academicCap from "@/public/academic-cap.svg";
 
 const HeroSection = () => {
     return (
@@ -11,7 +13,7 @@ const HeroSection = () => {
                     {/* Left Content */}
                     <div className="lg:col-span-7 space-y-5 text-left">
                         <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-deep-blue-50 text-deep-blue-700 text-xs font-semibold tracking-wide">
-                            <img src="/academic-cap.svg" alt="" className="w-3.5 h-3.5" />
+                            <Image src={academicCap} alt="" className="w-3.5 h-3.5" width={14} height={14} />
                             <span>Verified Direct-to-Educator Network</span>
                         </div>
 
@@ -40,7 +42,7 @@ const HeroSection = () => {
                                     />
                                 </div>
                                 <Link
-                                    href={ROUTES.MENTORS}
+                                    href={ROUTES.EDUCATORS}
                                     id="hero-search-submit-btn"
                                     className="py-2.5 px-5 rounded-md bg-primary-600 hover:bg-primary-700 text-neutral-0 font-semibold text-xs sm:text-sm transition shadow-xs flex items-center justify-center gap-2 cursor-pointer"
                                 >
@@ -66,7 +68,7 @@ const HeroSection = () => {
                         {/* CTAs */}
                         <div className="flex flex-wrap items-center gap-3 pt-1">
                             <Link
-                                href={ROUTES.MENTORS}
+                                href={ROUTES.EDUCATORS}
                                 id="hero-primary-cta"
                                 className="py-2.5 px-5 rounded-md bg-primary-500 hover:bg-primary-700 text-neutral-0 font-semibold text-sm transition shadow-xs cursor-pointer flex items-center gap-2"
                             >
@@ -74,7 +76,7 @@ const HeroSection = () => {
                                 <ArrowRight className="w-4 h-4" />
                             </Link>
                             <Link
-                                href={ROUTES.CLASSES}
+                                href={ROUTES.LIVE_BATCHES}
                                 id="hero-secondary-cta"
                                 className="py-2.5 px-5 rounded-md bg-neutral-0 border border-neutral-300 hover:bg-neutral-20 text-neutral-700 font-semibold text-sm transition cursor-pointer"
                             >
@@ -88,10 +90,12 @@ const HeroSection = () => {
                         <div className="relative mx-auto max-w-md lg:max-w-none">
                             {/* Main Hero Image */}
                             <div className="relative rounded-2xl overflow-hidden shadow-md bg-neutral-900 aspect-4/5 sm:aspect-square lg:aspect-4/5">
-                                <img
+                                <Image
+                                    fill
                                     src="/assets/Hero-splash.jpeg"
                                     alt="Students collaborating with mentor in live session"
-                                    className="w-full h-full object-cover"
+                                    sizes="(min-width: 1024px) 40vw, 90vw"
+                                    className="object-cover"
                                 />
                                 {/* <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" /> */}
 
@@ -116,9 +120,11 @@ const HeroSection = () => {
 
                             {/* Floating Mentor Card badge */}
                             <div className="absolute -top-3 -left-3 sm:-left-5 bg-neutral-0/95 backdrop-blur-md p-3 rounded-xl shadow-md flex items-center gap-2.5 animate-in fade-in zoom-in-95 duration-300">
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
                                     alt="Ahsan Rahman"
+                                    width={40}
+                                    height={40}
                                     className="w-10 h-10 rounded-lg object-cover border border-neutral-200"
                                 />
                                 <div>

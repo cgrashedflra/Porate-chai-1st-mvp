@@ -1,7 +1,9 @@
 import { Menu } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { NAVBAR_LINKS } from '@/constants/navigation';
 import ROUTES from '@/constants/routes';
+import academicCap from "@/public/academic-cap.svg";
 
 export const Navbar = () => {
 
@@ -14,7 +16,7 @@ export const Navbar = () => {
                     aria-label="PorateChai home"
                 >
                     <div className="flex h-10 w-10 items-center justify-center rounded">
-                        <img src="/academic-cap.svg" alt="logo" className="h-10 w-10" aria-hidden="true" />
+                        <Image src={academicCap} alt="logo" className="h-10 w-10" width={40} height={40} aria-hidden="true" />
                     </div>
 
                     <div className="flex items-baseline gap-1.5">

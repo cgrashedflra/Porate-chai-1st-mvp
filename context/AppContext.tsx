@@ -10,7 +10,7 @@ import {
     PlatformUser,
     ReportItem,
     AdminAuditLog
-} from '@/types';
+} from '@/types/types';
 import { initialEducators } from '@/data/educators';
 import { initialClasses } from '@/data/classes';
 import {
@@ -364,7 +364,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
                 status: 'active'
             };
             setUser(adminSession);
-            navigate('/admin');
+            navigate('/admin/dashboard');
         } else if (role === 'student') {
             const studentSession: UserSession = {
                 ...defaultStudentUser,
@@ -374,7 +374,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
                 status: 'active'
             };
             setUser(studentSession);
-            navigate('/dashboard/student');
+            navigate('/student/dashboard');
         } else {
             const educatorSession: UserSession = {
                 ...defaultEducatorUser,
@@ -384,7 +384,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
                 status: 'active'
             };
             setUser(educatorSession);
-            navigate('/dashboard/educator');
+            navigate('/educator/dashboard');
         }
     };
 

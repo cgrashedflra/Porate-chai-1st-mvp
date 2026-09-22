@@ -18,8 +18,13 @@ type Props = {
 export function AppShell({ user, left, right, children }: Props) {
   const [drawer, setDrawer] = useState(false);
   const pathname = usePathname();
+  const [lastPathname, setLastPathname] = useState(pathname);
 
-  useEffect(() => setDrawer(false), [pathname]);
+  // Close the mobile drawer on route change (adjust state during render)
+  if (lastPathname !== pathname) {
+    setLastPathname(pathname);
+    setDrawer(false);
+  }
   useEffect(() => {
     if (!drawer) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setDrawer(false);

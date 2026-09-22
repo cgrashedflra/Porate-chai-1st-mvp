@@ -6,7 +6,8 @@
 
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/Poppins-Regular.ttf") format("truetype");
+  src: url("/fonts/Poppins-Regular.woff2") format("woff2"),
+       url("/fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -14,7 +15,8 @@
 
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/Poppins-Medium.ttf") format("truetype");
+  src: url("/fonts/Poppins-Medium.woff2") format("woff2"),
+       url("/fonts/Poppins-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -22,7 +24,8 @@
 
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/Poppins-SemiBold.ttf") format("truetype");
+  src: url("/fonts/Poppins-SemiBold.woff2") format("woff2"),
+       url("/fonts/Poppins-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -30,7 +33,53 @@
 
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/Poppins-Bold.ttf") format("truetype");
+  src: url("/fonts/Poppins-Bold.woff2") format("woff2"),
+       url("/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans Bengali";
+  src: url("/fonts/NotoSansBengali-Variable.woff2") format("woff2"),
+       url("/fonts/NotoSansBengali-Variable.ttf") format("truetype");
+  font-weight: 400 700; /* variable font: all weights 400-700 */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hind Siliguri";
+  src: url("/fonts/HindSiliguri-Regular.woff2") format("woff2"),
+       url("/fonts/HindSiliguri-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hind Siliguri";
+  src: url("/fonts/HindSiliguri-Medium.woff2") format("woff2"),
+       url("/fonts/HindSiliguri-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hind Siliguri";
+  src: url("/fonts/HindSiliguri-SemiBold.woff2") format("woff2"),
+       url("/fonts/HindSiliguri-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hind Siliguri";
+  src: url("/fonts/HindSiliguri-Bold.woff2") format("woff2"),
+       url("/fonts/HindSiliguri-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -47,6 +96,7 @@
      ---------------------------------------------------------- */
 
   --font-sans: "Poppins", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 
 
   /* ----------------------------------------------------------
@@ -228,6 +278,7 @@
 
 html {
   font-family: var(--font-sans);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -242,6 +293,114 @@ body {
    ============================================================ */
 
 @layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(79, 70, 229, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(79, 70, 229, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .bg-dots-pattern {
+    background-image: radial-gradient(rgba(79, 70, 229, 0.12) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  /* ----------------------------------------------------------
+     GRADIENTS — every stop references a @theme color token
+     ---------------------------------------------------------- */
+
+  /* Brand / CTA (rich, dark) */
+  .gradient-brand {
+    background-image: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-deep-blue-500) 60%, var(--color-deep-blue-800) 100%);
+  }
+  .gradient-brand-vertical {
+    background-image: linear-gradient(180deg, var(--color-primary-500) 0%, var(--color-deep-blue-500) 60%, var(--color-deep-blue-800) 100%);
+  }
+
+  /* Single-family ramps (buttons, badges, hero blocks) */
+  .gradient-primary {
+    background-image: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
+  }
+  .gradient-deep-blue {
+    background-image: linear-gradient(135deg, var(--color-deep-blue-500) 0%, var(--color-deep-blue-800) 100%);
+  }
+  .gradient-sky {
+    background-image: linear-gradient(135deg, var(--color-skyblue-400) 0%, var(--color-skyblue-700) 100%);
+  }
+  .gradient-ocean {
+    background-image: linear-gradient(135deg, var(--color-skyblue-500) 0%, var(--color-primary-600) 100%);
+  }
+  .gradient-success {
+    background-image: linear-gradient(135deg, var(--color-success-500) 0%, var(--color-success-600) 100%);
+  }
+  .gradient-orange {
+    background-image: linear-gradient(135deg, var(--color-orange-400) 0%, var(--color-orange-700) 100%);
+  }
+  .gradient-warm {
+    background-image: linear-gradient(135deg, var(--color-orange-400) 0%, var(--color-error-500) 100%);
+  }
+
+  /* Soft surfaces (light section / page backgrounds) */
+  .gradient-hero {
+    background-image: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-skyblue-50) 50%, var(--color-neutral-0) 100%);
+  }
+  .gradient-surface {
+    background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-neutral-20) 60%, transparent) 0%, var(--color-neutral-0) 100%);
+  }
+  .gradient-mesh {
+    background-image:
+      radial-gradient(60% 55% at 15% 20%, color-mix(in srgb, var(--color-primary-100) 70%, transparent) 0%, transparent 100%),
+      radial-gradient(55% 50% at 85% 15%, color-mix(in srgb, var(--color-skyblue-100) 65%, transparent) 0%, transparent 100%),
+      radial-gradient(50% 45% at 70% 90%, color-mix(in srgb, var(--color-orange-100) 60%, transparent) 0%, transparent 100%),
+      var(--color-neutral-0);
+  }
+
+  /* Subtle card tints (top → bottom, 50% → 10% of the family's 50 shade) */
+  .gradient-tint-primary {
+    background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-primary-50) 50%, transparent) 0%, color-mix(in srgb, var(--color-primary-50) 10%, transparent) 100%);
+  }
+  .gradient-tint-deep-blue {
+    background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-deep-blue-50) 50%, transparent) 0%, color-mix(in srgb, var(--color-deep-blue-50) 10%, transparent) 100%);
+  }
+  .gradient-tint-green {
+    background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-green-50) 50%, transparent) 0%, color-mix(in srgb, var(--color-green-50) 10%, transparent) 100%);
+  }
+  .gradient-tint-orange {
+    background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-orange-50) 50%, transparent) 0%, color-mix(in srgb, var(--color-orange-50) 10%, transparent) 100%);
+  }
+
+  /* Text gradients */
+  .text-gradient-primary {
+    background-image: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-gradient-warm {
+    background-image: linear-gradient(135deg, var(--color-orange-500) 0%, var(--color-error-500) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .shadow-pc-sm {
+    box-shadow: 0px 2px 8px 0px rgba(15, 23, 42, 0.05);
+  }
+  .shadow-pc-md {
+    box-shadow: 0px 4px 16px 0px rgba(15, 23, 42, 0.08);
+  }
+  .shadow-pc-lg {
+    box-shadow: 0px 10px 30px 0px rgba(15, 23, 42, 0.10);
+  }
+  .shadow-pc-xl {
+    box-shadow: 0px 20px 50px 0px rgba(79, 70, 229, 0.15);
+  }
+  .shadow-pc-glow {
+    box-shadow: 0px 0px 40px 0px rgba(79, 70, 229, 0.25);
+  }
+
   .display-xl {
     font-size: 64px;
     line-height: 1.05;
@@ -354,4 +513,68 @@ body {
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
+
+  /* Hide scrollbars while keeping scrolling functional */
+  .scrollbar-none {
+    -ms-overflow-style: none; /* IE / legacy Edge */
+    scrollbar-width: none;    /* Firefox */
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, modern Edge */
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY / REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+  border: 2px solid #F1F5F9;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4F46E5;
+}
+
+/* ============================================================
+   BENGALI SCRIPT
+   ============================================================ */
+
+.font-bengali {
+  font-family: var(--font-poppins), 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
+}
+
+/* ============================================================
+   SELECTION COLOR
+   ============================================================ */
+
+::selection {
+  background-color: rgba(79, 70, 229, 0.2);
+  color: #0F172A;
 }

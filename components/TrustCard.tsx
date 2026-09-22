@@ -24,7 +24,7 @@ export const TrustCard = ({
     tag,
     tagBgColor = 'bg-neutral-100',
     tagTextColor = 'text-neutral-600',
-    actionHref = '/how-it-works',
+    actionHref = '/#how-it-works',
     onActionClick,
 }: TrustCardProps) => {
     return (

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
 import { getNavConfig } from "@/config/nav";
-import { marketingNav } from "@/config/nav/marketing";
+import { PublicNav } from "@/config/nav/public";
 import type { NavItem } from "@/config/nav/types";
 import type { NavUser } from "@/types/user";
 import { ButtonLink } from "../../ui/ButtonLink";
@@ -23,11 +23,18 @@ type Props = {
   items?: NavItem[];
 };
 
-export function Navbar({ user = null, items = marketingNav.items }: Props) {
+export function Navbar({ user = null, items = PublicNav.items }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const menuId = useId();
+  const [lastPathname, setLastPathname] = useState(pathname);
+
+  // Close the mobile menu on route change (adjust state during render)
+  if (lastPathname !== pathname) {
+    setLastPathname(pathname);
+    setOpen(false);
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -35,8 +42,6 @@ export function Navbar({ user = null, items = marketingNav.items }: Props) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
     if (!open) return;
@@ -83,8 +88,8 @@ export function Navbar({ user = null, items = marketingNav.items }: Props) {
               </div>
             ) : (
               <div className="ml-2 hidden items-center gap-3 lg:flex">
-                <ButtonLink href={marketingNav.auth.login} variant="secondary">Log In</ButtonLink>
-                <ButtonLink href={marketingNav.auth.signup} icon="arrowRight">Get Started</ButtonLink>
+                <ButtonLink href={PublicNav.auth.login} variant="secondary">Log In</ButtonLink>
+                <ButtonLink href={PublicNav.auth.signup} icon="arrowRight">Get Started</ButtonLink>
               </div>
             )}
 

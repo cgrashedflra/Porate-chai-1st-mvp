@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star, CheckCircle2, Video, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import ROUTES from '@/constants/routes';
 
@@ -41,9 +42,11 @@ export const MentorCard = ({
             <div>
                 <div className="flex items-start justify-between gap-3 mb-4">
                     <div className="flex items-start gap-3">
-                        <img
+                        <Image
                             src={image}
                             alt={name}
+                            width={64}
+                            height={64}
                             className="w-16 h-16 rounded-2xl object-cover object-center flex-shrink-0"
                         />
                         <div>
@@ -106,7 +109,7 @@ export const MentorCard = ({
                     </div>
                 </div>
 
-                <Link href={ROUTES.MENTOR(id)} className="inline-flex items-center justify-center gap-1.5 bg-primary-500 hover:bg-primary-700 text-neutral-0 text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors duration-200">
+                <Link href={ROUTES.EDUCATOR_PROFILE(id)} className="inline-flex items-center justify-center gap-1.5 bg-primary-500 hover:bg-primary-700 text-neutral-0 text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors duration-200">
                     <span>Book Session</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                 </Link>

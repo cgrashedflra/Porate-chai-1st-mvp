@@ -1,4 +1,4 @@
-import { PlatformUser, ReportItem, AdminAuditLog, UserSession } from '@/types';
+import { PlatformUser, ReportItem, AdminAuditLog, UserSession } from '@/types/types';
 
 export const defaultAdminUser: UserSession = {
     isAuthenticated: true,

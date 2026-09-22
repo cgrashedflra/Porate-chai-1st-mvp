@@ -45,7 +45,7 @@ export const TopBatches = () => {
                     {/* View All Button */}
                     <div className="flex flex-col items-start lg:items-end gap-6">
                         <Link
-                            href={ROUTES.CLASSES}
+                            href={ROUTES.LIVE_BATCHES}
                             className="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-700 font-semibold text-xs transition-colors duration-200"
                         >
                             <span>View All Batches</span>
@@ -67,7 +67,7 @@ export const TopBatches = () => {
                                 </button>
                             ))}
 
-                            <Link href={ROUTES.CLASSES} className="inline-flex items-center gap-1 px-3 py-2 rounded-full text-xs font-semibold bg-neutral-0 text-neutral-600 hover:bg-neutral-100 border border-neutral-30">
+                            <Link href={ROUTES.LIVE_BATCHES} className="inline-flex items-center gap-1 px-3 py-2 rounded-full text-xs font-semibold bg-neutral-0 text-neutral-600 hover:bg-neutral-100 border border-neutral-30">
                                 <span>More</span>
                                 <ChevronDown className="w-3.5 h-3.5 text-neutral-400" />
                             </Link>

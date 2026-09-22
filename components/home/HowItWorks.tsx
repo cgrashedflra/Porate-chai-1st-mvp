@@ -12,6 +12,7 @@ import {
     Mic,
     PhoneOff
 } from 'lucide-react';
+import Image from 'next/image';
 import { StepCard } from '@/components/StepCard';
 
 export const HowItWorks = () => {
@@ -57,7 +58,7 @@ export const HowItWorks = () => {
                                     <span>কোন বিষয় শিখতে চান?</span>
                                 </div>
                                 <div className="flex items-center gap-2.5 bg-neutral-20/50 p-2 rounded-xl">
-                                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&q=80" className="w-8 h-8 rounded-full object-cover" alt="Rafid" />
+                                    <Image src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&q=80" className="w-8 h-8 rounded-full object-cover" alt="Rafid" width={32} height={32} />
                                     <div>
                                         <div className="flex items-center gap-1">
                                             <span className="font-bold text-[11px] text-neutral-800">Rafid Hasan</span>
@@ -72,7 +73,7 @@ export const HowItWorks = () => {
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-2.5 bg-neutral-20/50 p-2 rounded-xl">
-                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" className="w-8 h-8 rounded-full object-cover" alt="Nusrat" />
+                                    <Image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" className="w-8 h-8 rounded-full object-cover" alt="Nusrat" width={32} height={32} />
                                     <div>
                                         <div className="flex items-center gap-1">
                                             <span className="font-bold text-[11px] text-neutral-800">Nusrat Jahan</span>
@@ -210,15 +211,15 @@ export const HowItWorks = () => {
                         >
                             <div className="bg-neutral-0 p-2 rounded-2xl shadow-sm border border-neutral-30 w-full space-y-2">
                                 <div className="relative rounded-xl overflow-hidden bg-neutral-900 aspect-video flex items-center justify-center">
-                                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80" className="w-full h-full object-cover opacity-80" alt="Live Class" />
+                                    <Image fill src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80" className="object-cover opacity-80" alt="Live Class" sizes="(max-width: 767px) 90vw, 40vw" />
                                     <span className="absolute top-1.5 left-1.5 bg-green-500 text-neutral-0 text-[8px] px-1.5 py-0.5 rounded-full flex items-center gap-1 font-semibold">
                                         <span className="w-1 h-1 rounded-full bg-neutral-0 animate-ping"></span> Live
                                     </span>
 
                                     {/* Participant Grid Overlay */}
                                     <div className="absolute right-1 top-1 flex flex-col gap-1">
-                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" className="w-4 h-4 rounded border border-neutral-0 object-cover" alt="Student" />
-                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" className="w-4 h-4 rounded border border-neutral-0 object-cover" alt="Student" />
+                                        <Image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" className="w-4 h-4 rounded border border-neutral-0 object-cover" alt="Student" width={16} height={16} />
+                                        <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" className="w-4 h-4 rounded border border-neutral-0 object-cover" alt="Student" width={16} height={16} />
                                     </div>
 
                                     {/* Controls */}

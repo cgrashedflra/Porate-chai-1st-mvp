@@ -1,11 +1,12 @@
 import { ReactNode } from 'react'
-import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { Navbar } from '@/components/navigation/public/Navbar';
 
 const Rootlayout = ({ children }: { children: ReactNode }) => {
+    const user = null;
     return (
         <main>
-            <Navbar />
+            <Navbar user={user} />
             {children}
             <Footer />
         </main>

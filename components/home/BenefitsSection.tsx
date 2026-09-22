@@ -1,5 +1,6 @@
 import React from 'react';
 import { Users, CalendarCheck2, Video, Star, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 import { BenefitCard } from '@/components/BenefitCard';
 import { MockupFrame } from '@/components/home/MockupFrame';
 
@@ -44,7 +45,7 @@ export const BenefitsSection = () => {
                     <BenefitCard
                         icon={<Users className="w-6 h-6 text-primary-500" />}
                         iconBgColor="bg-primary-100/80"
-                        cardBgGradient="bg-gradient-to-b from-primary-50/50 to-primary-50/10"
+                        cardBgGradient="gradient-tint-primary"
                         title="শিক্ষক খুঁজুন"
                         description="আপনার পছন্দের বিষয় অনুযায়ী অভিজ্ঞ ও যাচাইকৃত শিক্ষকদের থেকে বেছে নিন।"
                         actionText="আরও জানুন"
@@ -52,9 +53,11 @@ export const BenefitsSection = () => {
                         illustration={
                             <MockupFrame className="relative">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <img
+                                    <Image
                                         src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80"
                                         alt="Teacher"
+                                        width={40}
+                                        height={40}
                                         className="w-10 h-10 rounded-xl object-cover"
                                     />
                                     <div className="text-[10px]">
@@ -83,7 +86,7 @@ export const BenefitsSection = () => {
                     <BenefitCard
                         icon={<CalendarCheck2 className="w-6 h-6 text-green-600" />}
                         iconBgColor="bg-green-100/80"
-                        cardBgGradient="bg-gradient-to-b from-green-50/50 to-green-50/10"
+                        cardBgGradient="gradient-tint-green"
                         title="সহজে ক্লাস বুক করুন"
                         description="আপনার সুবিধামত সময় ও শিক্ষকের সাথে ক্লাস বুক করুন। সম্পূর্ণ অনলাইন ও ঝামেলাহীন প্রক্রিয়া।"
                         actionText="আরও জানুন"
@@ -109,7 +112,7 @@ export const BenefitsSection = () => {
                     <BenefitCard
                         icon={<Video className="w-6 h-6 text-deep-blue-600" />}
                         iconBgColor="bg-deep-blue-100/80"
-                        cardBgGradient="bg-gradient-to-b from-deep-blue-50/50 to-deep-blue-50/10"
+                        cardBgGradient="gradient-tint-deep-blue"
                         title="লাইভ ক্লাস ও কনফারেন্স"
                         description="নিরাপদ ও স্থিতিশীল ভিডিও কলে লাইভ ক্লাস নিন এবং ইন্টারেক্টিভ লার্নিং অভিজ্ঞতা উপভোগ করুন।"
                         actionText="আরও জানুন"
@@ -117,10 +120,12 @@ export const BenefitsSection = () => {
                         illustration={
                             <MockupFrame className="bg-neutral-900 p-2.5 text-neutral-0">
                                 <div className="bg-neutral-800 rounded-xl h-20 flex items-center justify-center relative overflow-hidden mb-2">
-                                    <img
+                                    <Image
+                                        fill
                                         src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80"
                                         alt="Video Call"
-                                        className="w-full h-full object-cover opacity-80"
+                                        sizes="200px"
+                                        className="object-cover opacity-80"
                                     />
                                     <div className="absolute bottom-1 right-1 bg-primary-500 p-1 rounded-full">
                                         <Video className="w-2.5 h-2.5 text-neutral-0" />
@@ -139,7 +144,7 @@ export const BenefitsSection = () => {
                     <BenefitCard
                         icon={<Star className="w-6 h-6 text-orange-600 fill-orange-600" />}
                         iconBgColor="bg-orange-100/80"
-                        cardBgGradient="bg-gradient-to-b from-orange-50/50 to-orange-50/10"
+                        cardBgGradient="gradient-tint-orange"
                         title="নির্ভরযোগ্য মার্কেটপ্লেস"
                         description="রেটিং, রিভিউ ও ভেরিফিকেশন-এর মাধ্যমে নির্ভরযোগ্য শিক্ষক বেছে নিয়ে নিশ্চিন্তে শিখুন।"
                         actionText="আরও জানুন"
@@ -147,9 +152,11 @@ export const BenefitsSection = () => {
                         illustration={
                             <MockupFrame>
                                 <div className="flex items-center gap-2 mb-2">
-                                    <img
+                                    <Image
                                         src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
                                         alt="Verified Teacher"
+                                        width={36}
+                                        height={36}
                                         className="w-9 h-9 rounded-full object-cover"
                                     />
                                     <div>

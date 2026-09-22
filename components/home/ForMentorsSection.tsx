@@ -13,6 +13,7 @@ import {
     Atom,
     Laptop
 } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import ROUTES from '@/constants/routes';
 import { mentorFeatures, mentorSubjects } from '@/data/home/features';
@@ -96,7 +97,7 @@ export default function ForMentorsSection() {
                                 <ArrowRight className="w-4 h-4" />
                             </Link>
 
-                            <Link href={ROUTES.CLASSES} className="flex items-center gap-2 bg-neutral-0 hover:bg-neutral-20 text-primary-500 font-medium px-6 py-3 rounded-full border border-primary-200 transition duration-200 text-sm">
+                            <Link href={ROUTES.LIVE_BATCHES} className="flex items-center gap-2 bg-neutral-0 hover:bg-neutral-20 text-primary-500 font-medium px-6 py-3 rounded-full border border-primary-200 transition duration-200 text-sm">
                                 <span>এখনই ক্লাস খুঁজুন</span>
                                 <ArrowRight className="w-4 h-4" />
                             </Link>
@@ -134,11 +135,13 @@ export default function ForMentorsSection() {
                                 </div>
 
                                 {/* Hero Instructor Image */}
-                                <div className="relative z-10 flex justify-center pt-6">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
+                                <div className="relative  z-10 flex justify-center pt-6">
+                                    <Image
+                                        src="/assets/educator.png"
                                         alt="Instructor"
-                                        className="h-80 object-cover object-top rounded-2xl"
+                                        width={429}
+                                        height={320}
+                                        className="rounded-2xl scale-110 origin-center"
                                     />
                                 </div>
 
@@ -170,7 +173,7 @@ export default function ForMentorsSection() {
                                             </div>
                                         </div>
 
-                                        <Link href={ROUTES.MENTOR('rafid-hasan')} className="bg-primary-500 hover:bg-primary-700 text-neutral-0 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-1.5 transition w-full sm:w-auto justify-center">
+                                        <Link href={ROUTES.EDUCATOR_PROFILE('rafid-hasan')} className="bg-primary-500 hover:bg-primary-700 text-neutral-0 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-1.5 transition w-full sm:w-auto justify-center">
                                             <span>View Profile</span>
                                             <ArrowRight className="w-3.5 h-3.5" />
                                         </Link>

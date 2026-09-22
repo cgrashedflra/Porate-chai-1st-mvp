@@ -1,4 +1,4 @@
-import { Educator } from '@/types';
+import { Educator } from '@/types/types';
 
 export const initialEducators: Educator[] = [
   {

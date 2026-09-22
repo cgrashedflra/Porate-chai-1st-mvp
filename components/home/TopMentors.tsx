@@ -32,7 +32,7 @@ export const TopMentors = () => {
 
                     {/* View All Button */}
                     <a
-                        href={ROUTES.MENTORS}
+                        href={ROUTES.EDUCATORS}
                         className="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-700 font-semibold text-sm transition-colors duration-200 self-start md:self-end pb-1"
                     >
                         <span>সকল মেন্টর দেখুন</span>

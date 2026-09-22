@@ -41,7 +41,7 @@ export const PopularSubjects = () => {
                 </div>
 
                 {/* Action Button */}
-                <Link href={ROUTES.MENTORS} className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary-200 text-primary-500 font-medium text-sm hover:bg-primary-50 transition-colors duration-200 bg-neutral-0">
+                <Link href={ROUTES.EDUCATORS} className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary-200 text-primary-500 font-medium text-sm hover:bg-primary-50 transition-colors duration-200 bg-neutral-0">
                     <span>সব বিষয় দেখুন</span>
                     <ArrowRight className="w-4 h-4" />
                 </Link>

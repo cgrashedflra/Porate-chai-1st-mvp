@@ -12,7 +12,7 @@ export function Avatar({ name, src, size = "md", className }: Props) {
   }
   // Placeholder: initials on a brand gradient
   return (
-    <span aria-hidden="true" className={cn("grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-indigo-400 to-cyan-400 font-semibold text-white", sizes[size], className)}>
+    <span aria-hidden="true" className={cn("grid shrink-0 place-items-center rounded-full bg-linear-to-br from-primary-400 to-skyblue-400 font-semibold text-white", sizes[size], className)}>
       {initials || "?"}
     </span>
   );

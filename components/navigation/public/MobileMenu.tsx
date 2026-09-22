@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { marketingNav } from "@/config/nav/marketing";
+import { PublicNav } from "@/config/nav/public";
 import type { NavItem } from "@/config/nav/types";
 import type { NavUser } from "@/types/user";
 import { ButtonLink } from "../../ui/ButtonLink";
@@ -32,12 +31,12 @@ export function MobileMenu({ id, items, user, onNavigate }: Props) {
         </LogoutButton>
       ) : (
         <div className="mt-3 grid grid-cols-2 gap-3">
-          <ButtonLink href={marketingNav.auth.login} variant="secondary">Log In</ButtonLink>
-          <ButtonLink href={marketingNav.auth.signup}>Get Started</ButtonLink>
+          <ButtonLink href={PublicNav.auth.login} variant="secondary">Log In</ButtonLink>
+          <ButtonLink href={PublicNav.auth.signup}>Get Started</ButtonLink>
         </div>
       )}
 
-      <PromoCard className="mt-3" {...marketingNav.promo} />
+      <PromoCard className="mt-3" {...PublicNav.promo} />
     </div>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/cn";
 import { getNavConfig } from "@/config/nav";
 import type { NavUser } from "@/types/user";
 import { Icon } from "../../ui/Icon";

@@ -23,7 +23,7 @@ export const BenefitCard = ({
     description,
     actionText = 'আরও জানুন',
     actionTextColor = 'text-primary-500 hover:text-primary-700',
-    actionHref = '/how-it-works',
+    actionHref = '/#how-it-works',
     onActionClick,
     illustration,
 }: BenefitCardProps) => {
