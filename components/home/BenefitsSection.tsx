@@ -33,7 +33,7 @@ export const BenefitsSection = () => {
                     </p>
 
                     {/* Hand-drawn Doodled Annotation Box */}
-                    <div className="hidden lg:block absolute -right-48 top-4 rotate-12 text-primary-500 text-xs font-bold bg-primary-50/90 px-4 py-2 rounded-2xl border border-primary-100 shadow-sm">
+                    <div className="glass-card hidden lg:block absolute -right-48 top-4 rotate-12 text-primary-500 text-xs font-bold bg-primary-50/90 px-4 py-2 rounded-2xl shadow-sm shadow-primary-500/20">
                         ভালো শিক্ষাই <br />
                         উজ্জ্বল ভবিষ্যৎ ✨
                     </div>
@@ -87,6 +87,7 @@ export const BenefitsSection = () => {
                         icon={<CalendarCheck2 className="w-6 h-6 text-green-600" />}
                         iconBgColor="bg-green-100/80"
                         cardBgGradient="gradient-tint-green"
+                        glowClassName="shadow-md shadow-green-500/10 hover:shadow-lg hover:shadow-green-500/20"
                         title="সহজে ক্লাস বুক করুন"
                         description="আপনার সুবিধামত সময় ও শিক্ষকের সাথে ক্লাস বুক করুন। সম্পূর্ণ অনলাইন ও ঝামেলাহীন প্রক্রিয়া।"
                         actionText="আরও জানুন"
@@ -101,7 +102,7 @@ export const BenefitsSection = () => {
                                     </div>
                                     <div className="bg-neutral-100 p-1 rounded">বু</div>
                                 </div>
-                                <div className="w-full bg-green-500 text-neutral-0 text-[10px] font-bold py-1.5 rounded-xl shadow-sm text-center">
+                                <div className="w-full bg-green-500 text-neutral-0 text-[10px] font-bold py-1.5 rounded-xl shadow-sm shadow-green-500/25 text-center">
                                     Book Class
                                 </div>
                             </MockupFrame>
@@ -113,6 +114,7 @@ export const BenefitsSection = () => {
                         icon={<Video className="w-6 h-6 text-deep-blue-600" />}
                         iconBgColor="bg-deep-blue-100/80"
                         cardBgGradient="gradient-tint-deep-blue"
+                        glowClassName="shadow-md shadow-deep-blue-500/10 hover:shadow-lg hover:shadow-deep-blue-500/20"
                         title="লাইভ ক্লাস ও কনফারেন্স"
                         description="নিরাপদ ও স্থিতিশীল ভিডিও কলে লাইভ ক্লাস নিন এবং ইন্টারেক্টিভ লার্নিং অভিজ্ঞতা উপভোগ করুন।"
                         actionText="আরও জানুন"
@@ -145,6 +147,7 @@ export const BenefitsSection = () => {
                         icon={<Star className="w-6 h-6 text-orange-600 fill-orange-600" />}
                         iconBgColor="bg-orange-100/80"
                         cardBgGradient="gradient-tint-orange"
+                        glowClassName="shadow-md shadow-orange-500/10 hover:shadow-lg hover:shadow-orange-500/20"
                         title="নির্ভরযোগ্য মার্কেটপ্লেস"
                         description="রেটিং, রিভিউ ও ভেরিফিকেশন-এর মাধ্যমে নির্ভরযোগ্য শিক্ষক বেছে নিয়ে নিশ্চিন্তে শিখুন।"
                         actionText="আরও জানুন"

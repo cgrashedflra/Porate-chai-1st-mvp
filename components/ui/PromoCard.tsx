@@ -13,7 +13,7 @@ type Props = {
 
 export function PromoCard({ title, body, cta, imageSrc, className }: Props) {
   return (
-    <div className={cn("relative overflow-hidden rounded-2xl bg-linear-to-br from-primary-50 via-primary-100/70 to-skyblue-100/60 p-5", className)}>
+    <div className={cn("glass-card relative overflow-hidden rounded-2xl bg-linear-to-br from-primary-50 via-primary-100/70 to-skyblue-100/60 p-5 shadow-md shadow-primary-500/10", className)}>
       <h3 className="max-w-[80%] text-lg font-semibold leading-snug text-indigo-700">{title}</h3>
       {body && <p className="mt-2 max-w-[75%] text-sm text-slate-500">{body}</p>}
       {cta && <ButtonLink href={cta.href} icon="arrowRight" className="mt-4">{cta.label}</ButtonLink>}

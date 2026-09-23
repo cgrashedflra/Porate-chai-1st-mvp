@@ -87,7 +87,7 @@ const HeroSection = () => {
                     <div className="lg:col-span-5 relative">
                         <div className="relative mx-auto max-w-md lg:max-w-none">
                             {/* Main Hero Image */}
-                            <div className="relative rounded-2xl overflow-hidden shadow-md bg-neutral-900 aspect-4/5 sm:aspect-square lg:aspect-4/5">
+                            <div className="relative rounded-2xl overflow-hidden shadow-lg shadow-primary-500/15 bg-neutral-900 aspect-4/5 sm:aspect-square lg:aspect-4/5">
                                 <Image
                                     fill
                                     src="/assets/Hero-splash.jpeg"
@@ -118,7 +118,7 @@ const HeroSection = () => {
                             </div>
 
                             {/* Floating Mentor Card badge */}
-                            <div className="absolute -top-3 -left-3 sm:-left-5 bg-neutral-0/95 backdrop-blur-md p-3 rounded-xl shadow-md flex items-center gap-2.5 animate-in fade-in zoom-in-95 duration-300">
+                            <div className="glass-card absolute -top-3 -left-3 sm:-left-5 p-3 rounded-xl shadow-lg shadow-primary-500/20 flex items-center gap-2.5 animate-in fade-in zoom-in-95 duration-300">
                                 <Image
                                     src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
                                     alt="Ahsan Rahman"
@@ -138,7 +138,7 @@ const HeroSection = () => {
                             </div>
 
                             {/* Floating stats badge */}
-                            <div className="absolute -bottom-3 -right-3 sm:-right-5 bg-neutral-900 text-neutral-0 p-3 rounded-xl shadow-md border border-neutral-800 flex items-center gap-2.5">
+                            <div className="absolute -bottom-3 -right-3 sm:-right-5 bg-neutral-900 text-neutral-0 p-3 rounded-xl shadow-lg shadow-primary-500/25 border border-neutral-800 flex items-center gap-2.5">
                                 <div className="w-8 h-8 rounded-lg bg-primary-600 text-neutral-0 flex items-center justify-center">
                                     <Video className="w-4 h-4" />
                                 </div>

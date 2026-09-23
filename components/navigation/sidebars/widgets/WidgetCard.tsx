@@ -11,7 +11,7 @@ type Props = {
 
 export function WidgetCard({ title, icon, viewAll, children }: Props) {
   return (
-    <div className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm">
+    <div className="glass-card rounded-2xl p-5 shadow-sm shadow-indigo-500/10">
       <div className="mb-4 flex items-center justify-between gap-3">
         <h2 className="flex items-center gap-2.5 text-base font-semibold text-slate-900">
           {icon && <Icon name={icon} size={20} className="text-indigo-500" />}

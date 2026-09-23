@@ -60,7 +60,7 @@ export const TopBatches = () => {
                                     key={cat}
                                     onClick={() => setActiveCategory(cat)}
                                     className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${activeCategory === cat
-                                        ? 'bg-primary-500 text-neutral-0 shadow-sm'
+                                        ? 'bg-primary-500 text-neutral-0 shadow-sm shadow-primary-500/20'
                                         : 'bg-neutral-0 text-neutral-600 hover:bg-neutral-100 border border-neutral-30'
                                         }`}
                                 >
@@ -85,7 +85,7 @@ export const TopBatches = () => {
                 </div>
 
                 {/* Bottom Feature Highlights Bar */}
-                <div className="bg-neutral-0/80 backdrop-blur rounded-3xl p-6 border border-neutral-30 shadow-sm grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="glass-card rounded-3xl p-6 shadow-md shadow-primary-500/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
                     <div className="flex items-center gap-3">
                         <div className="p-3 rounded-2xl bg-primary-50 text-primary-500 shrink-0">

@@ -8,7 +8,12 @@ export interface StepCardProps {
     badgeBgColor: string;
     badgeTextColor: string;
     children?: React.ReactNode;
+    /** Tailwind shadow classes that tint the card shadow to match its background color family. */
+    glowClassName?: string;
 }
+
+/** Default brand glow — indigo (primary-500) tint. */
+const DEFAULT_GLOW = 'shadow-md shadow-primary-500/10 hover:shadow-lg hover:shadow-primary-500/20';
 
 export const StepCard = ({
     stepNumber,
@@ -18,9 +23,10 @@ export const StepCard = ({
     badgeBgColor,
     badgeTextColor,
     children,
+    glowClassName = DEFAULT_GLOW,
 }: StepCardProps) => {
     return (
-        <div className={`relative flex flex-col justify-between rounded-3xl p-6 ${bgColor} border border-neutral-30 transition-all duration-300 hover:shadow-lg h-full min-h-[420px]`}>
+        <div className={`glass-card relative flex flex-col justify-between rounded-3xl p-6 ${bgColor} ${glowClassName} transition-all duration-300 h-full min-h-[420px]`}>
             <div>
                 <div className={`inline-flex items-center justify-center w-9 h-9 rounded-full ${badgeBgColor} ${badgeTextColor} font-bold text-sm mb-4`}>
                     {stepNumber}

@@ -21,9 +21,9 @@ export const TestimonialCard = ({
 }: TestimonialCardProps) => {
     return (
         <div
-            className={`relative flex flex-col justify-between p-8 rounded-3xl transition-all duration-300 ${isHighlighted
-                ? 'bg-primary-50/60 border border-primary-200/80 shadow-lg scale-105 z-10'
-                : 'bg-green-50/30 border border-green-100/50 shadow-sm hover:shadow-md'
+            className={`glass-card relative flex flex-col justify-between p-8 rounded-3xl transition-all duration-300 ${isHighlighted
+                ? 'bg-primary-50/60 shadow-xl shadow-primary-500/20 scale-105 z-10'
+                : 'bg-green-50/30 shadow-md shadow-green-500/10 hover:shadow-lg hover:shadow-green-500/20'
                 }`}
         >
             <div className="text-5xl font-serif text-primary-400/60 leading-none mb-3">

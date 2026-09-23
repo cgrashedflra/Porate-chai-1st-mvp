@@ -36,7 +36,7 @@ export default function SavedPage() {
                         { name: "Nusrat Jahan", subject: "Mathematics · Admission", id: "nusrat-jahan", rating: "4.8" },
                         { name: "Farhan Kabir", subject: "Chemistry · HSC", id: "farhan-kabir", rating: "4.7" },
                     ].map((e) => (
-                        <div key={e.id} className="flex flex-col gap-2 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                        <div key={e.id} className="glass-card flex flex-col gap-2 rounded-xl p-4 shadow-sm shadow-indigo-500/10">
                             <div className="flex items-start justify-between">
                                 <div>
                                     <p className="font-semibold text-slate-900">{e.name}</p>
@@ -73,7 +73,7 @@ export default function SavedPage() {
                         Find more gigs
                     </Link>
                 </div>
-                <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                <div className="glass-card overflow-hidden rounded-xl shadow-sm shadow-indigo-500/10">
                     {[
                         { title: "1-on-1 HSC Physics Crash Course", educator: "Dr. Ahsan Rahman", price: "৳500/hr" },
                         { title: "SSC Math Problem-Solving Sessions", educator: "Nusrat Jahan", price: "৳400/hr" },
@@ -107,7 +107,7 @@ export default function SavedPage() {
                         { title: "HSC Physics Live Batch", educator: "Dr. Ahsan Rahman", when: "Today 07:00 PM", id: "hsc-physics-batch" },
                         { title: "Integration Masterclass", educator: "Nusrat Jahan", when: "Tomorrow 06:00 PM", id: "integration-batch" },
                     ].map((b) => (
-                        <div key={b.id} className="flex flex-col gap-2 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                        <div key={b.id} className="glass-card flex flex-col gap-2 rounded-xl p-4 shadow-sm shadow-indigo-500/10">
                             <div className="flex items-start justify-between gap-3">
                                 <div>
                                     <p className="font-semibold text-slate-900">{b.title}</p>

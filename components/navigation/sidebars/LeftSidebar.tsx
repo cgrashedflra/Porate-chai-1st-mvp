@@ -41,7 +41,7 @@ export function LeftSidebar({ config, user, badges }: Props) {
 
       {footer.kind === "account" && (
         <div className="p-4">
-          <div className="rounded-2xl border border-slate-200/70 bg-white p-3 shadow-sm">
+          <div className="glass-card rounded-2xl p-3 shadow-sm shadow-indigo-500/10">
             {user && (
               <div className="flex items-center gap-3 border-b border-slate-100 pb-3">
                 <Avatar name={user.name} src={user.avatarUrl} />

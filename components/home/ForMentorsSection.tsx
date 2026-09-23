@@ -122,7 +122,7 @@ export default function ForMentorsSection() {
                                         const Icon = subjectIcons[badge.icon];
 
                                         return (
-                                            <div key={badge.name} className="flex items-center gap-2 bg-neutral-0/90 backdrop-blur px-3 py-1.5 rounded-full shadow-sm border border-neutral-30 text-xs text-neutral-700 font-medium cursor-pointer hover:shadow-md transition">
+                                            <div key={badge.name} className="glass-card flex items-center gap-2 px-3 py-1.5 rounded-full shadow-sm shadow-primary-500/10 text-xs text-neutral-700 font-medium cursor-pointer hover:shadow-md hover:shadow-primary-500/20 transition">
                                                 <Icon className={`w-4 h-4 ${subjectColors[badge.color]}`} />
                                                 <span>{badge.name}</span>
                                                 <ChevronRight className="w-3 h-3 text-neutral-400 ml-1" />
@@ -143,12 +143,12 @@ export default function ForMentorsSection() {
                                 </div>
 
                                 {/* Sticky Sticker Tag */}
-                                <div className="absolute top-12 -right-4 z-20 bg-neutral-0 px-3 py-2 rounded-xl shadow-lg border border-neutral-30 text-xs font-bold text-primary-500 rotate-12 hidden sm:block">
+                                <div className="glass-card absolute top-12 -right-4 z-20 px-3 py-2 rounded-xl shadow-lg shadow-primary-500/20 text-xs font-bold text-primary-500 rotate-12 hidden sm:block">
                                     Let&apos;s learn together!
                                 </div>
 
                                 {/* Main Profile Floating Card */}
-                                <div className="bg-neutral-0 rounded-2xl p-4 shadow-xl border border-neutral-30 -mt-10 relative z-30">
+                                <div className="glass-card rounded-2xl p-4 shadow-xl shadow-primary-500/20 -mt-10 relative z-30">
                                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                                         <div>
                                             <div className="flex items-center gap-1.5">
@@ -177,7 +177,7 @@ export default function ForMentorsSection() {
                                 </div>
 
                                 {/* Sub Stats Card */}
-                                <div className="bg-neutral-0/90 backdrop-blur rounded-xl p-3.5 shadow-sm border border-neutral-30 mt-3 grid grid-cols-3 gap-2 text-center relative z-30">
+                                <div className="glass-card rounded-xl p-3.5 shadow-sm shadow-primary-500/10 mt-3 grid grid-cols-3 gap-2 text-center relative z-30">
                                     <div className="flex flex-col items-center border-r border-neutral-100 pr-2">
                                         <div className="flex items-center gap-1 text-primary-500 text-xs font-bold">
                                             <Users className="w-3.5 h-3.5" />

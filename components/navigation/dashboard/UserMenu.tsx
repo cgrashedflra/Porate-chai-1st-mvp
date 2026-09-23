@@ -72,7 +72,7 @@ export function UserMenu({ user, items, showLabel = true }: Props) {
         <div
           id={menuId}
           role="menu"
-          className="absolute right-0 z-50 mt-2 w-60 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl shadow-indigo-500/10"
+          className="glass-card absolute right-0 z-50 mt-2 w-60 rounded-2xl p-2 shadow-xl shadow-indigo-500/10"
         >
           <div className="mb-1 flex items-center gap-3 border-b border-slate-100 px-3 pb-3 pt-2">
             <Avatar name={user.name} src={user.avatarUrl} size="md" />

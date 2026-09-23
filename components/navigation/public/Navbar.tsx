@@ -58,7 +58,7 @@ export function Navbar({ user = null, items = PublicNav.items }: Props) {
       <div
         className={cn(
           "mx-auto max-w-7xl rounded-2xl border bg-white/85 backdrop-blur-md transition-shadow duration-200",
-          scrolled ? "border-slate-200 shadow-lg shadow-indigo-500/10" : "border-white shadow-[0_8px_30px_rgba(99,102,241,0.08)]"
+          scrolled ? "border-slate-200 shadow-lg shadow-indigo-500/10" : "border-white shadow-[0_8px_30px_color-mix(in_srgb,var(--color-primary-500)_10%,transparent)]"
         )}
       >
         <div className={cn("flex items-center gap-4 px-4 transition-[height] duration-200 sm:px-6", scrolled ? "h-16" : "h-20")}>

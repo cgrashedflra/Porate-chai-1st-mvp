@@ -40,7 +40,7 @@ export const MentorCard = ({
     classType = 'Online Class',
 }: MentorProps) => {
     return (
-        <div className="bg-neutral-0 rounded-3xl p-6 border border-neutral-30 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between h-full">
+        <div className="glass-card rounded-3xl p-6 shadow-md shadow-primary-500/10 hover:shadow-lg hover:shadow-primary-500/20 transition-shadow duration-300 flex flex-col justify-between h-full">
             <div>
                 <div className="flex items-start justify-between gap-3 mb-4">
                     <div className="flex items-start gap-3">

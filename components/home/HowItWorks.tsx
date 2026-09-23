@@ -52,7 +52,7 @@ export const HowItWorks = () => {
                             badgeTextColor="text-primary-500"
                         >
                             {/* Card Graphic Preview */}
-                            <div className="bg-neutral-0 p-3 rounded-2xl shadow-sm border border-neutral-30 w-full space-y-2">
+                            <div className="glass-card p-3 rounded-2xl shadow-sm shadow-primary-500/10 w-full space-y-2">
                                 <div className="flex items-center gap-2 bg-neutral-20 px-3 py-1.5 rounded-xl border border-neutral-30 text-[10px] text-neutral-400">
                                     <Search className="w-3 h-3 text-neutral-400" />
                                     <span>কোন বিষয় শিখতে চান?</span>
@@ -90,7 +90,7 @@ export const HowItWorks = () => {
                             </div>
                         </StepCard>
                         {/* Arrow separator (hidden on small screens) */}
-                        <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-primary-100 border border-neutral-0 items-center justify-center text-primary-500 shadow-sm">
+                        <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-primary-100 border border-neutral-0 items-center justify-center text-primary-500 shadow-sm shadow-primary-500/20">
                             <ChevronRight className="w-3.5 h-3.5" />
                         </div>
                     </div>
@@ -104,8 +104,9 @@ export const HowItWorks = () => {
                             bgColor="bg-green-50/30"
                             badgeBgColor="bg-green-100"
                             badgeTextColor="text-green-600"
+                            glowClassName="shadow-md shadow-green-500/10 hover:shadow-lg hover:shadow-green-500/20"
                         >
-                            <div className="bg-neutral-0 p-3.5 rounded-2xl shadow-sm border border-neutral-30 w-full space-y-2">
+                            <div className="glass-card p-3.5 rounded-2xl shadow-sm shadow-primary-500/10 w-full space-y-2">
                                 <span className="text-[10px] font-bold text-neutral-700 block">Select Payment Method</span>
                                 <div className="space-y-1.5">
                                     <label className="flex items-center gap-2 text-[10px] text-neutral-600 p-1.5 border border-neutral-30 rounded-lg cursor-pointer">
@@ -126,7 +127,7 @@ export const HowItWorks = () => {
                                 </div>
                             </div>
                         </StepCard>
-                        <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-primary-100 border border-neutral-0 items-center justify-center text-primary-500 shadow-sm">
+                        <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-primary-100 border border-neutral-0 items-center justify-center text-primary-500 shadow-sm shadow-primary-500/20">
                             <ChevronRight className="w-3.5 h-3.5" />
                         </div>
                     </div>
@@ -140,8 +141,9 @@ export const HowItWorks = () => {
                             bgColor="bg-deep-blue-50/30"
                             badgeBgColor="bg-deep-blue-100"
                             badgeTextColor="text-deep-blue-600"
+                            glowClassName="shadow-md shadow-deep-blue-500/10 hover:shadow-lg hover:shadow-deep-blue-500/20"
                         >
-                            <div className="bg-neutral-0 p-4 rounded-2xl shadow-sm border border-neutral-30 w-full text-center space-y-2">
+                            <div className="glass-card p-4 rounded-2xl shadow-sm shadow-primary-500/10 w-full text-center space-y-2">
                                 <div className="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto">
                                     <ShieldCheck className="w-5 h-5" />
                                 </div>
@@ -152,7 +154,7 @@ export const HowItWorks = () => {
                                 </div>
                             </div>
                         </StepCard>
-                        <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-primary-100 border border-neutral-0 items-center justify-center text-primary-500 shadow-sm">
+                        <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-primary-100 border border-neutral-0 items-center justify-center text-primary-500 shadow-sm shadow-primary-500/20">
                             <ChevronRight className="w-3.5 h-3.5" />
                         </div>
                     </div>
@@ -166,8 +168,9 @@ export const HowItWorks = () => {
                             bgColor="bg-orange-50/30"
                             badgeBgColor="bg-orange-100"
                             badgeTextColor="text-orange-600"
+                            glowClassName="shadow-md shadow-orange-500/10 hover:shadow-lg hover:shadow-orange-500/20"
                         >
-                            <div className="bg-neutral-0 p-3 rounded-2xl shadow-sm border border-neutral-30 w-full space-y-2">
+                            <div className="glass-card p-3 rounded-2xl shadow-sm shadow-primary-500/10 w-full space-y-2">
                                 <span className="text-[10px] font-bold text-neutral-700 block">Book a Session</span>
                                 <div className="grid grid-cols-3 gap-1 text-center">
                                     <div className="p-1 rounded-lg border border-neutral-30 text-[9px]">
@@ -194,7 +197,7 @@ export const HowItWorks = () => {
                                 </div>
                             </div>
                         </StepCard>
-                        <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-primary-100 border border-neutral-0 items-center justify-center text-primary-500 shadow-sm">
+                        <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 rounded-full bg-primary-100 border border-neutral-0 items-center justify-center text-primary-500 shadow-sm shadow-primary-500/20">
                             <ChevronRight className="w-3.5 h-3.5" />
                         </div>
                     </div>
@@ -209,7 +212,7 @@ export const HowItWorks = () => {
                             badgeBgColor="bg-primary-100"
                             badgeTextColor="text-primary-500"
                         >
-                            <div className="bg-neutral-0 p-2 rounded-2xl shadow-sm border border-neutral-30 w-full space-y-2">
+                            <div className="glass-card p-2 rounded-2xl shadow-sm shadow-primary-500/10 w-full space-y-2">
                                 <div className="relative rounded-xl overflow-hidden bg-neutral-900 aspect-video flex items-center justify-center">
                                     <Image fill src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80" className="object-cover opacity-80" alt="Live Class" sizes="(max-width: 767px) 90vw, 40vw" />
                                     <span className="absolute top-1.5 left-1.5 bg-green-500 text-neutral-0 text-[8px] px-1.5 py-0.5 rounded-full flex items-center gap-1 font-semibold">
@@ -236,7 +239,7 @@ export const HowItWorks = () => {
                 </div>
 
                 {/* Bottom Benefits Bar */}
-                <div className="bg-neutral-0 rounded-2xl p-6 border border-neutral-30 shadow-sm grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="glass-card rounded-2xl p-6 shadow-md shadow-primary-500/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div className="flex items-center gap-3">
                         <div className="p-3 rounded-xl bg-primary-50 text-primary-500">
                             <ShieldCheck className="w-5 h-5" />

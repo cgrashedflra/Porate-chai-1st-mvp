@@ -286,6 +286,24 @@ body {
   color: var(--color-neutral-900);
 }
 
+/* ----------------------------------------------------------
+   GLASS CARDS — glassmorphism enhancement surface.
+   Lives in @layer base so any bg-* or border utility that a
+   card uses keeps priority: colored tints and gradients survive,
+   while cards with no background get the frosted white fill.
+   Backdrop blur + glass border always apply.
+   ---------------------------------------------------------- */
+
+@layer base {
+  .glass-card {
+    background-color: color-mix(in srgb, var(--color-neutral-0) 45%, transparent);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    backdrop-filter: blur(18px) saturate(180%);
+    border: 1px solid color-mix(in srgb, var(--color-neutral-0) 60%, transparent);
+  }
+}
+
+
 
 /* ============================================================
    TYPOGRAPHY UTILITIES
@@ -386,19 +404,19 @@ body {
     -webkit-text-fill-color: transparent;
   }
   .shadow-pc-sm {
-    box-shadow: 0px 2px 8px 0px rgba(15, 23, 42, 0.05);
+    box-shadow: 0px 2px 8px 0px color-mix(in srgb, var(--color-neutral-800) 5%, transparent);
   }
   .shadow-pc-md {
-    box-shadow: 0px 4px 16px 0px rgba(15, 23, 42, 0.08);
+    box-shadow: 0px 4px 16px 0px color-mix(in srgb, var(--color-neutral-800) 8%, transparent);
   }
   .shadow-pc-lg {
-    box-shadow: 0px 10px 30px 0px rgba(15, 23, 42, 0.10);
+    box-shadow: 0px 10px 30px 0px color-mix(in srgb, var(--color-neutral-800) 10%, transparent);
   }
   .shadow-pc-xl {
-    box-shadow: 0px 20px 50px 0px rgba(79, 70, 229, 0.15);
+    box-shadow: 0px 20px 50px 0px color-mix(in srgb, var(--color-primary-500) 15%, transparent);
   }
   .shadow-pc-glow {
-    box-shadow: 0px 0px 40px 0px rgba(79, 70, 229, 0.25);
+    box-shadow: 0px 0px 40px 0px color-mix(in srgb, var(--color-primary-500) 25%, transparent);
   }
 
   .display-xl {

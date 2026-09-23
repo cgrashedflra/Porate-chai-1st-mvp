@@ -13,7 +13,12 @@ export interface BenefitCardProps {
     actionHref?: string;
     onActionClick?: () => void;
     illustration: React.ReactNode;
+    /** Tailwind shadow classes that tint the card shadow to match its gradient color family. */
+    glowClassName?: string;
 }
+
+/** Default brand glow — indigo (primary-500) tint, matches `gradient-tint-primary`. */
+const DEFAULT_GLOW = 'shadow-md shadow-primary-500/10 hover:shadow-lg hover:shadow-primary-500/20';
 
 export const BenefitCard = ({
     icon,
@@ -26,10 +31,11 @@ export const BenefitCard = ({
     actionHref = '/#how-it-works',
     onActionClick,
     illustration,
+    glowClassName = DEFAULT_GLOW,
 }: BenefitCardProps) => {
     return (
         <div
-            className={`rounded-3xl p-6 flex flex-col justify-between h-full border border-neutral-30 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden ${cardBgGradient}`}
+            className={`glass-card rounded-3xl p-6 flex flex-col justify-between h-full ${glowClassName} transition-all duration-300 relative overflow-hidden ${cardBgGradient}`}
         >
             <div>
                 <div

@@ -1,11 +1,11 @@
 import React from 'react';
+import Image from 'next/image';
 import {
     ShieldCheck,
     Wallet,
     CheckCircle2,
     CalendarCheck,
     Globe,
-    Lock,
     Users
 } from 'lucide-react';
 import { TrustCard } from '@/components/TrustCard';
@@ -37,102 +37,119 @@ export const TrustAndSafety = () => {
                     </p>
 
                     {/* Decorative Doodled Text Tag */}
-                    <div className="hidden lg:block absolute -right-12 top-2 rotate-12 text-primary-500 text-xs font-bold bg-primary-50/80 px-3 py-1.5 rounded-xl border border-primary-100 shadow-sm">
+                    <div className="glass-card hidden lg:block absolute -right-12 top-2 rotate-12 text-primary-500 text-xs font-bold bg-primary-50/80 px-3 py-1.5 rounded-xl shadow-sm shadow-primary-500/20">
                         কারণ, শিক্ষা মানেই বিশ্বাস!
                     </div>
                 </div>
 
                 {/* 3-Column Layout with Center Visual 3D Shield */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center mb-12">
+                <div className="relative mb-12 py-8 lg:py-16">
 
-                    {/* Left Column (Cards 01 & 02) */}
-                    <div className="lg:col-span-4 space-y-6">
-                        <TrustCard
-                            stepNumber="01"
-                            icon={<Wallet className="w-5 h-5 text-primary-500" />}
-                            iconBgColor="bg-primary-50"
-                            title="অগ্রিম পেমেন্ট & এসক্রো সুরক্ষা"
-                            description="স্টুডেন্টরা আগে পেমেন্ট করলে সোাট আমাদের নিরাপদ এসক্রো অ্যাকাউন্টে থাকে। মেন্টর ক্লাস করালে পরই পেমেন্ট রিলিজ হয়।"
-                            tag="Your Money, Our Responsibility"
-                            tagBgColor="bg-primary-50"
-                            tagTextColor="text-primary-500"
+                    {/* Background Assurance Artwork (full-width behind the floating glass cards) */}
+                    <div aria-hidden="true" className="absolute inset-0 z-0 pointer-events-none select-none">
+                        <Image
+                            src="/assets/assurance.png"
+                            alt=""
+                            fill
+                            sizes="100vw"
+                            className="object-cover object-center opacity-90"
                         />
-
-                        <TrustCard
-                            stepNumber="02"
-                            icon={<CheckCircle2 className="w-5 h-5 text-green-600" />}
-                            iconBgColor="bg-green-50"
-                            title="কঠোর যাচাই প্রক্রিয়ায় মেন্টর নির্বাচন"
-                            description="প্রতিটি মেন্টরকে আমাদের শক্তিশালী প্রার্থী নিরীক্ষণ প্রক্রিয়ায় বাছাই করা হয়। শুধুমাত্র পেশাদার, সৎ, নির্ভরযোগ্য এবং যোগ্য শিক্ষকরাই পান আমাদের প্ল্যাটফর্মে সুযোগ।"
-                            tag="Verified • Qualified • Trusted"
-                            tagBgColor="bg-green-50"
-                            tagTextColor="text-green-600"
-                        />
+                        {/* Soft top/bottom fade so the artwork melts into the light section */}
+                        <div className="absolute inset-0 bg-linear-to-b from-neutral-20/90 via-neutral-20/0 to-neutral-20/90" />
                     </div>
 
-                    {/* Center Column (3D Security Shield Visual) */}
-                    <div className="lg:col-span-4 flex justify-center py-8 lg:py-0 relative">
-                        <div className="relative w-full max-w-sm aspect-square bg-linear-to-b from-primary-100/50 to-deep-blue-100/30 rounded-full p-8 flex items-center justify-center">
+                    {/* Floating Card Columns (z-10 sits above the artwork) */}
+                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
 
-                            {/* Floating Badge - Top Left */}
-                            <div className="absolute top-8 left-0 z-20 bg-neutral-0/90 backdrop-blur px-3 py-1.5 rounded-full shadow-md border border-neutral-30 flex items-center gap-1.5 text-xs font-medium text-green-600">
-                                <CheckCircle2 className="w-3.5 h-3.5 fill-green-500 text-neutral-0" />
-                                <span>Secure Payment</span>
-                            </div>
+                        {/* Left Column (Cards 01 & 02) */}
+                        <div className="lg:col-span-4 space-y-5 animate-float-y">
+                            <TrustCard
+                                stepNumber="01"
+                                icon={<Wallet className="w-5 h-5 text-primary-500" />}
+                                iconBgColor="bg-primary-50"
+                                title="অগ্রিম পেমেন্ট & এসক্রো সুরক্ষা"
+                                description="স্টুডেন্টরা আগে পেমেন্ট করলে সোাট আমাদের নিরাপদ এসক্রো অ্যাকাউন্টে থাকে। মেন্টর ক্লাস করালে পরই পেমেন্ট রিলিজ হয়।"
+                                tag="Your Money, Our Responsibility"
+                                tagBgColor="bg-primary-50"
+                                tagTextColor="text-primary-500"
+                                tintClassName="bg-primary-500/15"
+                                glowClassName="shadow-lg shadow-primary-500/10 hover:shadow-xl hover:shadow-primary-500/25"
+                            />
 
-                            {/* Floating Badge - Middle Right */}
-                            <div className="absolute top-20 right-0 z-20 bg-neutral-0/90 backdrop-blur px-3 py-1.5 rounded-full shadow-md border border-neutral-30 flex items-center gap-1.5 text-xs font-medium text-primary-500">
-                                <ShieldCheck className="w-3.5 h-3.5 text-primary-500" />
-                                <span>Verified Mentor</span>
-                            </div>
-
-                            {/* Central 3D Shield Display */}
-                            <div className="relative z-10 w-44 h-52 bg-linear-to-b from-primary-500 to-deep-blue-600 rounded-b-full rounded-t-3xl p-1 shadow-2xl flex items-center justify-center border-4 border-neutral-0/60">
-                                <div className="w-full h-full bg-primary-500/90 rounded-b-full rounded-t-2xl flex items-center justify-center">
-                                    <div className="w-16 h-20 bg-neutral-0 rounded-xl shadow-inner flex items-center justify-center">
-                                        <Lock className="w-8 h-8 text-primary-500" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Floating Badge - Bottom Left */}
-                            <div className="absolute bottom-8 left-2 z-20 bg-neutral-0/90 backdrop-blur px-3 py-1.5 rounded-full shadow-md border border-neutral-30 flex items-center gap-1.5 text-xs font-medium text-deep-blue-600">
-                                <Users className="w-3.5 h-3.5 text-deep-blue-600" />
-                                <span>Safe for Everyone</span>
-                            </div>
-
+                            <TrustCard
+                                stepNumber="02"
+                                icon={<CheckCircle2 className="w-5 h-5 text-green-600" />}
+                                iconBgColor="bg-green-50"
+                                title="কঠোর যাচাই প্রক্রিয়ায় মেন্টর নির্বাচন"
+                                description="প্রতিটি মেন্টরকে আমাদের শক্তিশালী প্রার্থী নিরীক্ষণ প্রক্রিয়ায় বাছাই করা হয়। শুধুমাত্র পেশাদার, সৎ, নির্ভরযোগ্য এবং যোগ্য শিক্ষকরাই পান আমাদের প্ল্যাটফর্মে সুযোগ।"
+                                tag="Verified • Qualified • Trusted"
+                                tagBgColor="bg-green-50"
+                                tagTextColor="text-green-600"
+                                tintClassName="bg-green-500/15"
+                                glowClassName="shadow-lg shadow-green-500/10 hover:shadow-xl hover:shadow-green-500/25"
+                            />
                         </div>
-                    </div>
 
-                    {/* Right Column (Cards 03 & 04) */}
-                    <div className="lg:col-span-4 space-y-6">
-                        <TrustCard
-                            stepNumber="03"
-                            icon={<CalendarCheck className="w-5 h-5 text-deep-blue-600" />}
-                            iconBgColor="bg-deep-blue-50"
-                            title="সময়ে ক্লাস, নিশ্চিত পেমেন্ট"
-                            description="মেন্টর নিশ্চিত সময়ে ক্লাস উপস্থিত হয়ে সঠিকভাবে ক্লাস করালে তবেই পেমেন্ট রিলিজ হয়। ক্লাস সম্পন্ন না হলে পেমেন্ট আটকে থাকে।"
-                            tag="No Class = No Payment"
-                            tagBgColor="bg-deep-blue-50"
-                            tagTextColor="text-deep-blue-600"
-                        />
+                        {/* Center Column (Floating Security Badges Visual) */}
+                        <div className="lg:col-span-4 flex justify-center py-8 lg:py-0 relative">
+                            <div className="relative w-full max-w-sm aspect-square bg-linear-to-b from-primary-100/50 to-deep-blue-100/30 rounded-full p-8 flex items-center justify-center">
 
-                        <TrustCard
-                            stepNumber="04"
-                            icon={<Globe className="w-5 h-5 text-orange-600" />}
-                            iconBgColor="bg-orange-50"
-                            title="দূরত্ব বা অচেনা? তবুও নির্ভয়ে"
-                            description="আপনি যেখানেই থাকুন না কেন — দেশ, শহর, বা বিদেশ, সবকিছুই আমরা নিশ্চিত করছি। নিরাপদ ভিডিও ক্লাস, প্রাইভেসি এবং সহায়তা দল সবসময় আপনার পাশে।"
-                            tag="Anywhere • Anytime • Always"
-                            tagBgColor="bg-orange-50"
-                            tagTextColor="text-orange-600"
-                        />
+                                {/* Floating Badge - Top Left */}
+                                <div className="glass-card absolute top-8 left-0 z-20 px-3 py-1.5 rounded-full shadow-md shadow-green-500/15 flex items-center gap-1.5 text-xs font-medium text-green-600">
+                                    <CheckCircle2 className="w-3.5 h-3.5 fill-green-500 text-neutral-0" />
+                                    <span>Secure Payment</span>
+                                </div>
+
+                                {/* Floating Badge - Middle Right */}
+                                <div className="glass-card absolute top-20 right-0 z-20 px-3 py-1.5 rounded-full shadow-md shadow-primary-500/15 flex items-center gap-1.5 text-xs font-medium text-primary-500">
+                                    <ShieldCheck className="w-3.5 h-3.5 text-primary-500" />
+                                    <span>Verified Mentor</span>
+                                </div>
+
+                                {/* Floating Badge - Bottom Left */}
+                                <div className="glass-card absolute bottom-8 left-2 z-20 px-3 py-1.5 rounded-full shadow-md shadow-deep-blue-500/15 flex items-center gap-1.5 text-xs font-medium text-deep-blue-600">
+                                    <Users className="w-3.5 h-3.5 text-deep-blue-600" />
+                                    <span>Safe for Everyone</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {/* Right Column (Cards 03 & 04) */}
+                        <div className="lg:col-span-4 space-y-5 animate-float-y-reverse">
+                            <TrustCard
+                                stepNumber="03"
+                                icon={<CalendarCheck className="w-5 h-5 text-deep-blue-600" />}
+                                iconBgColor="bg-deep-blue-50"
+                                title="সময়ে ক্লাস, নিশ্চিত পেমেন্ট"
+                                description="মেন্টর নিশ্চিত সময়ে ক্লাস উপস্থিত হয়ে সঠিকভাবে ক্লাস করালে তবেই পেমেন্ট রিলিজ হয়। ক্লাস সম্পন্ন না হলে পেমেন্ট আটকে থাকে।"
+                                tag="No Class = No Payment"
+                                tagBgColor="bg-deep-blue-50"
+                                tagTextColor="text-deep-blue-600"
+                                tintClassName="bg-deep-blue-500/15"
+                                glowClassName="shadow-lg shadow-deep-blue-500/10 hover:shadow-xl hover:shadow-deep-blue-500/25"
+                            />
+
+                            <TrustCard
+                                stepNumber="04"
+                                icon={<Globe className="w-5 h-5 text-orange-600" />}
+                                iconBgColor="bg-orange-50"
+                                title="দূরত্ব বা অচেনা? তবুও নির্ভয়ে"
+                                description="আপনি যেখানেই থাকুন না কেন — দেশ, শহর, বা বিদেশ, সবকিছুই আমরা নিশ্চিত করছি। নিরাপদ ভিডিও ক্লাস, প্রাইভেসি এবং সহায়তা দল সবসময় আপনার পাশে।"
+                                tag="Anywhere • Anytime • Always"
+                                tagBgColor="bg-orange-50"
+                                tagTextColor="text-orange-600"
+                                tintClassName="bg-orange-500/15"
+                                glowClassName="shadow-lg shadow-orange-500/10 hover:shadow-xl hover:shadow-orange-500/25"
+                            />
+                        </div>
+
                     </div>
 
                 </div>
 
                 {/* Bottom Banner Component */}
-                <div className="bg-neutral-0/90 backdrop-blur rounded-3xl p-6 lg:p-8 border border-neutral-30 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6">
+                <div className="glass-card rounded-3xl p-6 lg:p-8 shadow-md shadow-deep-blue-500/10 flex flex-col lg:flex-row items-center justify-between gap-6">
 
                     <div className="flex items-start gap-4 max-w-2xl">
                         <div className="p-3.5 rounded-2xl bg-deep-blue-50 text-deep-blue-600 shrink-0 mt-1">

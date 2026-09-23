@@ -49,7 +49,7 @@ export const Testimonials = () => {
                 <div className="flex items-center gap-4">
                     <button
                         onClick={() => setActiveIndex((prev) => (prev > 0 ? prev - 1 : homeTestimonials.length - 1))}
-                        className="w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-500 hover:bg-neutral-0 hover:border-neutral-300 transition shadow-sm"
+                        className="w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-500 hover:bg-neutral-0 hover:border-neutral-300 transition shadow-sm shadow-primary-500/10"
                         aria-label="Previous testimonial"
                     >
                         <ChevronLeft className="w-4 h-4" />
@@ -72,7 +72,7 @@ export const Testimonials = () => {
 
                     <button
                         onClick={() => setActiveIndex((prev) => (prev < homeTestimonials.length - 1 ? prev + 1 : 0))}
-                        className="w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-500 hover:bg-neutral-0 hover:border-neutral-300 transition shadow-sm"
+                        className="w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-500 hover:bg-neutral-0 hover:border-neutral-300 transition shadow-sm shadow-primary-500/10"
                         aria-label="Next testimonial"
                     >
                         <ChevronRight className="w-4 h-4" />

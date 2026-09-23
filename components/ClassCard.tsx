@@ -85,7 +85,7 @@ export const ClassCard = ({
     );
 
     return (
-        <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-neutral-30 bg-neutral-0 shadow-sm transition-all duration-200 hover:border-primary-100 hover:shadow-md">
+        <article className="glass-card group flex h-full flex-col overflow-hidden rounded-xl shadow-md shadow-primary-500/10 transition-all duration-200 hover:border-primary-100 hover:shadow-lg hover:shadow-primary-500/20">
             <div className="relative h-44 shrink-0 overflow-hidden bg-linear-to-br from-primary-50 via-skyblue-50 to-neutral-20 text-primary-500">
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <BookOpen className="mb-1.5 h-8 w-8" strokeWidth={1.5} />
