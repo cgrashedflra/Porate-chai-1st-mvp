@@ -4,7 +4,6 @@ import {
     Calendar,
     TrendingUp,
     Headphones,
-    ArrowRight,
     ChevronRight,
     Star,
     CheckCircle,
@@ -14,8 +13,8 @@ import {
     Laptop
 } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import ROUTES from '@/constants/routes';
+import { ButtonLink } from '@/components/ui/ButtonLink';
 import { mentorFeatures, mentorSubjects } from '@/data/home/features';
 
 const featureIcons = {
@@ -92,15 +91,13 @@ export default function ForMentorsSection() {
 
                         {/* CTA Buttons */}
                         <div className="flex flex-wrap items-center gap-4 pt-4">
-                            <Link href={ROUTES.AUTH.SIGN_UP} className="flex items-center gap-2 bg-primary-500 hover:bg-primary-700 text-neutral-0 font-medium px-6 py-3 rounded-full transition duration-200 text-sm shadow-md shadow-primary-500/20">
-                                <span>Mentor হিসেবে যোগ দিন</span>
-                                <ArrowRight className="w-4 h-4" />
-                            </Link>
+                            <ButtonLink href={ROUTES.AUTH.SIGN_UP} icon="arrowRight">
+                                Mentor হিসেবে যোগ দিন
+                            </ButtonLink>
 
-                            <Link href={ROUTES.LIVE_BATCHES} className="flex items-center gap-2 bg-neutral-0 hover:bg-neutral-20 text-primary-500 font-medium px-6 py-3 rounded-full border border-primary-200 transition duration-200 text-sm">
-                                <span>এখনই ক্লাস খুঁজুন</span>
-                                <ArrowRight className="w-4 h-4" />
-                            </Link>
+                            <ButtonLink href={ROUTES.LIVE_BATCHES} variant="secondary" icon="arrowRight">
+                                এখনই ক্লাস খুঁজুন
+                            </ButtonLink>
                         </div>
                     </div>
 
@@ -173,10 +170,9 @@ export default function ForMentorsSection() {
                                             </div>
                                         </div>
 
-                                        <Link href={ROUTES.EDUCATOR_PROFILE('rafid-hasan')} className="bg-primary-500 hover:bg-primary-700 text-neutral-0 px-4 py-2 rounded-xl text-xs font-medium flex items-center gap-1.5 transition w-full sm:w-auto justify-center">
-                                            <span>View Profile</span>
-                                            <ArrowRight className="w-3.5 h-3.5" />
-                                        </Link>
+                                        <ButtonLink href={ROUTES.EDUCATOR_PROFILE('rafid-hasan')} size="sm" icon="arrowRight" className="w-full sm:w-auto">
+                                            View Profile
+                                        </ButtonLink>
                                     </div>
                                 </div>
 

@@ -1,13 +1,16 @@
-import { ArrowRight, Search, Video } from "lucide-react";
+import { Video } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { getSubjectVariant } from '@/constants/subjects';
+import { SubjectBadge } from '@/components/SubjectBadge';
 import { heroTopics } from '@/data/home/features';
 import ROUTES from '@/constants/routes';
+import { ButtonLink } from '@/components/ui/ButtonLink';
+import { SearchBar } from '@/components/ui/SearchBar';
 import academicCap from "@/public/academic-cap.svg";
 
 const HeroSection = () => {
     return (
-        <section className="relative pt-8 pb-14 md:pt-12 md:pb-20 overflow-hidden bg-neutral-0" >
+        <section className="relative pt-8 pb-14 md:pt-12 md:pb-20 overflow-hidden bg-neutral-10" >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                     {/* Left Content */}
@@ -17,7 +20,7 @@ const HeroSection = () => {
                             <span>Verified Direct-to-Educator Network</span>
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-neutral-900 tracking-tight leading-[1.12]">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-deep-blue-600 tracking-tight leading-[1.12]">
                             Find the Right Mentor.{' '}
                             <span className="text-primary-500">
                                 Learn Your Way.
@@ -31,57 +34,52 @@ const HeroSection = () => {
 
                         {/* HERO SEARCH */}
                         <div className="pt-2">
-                            <div className="bg-neutral-0 p-1.5 rounded-xl border border-neutral-10 shadow-sm flex flex-col sm:flex-row gap-2 max-w-xl">
-                                <div className="flex-1 flex items-center gap-2.5 px-3 py-1.5">
-                                    <Search className="w-4 h-4 text-neutral-400 shrink-0" />
-                                    <input
-                                        id="hero-search-input"
-                                        type="text"
-                                        placeholder="What do you want to learn? (e.g. Physics, IELTS, Math)"
-                                        className="w-full text-xs sm:text-sm text-neutral-900 bg-transparent focus:outline-none placeholder:text-neutral-400 font-medium"
-                                    />
-                                </div>
-                                <Link
+                            <div className="max-w-xl flex items-center gap-2.5">
+                                <SearchBar
+                                    placeholder="What do you want to learn? (e.g. Physics, IELTS, Math)"
+                                    searchHref={ROUTES.EDUCATORS}
+                                    className="flex-1"
+                                />
+                                <ButtonLink
                                     href={ROUTES.EDUCATORS}
                                     id="hero-search-submit-btn"
-                                    className="py-2.5 px-5 rounded-md bg-primary-600 hover:bg-primary-700 text-neutral-0 font-semibold text-xs sm:text-sm transition shadow-xs flex items-center justify-center gap-2 cursor-pointer"
+                                    icon="arrowRight"
+                                    className="h-11"
                                 >
-                                    <span>Find a Mentor</span>
-                                    <ArrowRight className="w-4 h-4 text-neutral-0" />
-                                </Link>
+                                    Find a Mentor
+                                </ButtonLink>
                             </div>
 
                             {/* Quick Subject Tags */}
                             <div className="flex flex-wrap items-center gap-1.5 pt-3 text-xs text-neutral-500">
                                 <span className="font-semibold text-neutral-400 text-xs">Popular:</span>
                                 {heroTopics.map((topic) => (
-                                    <span
+                                    <SubjectBadge
                                         key={topic}
-                                        className="px-2.5 py-1 rounded bg-neutral-100 text-neutral-700 text-xs font-medium"
-                                    >
-                                        {topic}
-                                    </span>
+                                        label={topic}
+                                        variant={getSubjectVariant(topic)}
+                                        size="sm"
+                                    />
                                 ))}
                             </div>
                         </div>
 
                         {/* CTAs */}
                         <div className="flex flex-wrap items-center gap-3 pt-1">
-                            <Link
+                            <ButtonLink
                                 href={ROUTES.EDUCATORS}
                                 id="hero-primary-cta"
-                                className="py-2.5 px-5 rounded-md bg-primary-500 hover:bg-primary-700 text-neutral-0 font-semibold text-sm transition shadow-xs cursor-pointer flex items-center gap-2"
+                                icon="arrowRight"
                             >
                                 Find a Mentor
-                                <ArrowRight className="w-4 h-4" />
-                            </Link>
-                            <Link
+                            </ButtonLink>
+                            <ButtonLink
                                 href={ROUTES.LIVE_BATCHES}
                                 id="hero-secondary-cta"
-                                className="py-2.5 px-5 rounded-md bg-neutral-0 border border-neutral-300 hover:bg-neutral-20 text-neutral-700 font-semibold text-sm transition cursor-pointer"
+                                variant="secondary"
                             >
                                 Explore Classes
-                            </Link>
+                            </ButtonLink>
                         </div>
                     </div>
 

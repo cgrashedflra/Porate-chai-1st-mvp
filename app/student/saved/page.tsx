@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ROUTES from "@/constants/routes";
+import { ButtonLink } from "@/components/ui/ButtonLink";
 
 /**
  * Student → Saved
@@ -84,9 +85,9 @@ export default function SavedPage() {
                             </div>
                             <div className="flex items-center gap-3">
                                 <span className="text-sm font-semibold text-emerald-600">{g.price}</span>
-                                <a href="#" className="rounded-lg bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700">
+                                <ButtonLink href="#" size="sm">
                                     Book
-                                </a>
+                                </ButtonLink>
                             </div>
                         </div>
                     ))}

@@ -1,33 +1,37 @@
-import React from 'react';
-
-export type BadgeVariant = 'blue' | 'purple' | 'green' | 'orange';
+import { cn } from "@/lib/cn";
+import { BadgeSize, BadgeVariant, BADGE_SIZES, BADGE_VARIANTS } from "@/constants/badge";
 
 export interface SubjectBadgeProps {
     label: string;
     variant?: BadgeVariant;
+    size?: BadgeSize;
     onClick?: () => void;
     className?: string;
 }
 
-const variantStyles: Record<BadgeVariant, string> = {
-    blue: 'bg-primary-50/80 text-primary-500 hover:bg-primary-100',
-    purple: 'bg-deep-blue-50/80 text-deep-blue-600 hover:bg-deep-blue-100',
-    green: 'bg-green-50/80 text-green-600 hover:bg-green-100',
-    orange: 'bg-orange-50/80 text-orange-600 hover:bg-orange-100',
-};
+const baseClass =
+    'inline-flex items-center gap-1 rounded-full font-medium transition-colors duration-200';
 
+/**
+ * Reusable subject chip. Renders a <button> when `onClick` is provided,
+ * otherwise a static <span> (safe to use inside Server Components).
+ */
 export const SubjectBadge = ({
     label,
     variant = 'blue',
+    size = 'md',
     onClick,
-    className = '',
+    className,
 }: SubjectBadgeProps) => {
-    return (
-        <button
-            onClick={onClick}
-            className={`px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer ${variantStyles[variant]} ${className}`}
-        >
-            {label}
-        </button>
-    );
+    const classes = cn(baseClass, BADGE_SIZES[size], BADGE_VARIANTS[variant], className);
+
+    if (onClick) {
+        return (
+            <button type="button" onClick={onClick} className={cn(classes, 'cursor-pointer')}>
+                {label}
+            </button>
+        );
+    }
+
+    return <span className={classes}>{label}</span>;
 };

@@ -1,5 +1,5 @@
 import ROUTES from "@/constants/routes";
-import { ArrowRight, Search, GraduationCap } from "lucide-react";
+import { ButtonLink } from "@/components/ui/ButtonLink";
 
 export default function CTASection() {
     return (
@@ -44,21 +44,23 @@ export default function CTASection() {
                     </p>
 
                     <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-                        <a
+                        <ButtonLink
                             href={ROUTES.EDUCATORS}
-                            className="group inline-flex items-center justify-center gap-2 rounded-full bg-neutral-10 px-7 py-4 text-base font-semibold text-brand-primary shadow-pc-lg hover:bg-brand-gray-100 transition-all hover:-translate-y-0.5"
+                            variant="secondary"
+                            size="lg"
+                            icon="arrowRight"
+                            className="shadow-pc-lg"
                         >
-                            <Search className="h-4 w-4" />
                             Find an educator
-                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                        </a>
-                        <a
+                        </ButtonLink>
+                        <ButtonLink
                             href={ROUTES.AUTH.SIGN_UP}
-                            className="group inline-flex items-center justify-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 px-7 py-4 text-base font-semibold text-white hover:bg-white/20 transition-all hover:-translate-y-0.5"
+                            variant="ghost"
+                            size="lg"
+                            icon="graduation"
                         >
-                            <GraduationCap className="h-4 w-4" />
                             Become a tutor
-                        </a>
+                        </ButtonLink>
                     </div>
 
                     {/* Micro-trust row */}

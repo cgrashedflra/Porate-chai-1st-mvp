@@ -60,5 +60,4 @@ export interface HomeFeature {
 export interface HomeSubject {
     id: string;
     label: string;
-    variant: 'blue' | 'purple' | 'green' | 'orange';
 }

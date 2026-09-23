@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Star, ArrowRight, Award, ShieldCheck, Users, GraduationCap, ChevronDown } from 'lucide-react';
+import { Star, ArrowRight, Award, ShieldCheck, Users, GraduationCap } from 'lucide-react';
 import { ClassCard } from '@/components/ClassCard';
 import { batchCategories, homeBatches } from '@/data/home/batches';
 import Link from 'next/link';
 import ROUTES from '@/constants/routes';
+import { ButtonLink } from '@/components/ui/ButtonLink';
 
 const categoryGroups: Record<string, string[]> = {
     Engineering: ['Web Development', 'Data Science'],
@@ -67,10 +68,9 @@ export const TopBatches = () => {
                                 </button>
                             ))}
 
-                            <Link href={ROUTES.LIVE_BATCHES} className="inline-flex items-center gap-1 px-3 py-2 rounded-full text-xs font-semibold bg-neutral-0 text-neutral-600 hover:bg-neutral-100 border border-neutral-30">
-                                <span>More</span>
-                                <ChevronDown className="w-3.5 h-3.5 text-neutral-400" />
-                            </Link>
+                            <ButtonLink href={ROUTES.LIVE_BATCHES} variant="secondary" size="sm" icon="chevronDown">
+                                More
+                            </ButtonLink>
                         </div>
                     </div>
                 </div>

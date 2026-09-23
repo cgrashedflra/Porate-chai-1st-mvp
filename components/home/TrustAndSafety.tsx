@@ -6,12 +6,11 @@ import {
     CalendarCheck,
     Globe,
     Lock,
-    Users,
-    ArrowRight
+    Users
 } from 'lucide-react';
 import { TrustCard } from '@/components/TrustCard';
-import Link from 'next/link';
 import ROUTES from '@/constants/routes';
+import { ButtonLink } from '@/components/ui/ButtonLink';
 
 export const TrustAndSafety = () => {
     return (
@@ -155,10 +154,9 @@ export const TrustAndSafety = () => {
                             <span className="text-xs font-bold text-primary-500">আমাদের অঙ্গীকার</span>
                         </div>
 
-                        <Link href={ROUTES.AUTH.SIGN_UP} className="bg-primary-500 hover:bg-primary-700 text-neutral-0 font-semibold text-xs sm:text-sm px-6 py-3 rounded-2xl transition duration-200 flex items-center justify-center gap-2 shadow-md shadow-primary-500/10 w-full sm:w-auto">
-                            <span>আজই যুক্ত হোন</span>
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
+                        <ButtonLink href={ROUTES.AUTH.SIGN_UP} icon="arrowRight" className="w-full sm:w-auto">
+                            আজই যুক্ত হোন
+                        </ButtonLink>
                     </div>
 
                 </div>

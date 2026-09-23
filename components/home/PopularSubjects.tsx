@@ -1,9 +1,9 @@
 "use client";
 
-import { ArrowRight } from 'lucide-react';
 import { SubjectBadge } from '@/components/SubjectBadge';
+import { getSubjectVariant } from '@/constants/subjects';
 import { homeSubjects } from '@/data/home/subjects';
-import Link from 'next/link';
+import { ButtonLink } from '@/components/ui/ButtonLink';
 import ROUTES from '@/constants/routes';
 
 export const PopularSubjects = () => {
@@ -34,17 +34,17 @@ export const PopularSubjects = () => {
                         <SubjectBadge
                             key={subject.id}
                             label={subject.label}
-                            variant={subject.variant}
+                            variant={getSubjectVariant(subject.label)}
+                            size="lg"
                             onClick={() => console.log(`Selected subject: ${subject.label}`)}
                         />
                     ))}
                 </div>
 
                 {/* Action Button */}
-                <Link href={ROUTES.EDUCATORS} className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary-200 text-primary-500 font-medium text-sm hover:bg-primary-50 transition-colors duration-200 bg-neutral-0">
-                    <span>সব বিষয় দেখুন</span>
-                    <ArrowRight className="w-4 h-4" />
-                </Link>
+                <ButtonLink href={ROUTES.EDUCATORS} variant="secondary" icon="arrowRight">
+                    সব বিষয় দেখুন
+                </ButtonLink>
 
             </div>
         </section>

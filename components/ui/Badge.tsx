@@ -8,7 +8,7 @@ export function Badge({ count, tone = "soft", max = 99, className }: Props) {
     <span
       className={cn(
         "grid h-5 min-w-5 place-items-center rounded-full px-1.5 text-[11px] font-semibold leading-none",
-        tone === "soft" ? "bg-indigo-100 text-indigo-600" : "bg-red-500 text-white",
+        tone === "soft" ? "bg-primary-100 text-primary-600" : "bg-red-500 text-white",
         className
       )}
     >

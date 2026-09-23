@@ -690,11 +690,11 @@ Update this section as development progresses.
 
 | Area                 | Status        |
 | -------------------- | ------------- |
-| Project Foundation   | ⬜ Not Started |
-| Design System        | ⬜ Not Started |
-| Public Website       | ⬜ Not Started |
+| Project Foundation   | 🟢 Completed |
+| Design System        | 🟢 Completed |
+| Public Website       | 🟡 In Progress |
 | Authentication       | ⬜ Not Started |
-| Tutor Discovery      | ⬜ Not Started |
+| Tutor Discovery      | 🟡 In Progress |
 | Student Experience   | ⬜ Not Started |
 | Tutor Experience     | ⬜ Not Started |
 | Mentor Experience    | ⬜ Not Started |

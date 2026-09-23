@@ -3,17 +3,18 @@ import type { IconName } from "./Icon";
 
 type Props = {
   href: string;
-  variant?: "primary" | "secondary";
-  size?: "sm" | "md";
+  id?: string;
+  variant?: "primary" | "secondary" | "ghost";
+  size?: "sm" | "md" | "lg";
   icon?: IconName;
   className?: string;
   children: React.ReactNode;
 };
 
 /** Navigation-only button. Owns link semantics; delegates all styling to <Button>. */
-export function ButtonLink({ href, variant = "primary", size = "md", icon, className, children }: Props) {
+export function ButtonLink({ href, id, variant = "primary", size = "md", icon, className, children }: Props) {
   return (
-    <Button href={href} variant={variant} size={size} icon={icon} className={className}>
+    <Button href={href} id={id} variant={variant} size={size} icon={icon} className={className}>
       {children}
     </Button>
   );

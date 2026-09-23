@@ -1,8 +1,10 @@
 import React from 'react';
-import { Star, CheckCircle2, Video, ArrowRight } from 'lucide-react';
+import { Star, CheckCircle2, Video } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import ROUTES from '@/constants/routes';
+import { SubjectBadge } from '@/components/SubjectBadge';
+import { getSubjectVariant } from '@/constants/subjects';
+import { ButtonLink } from '@/components/ui/ButtonLink';
 
 export interface MentorProps {
     id: string;
@@ -80,12 +82,12 @@ export const MentorCard = ({
 
                 <div className="flex flex-wrap items-center gap-1.5 mb-4">
                     {subjects.map((subject, index) => (
-                        <span
-                            key={index}
-                            className="bg-primary-50/70 text-primary-500 text-xs px-3 py-1 rounded-full font-medium"
-                        >
-                            {subject}
-                        </span>
+                        <SubjectBadge
+                            key={`${subject}-${index}`}
+                            label={subject}
+                            variant={getSubjectVariant(subject)}
+                            size="sm"
+                        />
                     ))}
                     {extraSubjectsCount && extraSubjectsCount > 0 && (
                         <span className="bg-neutral-100 text-neutral-500 text-xs px-2.5 py-1 rounded-full font-medium">
@@ -109,10 +111,9 @@ export const MentorCard = ({
                     </div>
                 </div>
 
-                <Link href={ROUTES.EDUCATOR_PROFILE(id)} className="inline-flex items-center justify-center gap-1.5 bg-primary-500 hover:bg-primary-700 text-neutral-0 text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors duration-200">
-                    <span>Book Session</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                <ButtonLink href={ROUTES.EDUCATOR_PROFILE(id)} size="sm" icon="arrowRight">
+                    Book Session
+                </ButtonLink>
             </div>
         </div>
     );
