@@ -1,9 +1,6 @@
-import React from 'react'
+import { AuthForm } from "@/components/auth/AuthForm";
+import { loginConfig } from "@/config/auth/login";
 
-const SignIn = () => {
-    return (
-        <div>SignIn</div>
-    )
+export default function LoginPage() {
+    return <AuthForm config={loginConfig} />;
 }
-
-export default SignIn

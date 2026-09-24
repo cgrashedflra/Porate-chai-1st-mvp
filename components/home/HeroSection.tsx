@@ -20,7 +20,7 @@ const HeroSection = () => {
                             <span>Verified Direct-to-Educator Network</span>
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-deep-blue-600 tracking-tight leading-[1.12]">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-deep-blue-800 tracking-tight leading-[1.12]">
                             Find the Right Mentor.{' '}
                             <span className="text-primary-500">
                                 Learn Your Way.

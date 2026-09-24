@@ -1,9 +1,6 @@
-import React from 'react'
+import { AuthForm } from "@/components/auth/AuthForm";
+import { recoveryConfig } from "@/config/auth/recovery";
 
-const RecoverPass = () => {
-    return (
-        <div>RecoverPass</div>
-    )
+export default function RecoveryPage() {
+    return <AuthForm config={recoveryConfig} />;
 }
-
-export default RecoverPass

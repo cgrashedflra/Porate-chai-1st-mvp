@@ -596,3 +596,32 @@ body {
   background-color: rgba(79, 70, 229, 0.2);
   color: #0F172A;
 }
+
+/* ============================================================
+   MICRO ANIMATIONS
+   ============================================================ */
+
+@theme {
+  --animate-fade-up: fade-up 0.45s ease-out both;
+  --animate-shake: shake 0.35s ease-in-out;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shake {
+    20%, 60% {
+      transform: translateX(-5px);
+    }
+    40%, 80% {
+      transform: translateX(5px);
+    }
+  }
+}

@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# dev verification snapshots
+/.verify/
+
 # production
 /build
 

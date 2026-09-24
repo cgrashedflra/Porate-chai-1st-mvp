@@ -52,12 +52,12 @@ export const HowItWorks = () => {
                             badgeTextColor="text-primary-500"
                         >
                             {/* Card Graphic Preview */}
-                            <div className="glass-card p-3 rounded-2xl shadow-sm shadow-primary-500/10 w-full space-y-2">
+                            <div className="glass-card p-3 rounded-2xl shadow-pc-xl  w-full space-y-2">
                                 <div className="flex items-center gap-2 bg-neutral-20 px-3 py-1.5 rounded-xl border border-neutral-30 text-[10px] text-neutral-400">
                                     <Search className="w-3 h-3 text-neutral-400" />
                                     <span>কোন বিষয় শিখতে চান?</span>
                                 </div>
-                                <div className="flex items-center gap-2.5 bg-neutral-20/50 p-2 rounded-xl">
+                                <div className="flex items-center gap-2.5 bg-neutral-20/50 p-2 rounded-xl ">
                                     <Image src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&q=80" className="w-8 h-8 rounded-full object-cover" alt="Rafid" width={32} height={32} />
                                     <div>
                                         <div className="flex items-center gap-1">
