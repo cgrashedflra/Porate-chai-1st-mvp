@@ -12,6 +12,8 @@ import type { RoleNavConfig } from "./types";
 export const studentNav: RoleNavConfig = {
   role: "student",
   homeHref: ROUTES.STUDENT.DASHBOARD,
+  profileHref: ROUTES.STUDENT.PROFILE,
+  notificationsHref: ROUTES.STUDENT.NOTIFICATIONS,
   searchPlaceholder: "Search educators, subjects, or anything...",
   sidebar: {
     items: [
@@ -51,9 +53,8 @@ export const studentNav: RoleNavConfig = {
     },
   ],
   userMenu: [
-    { label: "Dashboard", href: ROUTES.STUDENT.DASHBOARD, icon: "layoutDashboard" },
-    { label: "Profile", href: ROUTES.STUDENT.PROFILE, icon: "user" },
-    { label: "Settings", href: ROUTES.STUDENT.SETTINGS, icon: "settings" },
+    { label: "Home", href: ROUTES.HOME, icon: "home" },
+    { label: "Notifications", href: ROUTES.STUDENT.NOTIFICATIONS, icon: "bell" },
     { label: "Log out", icon: "logout", action: "logout" },
   ],
 };

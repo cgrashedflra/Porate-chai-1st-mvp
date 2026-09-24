@@ -8,7 +8,7 @@ import { AppTopbar } from "./AppTopbar";
 
 type Props = {
   user: NavUser;
-  /** Server-rendered left sidebar, e.g. <LeftSidebar config={studentNav} user={user} /> */
+  /** Server-rendered left sidebar, e.g. <LeftSidebar config={studentNav} /> */
   left: React.ReactNode;
   /** Optional server-rendered right sidebar, e.g. <RightSidebar widgets={studentNav.rightSidebar} /> */
   right?: React.ReactNode;
@@ -43,7 +43,7 @@ export function AppShell({ user, left, right, children }: Props) {
       {drawer && (
         <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-label="Navigation">
           <button type="button" aria-label="Close navigation" onClick={() => setDrawer(false)} className="absolute inset-0 bg-slate-900/40" />
-          <div className="glass-card relative h-full w-72 max-w-[85%] shadow-2xl shadow-indigo-500/10">
+          <div className="relative h-full w-72 max-w-[85%] border-r border-slate-200/70 bg-white shadow-2xl shadow-indigo-500/10">
             <button type="button" aria-label="Close navigation" onClick={() => setDrawer(false)} className="absolute right-3 top-4 grid h-9 w-9 place-items-center rounded-full text-slate-500 hover:bg-slate-50">
               <Icon name="x" size={20} />
             </button>

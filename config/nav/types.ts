@@ -52,12 +52,13 @@ export type WidgetConfig =
 
 export type SidebarFooter =
   | { kind: "promo"; title: string; body: string }
-  | { kind: "account" }
   | { kind: "none" };
 
 export type RoleNavConfig = {
   role: Role;
   homeHref: string;
+  profileHref: string;
+  notificationsHref: string;
   searchPlaceholder: string;
   showThemeToggle?: boolean;
   sidebar: { items: NavItem[]; footer: SidebarFooter };

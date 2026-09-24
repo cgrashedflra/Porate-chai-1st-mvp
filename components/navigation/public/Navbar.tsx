@@ -80,11 +80,11 @@ export function Navbar({ user = null, items = PublicNav.items }: Props) {
               <Icon name="search" size={21} />
             </Link>
 
-            {user && <NotificationBell />}
+            {user && <NotificationBell viewAllHref={getNavConfig(user.role).notificationsHref} />}
 
             {user ? (
               <div className="hidden lg:block">
-                <UserMenu user={user} items={getNavConfig(user.role).userMenu} showLabel={false} />
+                <UserMenu user={user} items={getNavConfig(user.role).userMenu} profileHref={getNavConfig(user.role).profileHref} showLabel={false} />
               </div>
             ) : (
               <div className="ml-2 hidden items-center gap-3 lg:flex">

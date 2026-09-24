@@ -24,6 +24,7 @@ const ROUTES = {
     PROFILE: "/student/profile",
     SAVED: "/student/saved",
     SETTINGS: "/student/settings",
+    NOTIFICATIONS: "/student/notifications",
   },
 
   EDUCATOR: {
@@ -34,6 +35,7 @@ const ROUTES = {
     MESSAGES: "/educator/messages",
     PROFILE: "/educator/profile",
     SETTINGS: "/educator/settings",
+    NOTIFICATIONS: "/educator/notifications",
   },
 
   ADMIN: {
@@ -45,6 +47,8 @@ const ROUTES = {
     REPORTS_DISPUTES: "/admin/reports-disputes",
     AUDIT_LOG: "/admin/audit-log",
     SETTINGS: "/admin/settings",
+    PROFILE: "/admin/profile",
+    NOTIFICATIONS: "/admin/notifications",
   },
 
   EDUCATOR_PROFILE: (id: string) => `/educator-profile/${id}`,

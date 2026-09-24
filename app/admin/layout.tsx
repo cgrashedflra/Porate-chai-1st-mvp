@@ -9,7 +9,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     return (
         <AppShell
             user={user}
-            left={<LeftSidebar config={adminNav} user={user} />}
+            left={<LeftSidebar config={adminNav} />}
             right={<RightSidebar widgets={adminNav.rightSidebar} />}
         >
             {children}

@@ -1,8 +1,11 @@
+import ROUTES from "@/constants/routes";
 import type { RoleNavConfig } from "./types";
 
 export const educatorNav: RoleNavConfig = {
   role: "educator",
   homeHref: "/educator/dashboard",
+  profileHref: "/educator/profile",
+  notificationsHref: "/educator/notifications",
   searchPlaceholder: "Search students, classes, or messages...",
   sidebar: {
     items: [
@@ -32,9 +35,8 @@ export const educatorNav: RoleNavConfig = {
     },
   ],
   userMenu: [
-    { label: "Dashboard", href: "/educator/dashboard", icon: "layoutDashboard" },
-    { label: "Profile", href: "/educator/profile", icon: "user" },
-    { label: "Settings", href: "/educator/settings", icon: "settings" },
+    { label: "Home", href: ROUTES.HOME, icon: "home" },
+    { label: "Notifications", href: "/educator/notifications", icon: "bell" },
     { label: "Log out", icon: "logout", action: "logout" },
   ],
 };

@@ -14,13 +14,15 @@ import { LogoutButton } from "../primitives/LogoutButton";
 type Props = {
   user: NavUser;
   items: UserMenuItem[];
+  /** role-scoped profile route, e.g. /student/profile */
+  profileHref: string;
   /** show name + role next to the avatar (app topbar) */
   showLabel?: boolean;
 };
 
 const itemCls = "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-indigo-50 hover:text-indigo-600 focus-visible:outline-2 focus-visible:outline-indigo-500";
 
-export function UserMenu({ user, items, showLabel = true }: Props) {
+export function UserMenu({ user, items, profileHref, showLabel = true }: Props) {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
   const menuId = useId();
@@ -72,15 +74,22 @@ export function UserMenu({ user, items, showLabel = true }: Props) {
         <div
           id={menuId}
           role="menu"
-          className="glass-card absolute right-0 z-50 mt-2 w-60 rounded-2xl p-2 shadow-xl shadow-indigo-500/10"
+          className="absolute right-0 z-50 mt-2 w-60 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl shadow-indigo-500/10"
         >
-          <div className="mb-1 flex items-center gap-3 border-b border-slate-100 px-3 pb-3 pt-2">
-            <Avatar name={user.name} src={user.avatarUrl} size="md" />
-            <div className="min-w-0">
-              <p className="truncate text-sm font-semibold text-slate-900">{user.name}</p>
-              <p className="truncate text-xs text-slate-500">{user.email ?? roleLabels[user.role]}</p>
+          <Link
+            href={profileHref}
+            onClick={() => setOpen(false)}
+            aria-label={`View ${user.name}'s profile`}
+            className="mb-1 block rounded-xl border-b border-slate-100 px-3 pb-3 pt-2 transition-colors hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-indigo-500"
+          >
+            <div className="flex items-center gap-3">
+              <Avatar name={user.name} src={user.avatarUrl} size="md" />
+              <div className="min-w-0">
+                <p className="truncate text-sm font-semibold text-slate-900">{user.name}</p>
+                <p className="truncate text-xs text-slate-500">{user.email ?? roleLabels[user.role]}</p>
+              </div>
             </div>
-          </div>
+          </Link>
           {items.map((item) =>
             item.action === "logout" ? (
               <LogoutButton key={item.label} className={cn(itemCls, "text-red-600 hover:bg-red-50 hover:text-red-600")}>

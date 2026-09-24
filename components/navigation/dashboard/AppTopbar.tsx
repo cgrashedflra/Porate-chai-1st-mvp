@@ -1,6 +1,7 @@
 "use client";
 
 import { getNavConfig } from "@/config/nav";
+import ROUTES from "@/constants/routes";
 import type { NavUser } from "@/types/user";
 import { Icon } from "../../ui/Icon";
 import { Logo } from "../../ui/Logo";
@@ -24,7 +25,7 @@ export function AppTopbar({ user, onMenuClick }: Props) {
         >
           <Icon name="menu" size={22} />
         </button>
-        <Logo variant="app" href={config.homeHref} className="[&>span>span:first-child]:text-xl" />
+        <Logo variant="app" href={ROUTES.HOME} className="[&>span>span:first-child]:text-xl" />
       </div>
 
       <SearchBar
@@ -39,8 +40,8 @@ export function AppTopbar({ user, onMenuClick }: Props) {
             <Icon name="sun" size={21} />
           </button>
         )}
-        <NotificationBell />
-        <UserMenu user={user} items={config.userMenu} />
+        <NotificationBell viewAllHref={config.notificationsHref} />
+        <UserMenu user={user} items={config.userMenu} profileHref={config.profileHref} />
       </div>
     </header>
   );

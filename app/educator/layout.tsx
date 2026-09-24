@@ -9,7 +9,7 @@ export default async function EducatorLayout({ children }: { children: React.Rea
     return (
         <AppShell
             user={user}
-            left={<LeftSidebar config={educatorNav} user={user} />}
+            left={<LeftSidebar config={educatorNav} />}
             right={<RightSidebar widgets={educatorNav.rightSidebar} />}
         >
             {children}

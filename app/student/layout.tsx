@@ -9,7 +9,7 @@ export default async function StudentLayout({ children }: { children: React.Reac
     return (
         <AppShell
             user={user}
-            left={<LeftSidebar config={studentNav} user={user} />}
+            left={<LeftSidebar config={studentNav} />}
             right={<RightSidebar widgets={studentNav.rightSidebar} />}
         >
             {children}

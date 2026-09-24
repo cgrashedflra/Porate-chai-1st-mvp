@@ -1,8 +1,11 @@
+import ROUTES from "@/constants/routes";
 import type { RoleNavConfig } from "./types";
 
 export const adminNav: RoleNavConfig = {
   role: "admin",
   homeHref: "/admin/dashboard",
+  profileHref: "/admin/profile",
+  notificationsHref: "/admin/notifications",
   searchPlaceholder: "Search users, educators, courses, or anything...",
   showThemeToggle: true,
   sidebar: {
@@ -16,7 +19,7 @@ export const adminNav: RoleNavConfig = {
       { label: "Audit Log", href: "/admin/audit-log", icon: "activity" },
       { label: "Settings", href: "/admin/settings", icon: "settings" },
     ],
-    footer: { kind: "account" },
+    footer: { kind: "promo", title: "Guardians of Learning", body: "Keep the platform safe, fair, and thriving for every learner." },
   },
   rightSidebar: [
     {
@@ -33,8 +36,8 @@ export const adminNav: RoleNavConfig = {
     { type: "promo", title: "Better Education Brighter Future", body: "Together we make learning accessible for everyone." },
   ],
   userMenu: [
-    { label: "Home", href: "/", icon: "home" },
-    { label: "Find Educators", href: "/educators", icon: "users" },
+    { label: "Home", href: ROUTES.HOME, icon: "home" },
+    { label: "Notifications", href: ROUTES.ADMIN.NOTIFICATIONS, icon: "bell" },
     { label: "Log out", icon: "logout", action: "logout" },
   ],
 };
