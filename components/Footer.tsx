@@ -5,8 +5,9 @@ import {
     EDUCATOR_FOOTER,
     COMPANY_FOOTER,
 } from "@/config/nav/footer";
-import { Shield, Award } from "lucide-react";
+import { Shield, Award, Mail, Phone, MapPin } from "lucide-react";
 import academicCap from "@/public/academic-cap.svg";
+import { NewsletterForm } from "./ui/NewsletterForm";
 
 type FooterLink = {
     label: string;
@@ -53,7 +54,7 @@ export function Footer() {
         <footer className="border-t border-deep-blue-800 bg-neutral-900">
             <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
                 {/* Main footer content */}
-                <div className="grid grid-cols-1 gap-10 border-b border-deep-blue-800 pb-10 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
+                <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
                     {/* Brand */}
                     <div className="lg:col-span-2">
                         <Link
@@ -121,8 +122,31 @@ export function Footer() {
                     />
                 </div>
 
+                <NewsletterForm />
+
+                {/* {contact section} */}
+                <div className="my-8 py-8 grid sm:grid-cols-3 gap-6 border-b border-t border-deep-blue-800">
+                    {[
+                        { icon: Mail, label: "Email", value: "hello@poratechai.bd" },
+                        { icon: Phone, label: "Phone", value: "+880 1700 000 000" },
+                        { icon: MapPin, label: "Office", value: "Banani, Dhaka 1213, BD" },
+                    ].map((c) => (
+                        <div key={c.label} className="flex items-center gap-3">
+                            <div className="h-10 w-10 rounded-xl bg-deep-blue-50 grid place-items-center">
+                                <c.icon className="h-4 w-4 text-primary-500" />
+                            </div>
+                            <div>
+                                <p className="text-[10px] uppercase tracking-wider text-white/50">
+                                    {c.label}
+                                </p>
+                                <p className="text-sm font-medium text-white">{c.value}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
                 {/* Bottom bar */}
-                <div className="flex flex-col gap-3 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <div className=" mt-4 flex flex-col gap-3 pt-6 sm:flex-row sm:items-center sm:justify-between">
                     <span className="caption text-neutral-300">
                         © {year} Porate Chai Network
                     </span>
