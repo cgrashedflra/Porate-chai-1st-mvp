@@ -42,7 +42,7 @@ export const PopularSubjects = () => {
                 </div>
 
                 {/* Action Button */}
-                <ButtonLink href={ROUTES.EDUCATORS} variant="secondary" icon="arrowRight">
+                <ButtonLink href={ROUTES.MARKETPLACE} variant="secondary" icon="arrowRight">
                     সব বিষয় দেখুন
                 </ButtonLink>
 

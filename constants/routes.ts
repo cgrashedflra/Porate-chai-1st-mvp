@@ -1,12 +1,11 @@
 const ROUTES = {
   HOME: "/",
-  EDUCATORS: "/educators",
   ABOUT: "/about",
   FAQ: "/faq",
   TERMS: "/terms",
   PRIVACY: "/privacy",
   SUPPORT: "/support",
-  LIVE_BATCHES: "/live-batches",
+  MARKETPLACE: "/marketplace",
   HOW_IT_WORKS_SECTION: "/#how-it-works",
 
   AUTH: {

@@ -95,7 +95,7 @@ export default function ForMentorsSection() {
                                 Mentor হিসেবে যোগ দিন
                             </ButtonLink>
 
-                            <ButtonLink href={ROUTES.LIVE_BATCHES} variant="secondary" icon="arrowRight">
+                            <ButtonLink href={ROUTES.MARKETPLACE} variant="secondary" icon="arrowRight">
                                 এখনই ক্লাস খুঁজুন
                             </ButtonLink>
                         </div>

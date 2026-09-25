@@ -20,15 +20,15 @@ export function CalendarWidget({ title, icon, eventDays = [] }: Props) {
 
   return (
     <WidgetCard title={title} icon={icon}>
-      <p className="mb-3 text-center text-sm font-semibold text-slate-800">{label}</p>
+      <p className="mb-3 text-center text-sm font-semibold text-neutral-700">{label}</p>
       <div className="grid grid-cols-7 gap-y-1.5 text-center text-xs">
         {weekdays.map((d) => (
-          <span key={d} className="text-slate-400">{d}</span>
+          <span key={d} className="text-neutral-100">{d}</span>
         ))}
         {cells.map((day, i) => (
           <span key={i} className="flex flex-col items-center">
             {day && (
-              <span className={`grid h-8 w-8 place-items-center rounded-full ${day === now.getDate() ? "bg-indigo-500 font-semibold text-white" : "text-slate-700"}`}>
+              <span className={`grid h-8 w-8 place-items-center rounded-full ${day === now.getDate() ? "bg-primary-500 font-semibold text-neutral-0" : "text-neutral-600"}`}>
                 {day}
               </span>
             )}

@@ -37,6 +37,7 @@ export const adminNav: RoleNavConfig = {
   ],
   userMenu: [
     { label: "Home", href: ROUTES.HOME, icon: "home" },
+    { label: "Marketplace", href: ROUTES.MARKETPLACE, icon: "layers" },
     { label: "Notifications", href: ROUTES.ADMIN.NOTIFICATIONS, icon: "bell" },
     { label: "Log out", icon: "logout", action: "logout" },
   ],

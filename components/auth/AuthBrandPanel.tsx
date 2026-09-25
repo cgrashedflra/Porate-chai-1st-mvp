@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { AuthConfig } from "@/types/auth/auth.types";
 import { Logo } from "../ui/Logo";
 import { Icon } from "../ui/Icon";
@@ -45,11 +46,13 @@ export function AuthBrandPanel({
                 </div>
 
                 {brand.image && (
-                    <div className="min-h-0 flex-1 overflow-hidden rounded-2xl shadow-pc-md">
-                        <img
+                    <div className="relative min-h-0 flex-1 overflow-hidden rounded-2xl shadow-pc-md">
+                        <Image
                             src={brand.image}
                             alt=""
-                            className="h-full w-full object-cover"
+                            fill
+                            sizes="(min-width: 1024px) 45vw, 100vw"
+                            className="object-cover"
                         />
                     </div>
                 )}

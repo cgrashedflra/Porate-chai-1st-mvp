@@ -12,8 +12,7 @@ export type FooterLink = {
 
 /** “For Students” column in the footer. */
 export const STUDENT_FOOTER: readonly FooterLink[] = [
-  { label: "Find Educators", href: ROUTES.EDUCATORS, featured: true },
-  { label: "Explore Batches", href: ROUTES.LIVE_BATCHES },
+  { label: "Browse Marketplace", href: ROUTES.MARKETPLACE, featured: true },
   { label: "How It Works", href: ROUTES.HOW_IT_WORKS_SECTION },
   { label: "Student Dashboard", href: ROUTES.STUDENT.DASHBOARD },
 ] as const;

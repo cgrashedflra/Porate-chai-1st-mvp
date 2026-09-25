@@ -54,6 +54,7 @@ export const studentNav: RoleNavConfig = {
   ],
   userMenu: [
     { label: "Home", href: ROUTES.HOME, icon: "home" },
+    { label: "Marketplace", href: ROUTES.MARKETPLACE, icon: "layers" },
     { label: "Notifications", href: ROUTES.STUDENT.NOTIFICATIONS, icon: "bell" },
     { label: "Log out", icon: "logout", action: "logout" },
   ],

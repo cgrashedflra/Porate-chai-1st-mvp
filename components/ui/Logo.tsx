@@ -28,20 +28,20 @@ export function Logo({ variant = "marketing", href = brand.homeHref, className }
     <Link
       href={href}
       aria-label={`${brand.name} ${brand.accent} home`}
-      className={cn("inline-flex items-center gap-2.5 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-500", className)}
+      className={cn("inline-flex items-center gap-2.5 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-500", className)}
     >
       <LogoMark className="h-9 w-9 shrink-0" />
       {variant === "marketing" ? (
         <span className="flex flex-col leading-none">
-          <span className="text-[22px] font-bold tracking-tight text-slate-900">
-            {brand.name} <span className="text-indigo-500">{brand.accent}</span>
+          <span className="text-[22px] font-bold tracking-tight text-neutral-900">
+            {brand.name} <span className="text-primary-500">{brand.accent}</span>
           </span>
-          <span className="mt-1 text-xs text-slate-500">{brand.tagline}</span>
+          <span className="mt-1 text-xs text-neutral-500">{brand.tagline}</span>
         </span>
       ) : (
         <span className="flex flex-col leading-none">
-          <span className="text-2xl font-bold text-indigo-600">{brand.tagline}</span>
-          <span className="mt-1 text-xs lowercase text-slate-500">{brand.name} {brand.accent}</span>
+          <span className="text-2xl font-bold text-primary-600">{brand.tagline}</span>
+          <span className="mt-1 text-xs lowercase text-neutral-500">{brand.name} {brand.accent}</span>
         </span>
       )}
     </Link>

@@ -20,7 +20,7 @@ type Props = {
   showLabel?: boolean;
 };
 
-const itemCls = "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-indigo-50 hover:text-indigo-600 focus-visible:outline-2 focus-visible:outline-indigo-500";
+const itemCls = "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-20 hover:text-primary-600 focus-visible:outline-2 focus-visible:outline-primary-500";
 
 export function UserMenu({ user, items, profileHref, showLabel = true }: Props) {
   const [open, setOpen] = useState(false);
@@ -58,35 +58,35 @@ export function UserMenu({ user, items, profileHref, showLabel = true }: Props) 
         aria-controls={menuId}
         aria-label={`Account menu for ${user.name}`}
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-3 rounded-full p-1 pr-2 transition-colors hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-indigo-500"
+        className="flex items-center gap-3 rounded-full p-1 pr-2 transition-colors hover:bg-neutral-20 focus-visible:outline-2 focus-visible:outline-primary-500"
       >
         <Avatar name={user.name} src={user.avatarUrl} size="md" />
         {showLabel && (
           <span className="hidden text-left leading-tight md:block">
-            <span className="block text-sm font-semibold text-slate-900">{user.name}</span>
-            <span className="block text-xs text-slate-500">{roleLabels[user.role]}</span>
+            <span className="block text-sm font-semibold text-neutral-900">{user.name}</span>
+            <span className="block text-xs text-neutral-500">{roleLabels[user.role]}</span>
           </span>
         )}
-        <Icon name="chevronDown" size={16} className={cn("text-slate-400 transition-transform", open && "rotate-180")} />
+        <Icon name="chevronDown" size={16} className={cn("text-neutral-100 transition-transform", open && "rotate-180")} />
       </button>
 
       {open && (
         <div
           id={menuId}
           role="menu"
-          className="absolute right-0 z-50 mt-2 w-60 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl shadow-indigo-500/10"
+          className="absolute right-0 z-50 mt-2 w-60 rounded-2xl border border-neutral-30 bg-neutral-0 p-2 shadow-pc-md"
         >
           <Link
             href={profileHref}
             onClick={() => setOpen(false)}
             aria-label={`View ${user.name}'s profile`}
-            className="mb-1 block rounded-xl border-b border-slate-100 px-3 pb-3 pt-2 transition-colors hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-indigo-500"
+            className="mb-1 block rounded-xl border-b border-neutral-20 px-3 pb-3 pt-2 transition-colors hover:bg-neutral-20 focus-visible:outline-2 focus-visible:outline-primary-500"
           >
             <div className="flex items-center gap-3">
               <Avatar name={user.name} src={user.avatarUrl} size="md" />
               <div className="min-w-0">
-                <p className="truncate text-sm font-semibold text-slate-900">{user.name}</p>
-                <p className="truncate text-xs text-slate-500">{user.email ?? roleLabels[user.role]}</p>
+                <p className="truncate text-sm font-semibold text-neutral-900">{user.name}</p>
+                <p className="truncate text-xs text-neutral-500">{user.email ?? roleLabels[user.role]}</p>
               </div>
             </div>
           </Link>

@@ -33,18 +33,18 @@ export function AppShell({ user, left, right, children }: Props) {
   }, [drawer]);
 
   return (
-    <div className="min-h-screen bg-slate-50/70">
+    <div className="min-h-screen bg-neutral-20/70">
       <AppTopbar user={user} onMenuClick={() => setDrawer(true)} />
 
       {/* Desktop sidebar, below the topbar */}
-      <aside className="fixed bottom-0 left-0 top-[72px] z-30 hidden w-64 border-r border-slate-200/70 bg-white lg:block">{left}</aside>
+      <aside className="fixed bottom-0 left-0 top-[72px] z-30 hidden w-64 border-r border-neutral-30 bg-neutral-0 lg:block">{left}</aside>
 
       {/* Mobile drawer */}
       {drawer && (
         <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-label="Navigation">
-          <button type="button" aria-label="Close navigation" onClick={() => setDrawer(false)} className="absolute inset-0 bg-slate-900/40" />
-          <div className="relative h-full w-72 max-w-[85%] border-r border-slate-200/70 bg-white shadow-2xl shadow-indigo-500/10">
-            <button type="button" aria-label="Close navigation" onClick={() => setDrawer(false)} className="absolute right-3 top-4 grid h-9 w-9 place-items-center rounded-full text-slate-500 hover:bg-slate-50">
+          <button type="button" aria-label="Close navigation" onClick={() => setDrawer(false)} className="absolute inset-0 bg-neutral-900/40" />
+          <div className="relative h-full w-72 max-w-[85%] border-r border-neutral-30 bg-neutral-0 shadow-pc-lg">
+            <button type="button" aria-label="Close navigation" onClick={() => setDrawer(false)} className="absolute right-3 top-4 grid h-9 w-9 place-items-center rounded-full text-neutral-400 hover:bg-neutral-20">
               <Icon name="x" size={20} />
             </button>
             {left}

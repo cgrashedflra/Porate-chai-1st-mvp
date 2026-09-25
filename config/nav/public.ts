@@ -19,8 +19,7 @@ export const PublicNav = {
 
     items: [
         { label: "Home", href: ROUTES.HOME, icon: "home", exact: true },
-        { label: "Educators", href: ROUTES.EDUCATORS, icon: "users" },
-        { label: "Batches", href: ROUTES.LIVE_BATCHES, icon: "book" },
+        { label: "Marketplace", href: ROUTES.MARKETPLACE, icon: "layers" },
         { label: "How It Works", href: ROUTES.HOW_IT_WORKS_SECTION, icon: "fileText" },
         { label: "About", href: ROUTES.ABOUT, icon: "info" },
     ] satisfies readonly NavItem[],
@@ -28,6 +27,6 @@ export const PublicNav = {
     promo: {
         title: "Better Learning, Bigger Dreams",
         body: "Find the right educator for your bright future.",
-        cta: { label: "Explore educators", href: ROUTES.EDUCATORS },
+        cta: { label: "Browse the marketplace", href: ROUTES.MARKETPLACE },
     },
 } as const;

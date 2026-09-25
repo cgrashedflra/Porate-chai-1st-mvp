@@ -45,7 +45,7 @@ export default function CTASection() {
 
                     <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
                         <ButtonLink
-                            href={ROUTES.EDUCATORS}
+                            href={ROUTES.MARKETPLACE}
                             variant="secondary"
                             size="lg"
                             icon="arrowRight"

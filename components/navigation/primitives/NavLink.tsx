@@ -18,14 +18,14 @@ const base = {
   child: "gap-3 rounded-lg px-3 py-2 text-sm font-medium",
 };
 const active = {
-  top: "bg-indigo-50 text-indigo-600",
-  side: "bg-indigo-50 text-indigo-600 font-semibold",
-  child: "bg-indigo-50 text-indigo-600",
+  top: "bg-primary-50 text-primary-600",
+  side: "bg-primary-50 text-primary-600 font-semibold",
+  child: "bg-primary-50 text-primary-600",
 };
 const idle = {
-  top: "text-slate-600 hover:bg-slate-50 hover:text-indigo-600",
-  side: "text-slate-600 hover:bg-slate-50 hover:text-slate-900",
-  child: "text-slate-500 hover:bg-slate-50 hover:text-slate-900",
+  top: "text-neutral-600 hover:bg-neutral-20 hover:text-primary-600",
+  side: "text-neutral-600 hover:bg-neutral-20 hover:text-neutral-900",
+  child: "text-neutral-500 hover:bg-neutral-20 hover:text-neutral-900",
 };
 
 type Props = {
@@ -46,13 +46,13 @@ export function NavLink({ item, variant = "side", badge, badgeTone = "soft", onN
       onClick={onNavigate}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "flex items-center transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500",
+        "flex items-center transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500",
         base[variant],
         isActive ? active[variant] : idle[variant]
       )}
     >
       {item.icon && variant === "side" && (
-        <Icon name={item.icon} className={isActive ? "text-indigo-600" : "text-slate-500"} />
+        <Icon name={item.icon} className={isActive ? "text-primary-600" : "text-neutral-400"} />
       )}
       <span className={variant === "top" ? "" : "flex-1 truncate"}>{item.label}</span>
       {variant !== "top" && <Badge count={count} tone={badgeTone} />}

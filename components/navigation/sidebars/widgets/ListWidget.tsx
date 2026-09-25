@@ -26,13 +26,13 @@ function Row({ item }: { item: ListItem }) {
         <Avatar name={item.title} size="md" />
       )}
       <span className="min-w-0 flex-1">
-        <span className="block truncate text-sm font-medium text-slate-800">{item.title}</span>
-        {item.subtitle && <span className="block truncate text-xs text-slate-500">{item.subtitle}</span>}
-        {item.meta && !item.action && <span className="block text-xs text-slate-400">{item.meta}</span>}
+        <span className="block truncate text-sm font-medium text-neutral-700">{item.title}</span>
+        {item.subtitle && <span className="block truncate text-xs text-neutral-500">{item.subtitle}</span>}
+        {item.meta && !item.action && <span className="block text-xs text-neutral-100">{item.meta}</span>}
       </span>
       {item.action && (
         <span className="flex shrink-0 flex-col items-end gap-1">
-          {item.meta && <span className="text-[11px] text-slate-400">{item.meta}</span>}
+          {item.meta && <span className="text-[11px] text-neutral-100">{item.meta}</span>}
           <ButtonLink href={item.action.href} variant="secondary" size="sm">{item.action.label}</ButtonLink>
         </span>
       )}

@@ -14,7 +14,7 @@ type Props = { id: string; items: NavItem[]; user: NavUser | null; onNavigate: (
 export function MobileMenu({ id, items, user, onNavigate }: Props) {
   const visible = items.filter((i) => !i.authOnly || user);
   return (
-    <div id={id} className="border-t border-slate-100 p-3 lg:hidden">
+    <div id={id} className="border-t border-neutral-30 p-3 lg:hidden">
       <nav aria-label="Mobile">
         <ul className="space-y-1">
           {visible.map((item) => (

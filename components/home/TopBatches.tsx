@@ -46,7 +46,7 @@ export const TopBatches = () => {
                     {/* View All Button */}
                     <div className="flex flex-col items-start lg:items-end gap-6">
                         <Link
-                            href={ROUTES.LIVE_BATCHES}
+                            href={ROUTES.MARKETPLACE}
                             className="inline-flex items-center gap-1.5 text-primary-500 hover:text-primary-700 font-semibold text-xs transition-colors duration-200"
                         >
                             <span>View All Batches</span>
@@ -68,7 +68,7 @@ export const TopBatches = () => {
                                 </button>
                             ))}
 
-                            <ButtonLink href={ROUTES.LIVE_BATCHES} variant="secondary" size="sm" icon="chevronDown">
+                            <ButtonLink href={ROUTES.MARKETPLACE} variant="secondary" size="sm" icon="chevronDown">
                                 More
                             </ButtonLink>
                         </div>

@@ -14,14 +14,14 @@ type Props = { user: NavUser; onMenuClick: () => void };
 export function AppTopbar({ user, onMenuClick }: Props) {
   const config = getNavConfig(user.role);
   return (
-    <header className="sticky top-0 z-40 flex h-[72px] items-center gap-3 border-b border-slate-200/70 bg-white/85 pr-4 backdrop-blur-md md:pr-6">
+    <header className="sticky top-0 z-40 flex h-[72px] items-center gap-3 border-b border-neutral-30 bg-neutral-0/85 pr-4 backdrop-blur-md md:pr-6">
       {/* Left slot matches the sidebar width on desktop so the search bar always starts at the sidebar edge */}
       <div className="flex h-full shrink-0 items-center gap-3 pl-4 md:pl-6 lg:w-64">
         <button
           type="button"
           aria-label="Open navigation"
           onClick={onMenuClick}
-          className="grid h-11 w-11 place-items-center rounded-full text-slate-600 hover:bg-slate-50 lg:hidden"
+          className="grid h-11 w-11 place-items-center rounded-full text-neutral-500 transition-colors hover:bg-neutral-20 focus-visible:outline-2 focus-visible:outline-primary-500 lg:hidden"
         >
           <Icon name="menu" size={22} />
         </button>
@@ -36,7 +36,7 @@ export function AppTopbar({ user, onMenuClick }: Props) {
 
       <div className="ml-auto flex items-center gap-1.5 sm:gap-3">
         {config.showThemeToggle && (
-          <button type="button" aria-label="Toggle theme" className="grid h-11 w-11 place-items-center rounded-full text-slate-600 hover:bg-indigo-50 hover:text-indigo-600">
+          <button type="button" aria-label="Toggle theme" className="grid h-11 w-11 place-items-center rounded-full text-neutral-500 transition-colors hover:bg-primary-50 hover:text-primary-500 focus-visible:outline-2 focus-visible:outline-primary-500">
             <Icon name="sun" size={21} />
           </button>
         )}

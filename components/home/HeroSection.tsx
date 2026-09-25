@@ -37,11 +37,11 @@ const HeroSection = () => {
                             <div className="max-w-xl flex items-center gap-2.5">
                                 <SearchBar
                                     placeholder="What do you want to learn? (e.g. Physics, IELTS, Math)"
-                                    searchHref={ROUTES.EDUCATORS}
+                                    searchHref={ROUTES.MARKETPLACE}
                                     className="flex-1"
                                 />
                                 <ButtonLink
-                                    href={ROUTES.EDUCATORS}
+                                    href={ROUTES.MARKETPLACE}
                                     id="hero-search-submit-btn"
                                     icon="arrowRight"
                                     className="h-11"
@@ -67,14 +67,14 @@ const HeroSection = () => {
                         {/* CTAs */}
                         <div className="flex flex-wrap items-center gap-3 pt-1">
                             <ButtonLink
-                                href={ROUTES.EDUCATORS}
+                                href={ROUTES.MARKETPLACE}
                                 id="hero-primary-cta"
                                 icon="arrowRight"
                             >
                                 Find a Mentor
                             </ButtonLink>
                             <ButtonLink
-                                href={ROUTES.LIVE_BATCHES}
+                                href={ROUTES.MARKETPLACE}
                                 id="hero-secondary-cta"
                                 variant="secondary"
                             >

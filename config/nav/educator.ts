@@ -36,7 +36,8 @@ export const educatorNav: RoleNavConfig = {
   ],
   userMenu: [
     { label: "Home", href: ROUTES.HOME, icon: "home" },
-    { label: "Notifications", href: "/educator/notifications", icon: "bell" },
+    { label: "Marketplace", href: ROUTES.MARKETPLACE, icon: "layers" },
+    { label: "Notifications", href: ROUTES.EDUCATOR.NOTIFICATIONS, icon: "bell" },
     { label: "Log out", icon: "logout", action: "logout" },
   ],
 };

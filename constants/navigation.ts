@@ -2,19 +2,14 @@ import ROUTES from "./routes";
 
 export const NAVBAR_LINKS = [
   { label: 'Explore', href: ROUTES.HOME },
-  { label: 'Find Educators', href: ROUTES.EDUCATORS },
-  { label: 'Batches', href: ROUTES.LIVE_BATCHES },
+  { label: 'Marketplace', href: ROUTES.MARKETPLACE },
   { label: 'How It Works', href: ROUTES.HOW_IT_WORKS_SECTION },
 ] as const;
 
 export const STUDENT_NAV = [
   {
-    label: "Find Educators",
-    href: ROUTES.EDUCATORS,
-  },
-  {
-    label: "Explore Batches",
-    href: ROUTES.LIVE_BATCHES,
+    label: "Browse Marketplace",
+    href: ROUTES.MARKETPLACE,
   },
   {
     label: "How It Works",

@@ -168,6 +168,57 @@ export interface AdminAuditLog {
   timestamp: string;
 }
 
+// ============================================================
+// MARKETPLACE — gigs (1-on-1 offers) & unified listings
+// ============================================================
+
+/** A 1-on-1 / paid offer published by an educator (a "gig"). */
+export interface GigItem {
+  id: string;
+  title: string;
+  educatorId: string;
+  educatorName: string;
+  educatorAvatar: string;
+  educatorVerified: boolean;
+  subject: string;
+  level: string;
+  format: 'Online' | 'In-person';
+  pricePerHour: number; // BDT
+  rating: number;
+  reviewCount: number;
+  availableThisWeek: boolean;
+  description: string;
+}
+
+export type MarketplaceKind = 'gig' | 'class';
+
+/**
+ * Normalized row shape used by marketplace lists — one entry per
+ * gig or batch class, so a single list can render both product types.
+ */
+export interface MarketplaceListing {
+  kind: MarketplaceKind;
+  id: string;
+  title: string;
+  educatorId: string;
+  educatorName: string;
+  educatorAvatar: string;
+  educatorVerified: boolean;
+  subject: string;
+  level: string;
+  format: 'Online' | 'In-person';
+  price: number; // gig → per hour · batch class → total fee (BDT)
+  rating: number;
+  description: string;
+  href: string;
+  reviewCount?: number;
+  availableThisWeek?: boolean;
+  schedule?: string;
+  seatsLeft?: number;
+  image?: string;
+  status?: string;
+}
+
 export interface UserSession {
   isAuthenticated: boolean;
   role: 'student' | 'educator' | 'admin' | 'guest';

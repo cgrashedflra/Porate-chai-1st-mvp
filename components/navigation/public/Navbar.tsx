@@ -51,14 +51,14 @@ export function Navbar({ user = null, items = PublicNav.items }: Props) {
   }, [open]);
 
   const desktopItems = items.filter((i) => !i.mobileOnly);
-  const iconBtn = "grid h-11 w-11 place-items-center rounded-full text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 focus-visible:outline-2 focus-visible:outline-indigo-500";
+  const iconBtn = "grid h-11 w-11 place-items-center rounded-full text-neutral-500 transition-colors hover:bg-primary-50 hover:text-primary-500 focus-visible:outline-2 focus-visible:outline-primary-500";
 
   return (
     <header className="sticky top-0 z-40 px-3 pt-3 sm:px-6">
       <div
         className={cn(
-          "mx-auto max-w-7xl rounded-2xl border bg-white/85 backdrop-blur-md transition-shadow duration-200",
-          scrolled ? "border-slate-200 shadow-lg shadow-indigo-500/10" : "border-white shadow-[0_8px_30px_color-mix(in_srgb,var(--color-primary-500)_10%,transparent)]"
+          "mx-auto max-w-7xl rounded-2xl border border-neutral-30/60 bg-white/85 backdrop-blur-md transition-shadow duration-200",
+          scrolled ? "shadow-pc-md" : "shadow-pc-sm"
         )}
       >
         <div className={cn("flex items-center gap-4 px-4 transition-[height] duration-200 sm:px-6", scrolled ? "h-16" : "h-20")}>
@@ -75,7 +75,7 @@ export function Navbar({ user = null, items = PublicNav.items }: Props) {
           </nav>
 
           <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
-            <SearchBar className="hidden w-64 xl:flex" placeholder="Search mentors, subjects..." shortcut="slash" />
+            <SearchBar className="hidden w-64 xl:flex" placeholder="Search gigs, classes, educators..." shortcut="slash" />
             <Link href="/search" aria-label="Search" className={cn(iconBtn, "xl:hidden")}>
               <Icon name="search" size={21} />
             </Link>
