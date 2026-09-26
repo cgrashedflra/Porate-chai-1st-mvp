@@ -11,5 +11,8 @@ export const navConfigs: Record<Role, RoleNavConfig> = {
 };
 
 export const getNavConfig = (role: Role) => navConfigs[role];
+
 export { PublicNav } from "./public";
+export { STUDENT_FOOTER, EDUCATOR_FOOTER, COMPANY_FOOTER, FooterGroups } from "./footer";
+export type { FooterLink } from "./footer";
 export type * from "./types";

@@ -1,6 +1,7 @@
 // components/auth/auth.types.ts
 
 import type { IconName } from "@/components/ui/Icon";
+import type { ImageSrc } from "@/types/types";
 
 export type AuthFieldType =
   | "text"
@@ -53,7 +54,7 @@ export interface AuthConfig {
     highlightedTitle?: string;
     description?: string;
 
-    image?: string;
+    image?: ImageSrc;
 
     features?: AuthFeature[];
   };

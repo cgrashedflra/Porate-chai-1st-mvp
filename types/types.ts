@@ -1,3 +1,16 @@
+/**
+ * A src value that is safe to hand to `next/image`.
+ *
+ * Local files in `public/` MUST be root-relative (`/assets/foo.png`).
+ * A bare relative path (`assets/foo.png`) throws at runtime:
+ *   "Failed to construct 'URL': Invalid URL"
+ * so this type rejects it at compile time instead.
+ *
+ * Remote images must be absolute, and the host has to be allowed by
+ * `images.remotePatterns` in `next.config.ts` (currently Unsplash only).
+ */
+export type ImageSrc = `/${string}` | `https://${string}`;
+
 export interface Review {
   id: string;
   studentName: string;

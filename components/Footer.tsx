@@ -1,20 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-    STUDENT_FOOTER,
-    EDUCATOR_FOOTER,
-    COMPANY_FOOTER,
-} from "@/config/nav/footer";
+import ROUTES from "@/constants/routes";
+import { FooterGroups, type FooterLink } from "@/config/nav";
 import { Shield, Award, Mail, Phone, MapPin } from "lucide-react";
 import academicCap from "@/public/academic-cap.svg";
 import { NewsletterForm } from "./ui/NewsletterForm";
-
-type FooterLink = {
-    label: string;
-    href: string;
-    featured?: boolean;
-    admin?: boolean;
-};
 
 function FooterSection({
     title,
@@ -58,7 +48,7 @@ export function Footer() {
                     {/* Brand */}
                     <div className="lg:col-span-2">
                         <Link
-                            href="/"
+                            href={ROUTES.HOME}
                             className="inline-flex items-center gap-2.5"
                             aria-label="Porate Chai home"
                         >
@@ -106,20 +96,13 @@ export function Footer() {
                     </div>
 
                     {/* Navigation */}
-                    <FooterSection
-                        title="For Students"
-                        links={STUDENT_FOOTER}
-                    />
-
-                    <FooterSection
-                        title="For Educators"
-                        links={EDUCATOR_FOOTER}
-                    />
-
-                    <FooterSection
-                        title="Company"
-                        links={COMPANY_FOOTER}
-                    />
+                    {FooterGroups.map((group) => (
+                        <FooterSection
+                            key={group.title}
+                            title={group.title}
+                            links={group.links}
+                        />
+                    ))}
                 </div>
 
                 <NewsletterForm />
@@ -156,28 +139,28 @@ export function Footer() {
                         className="flex flex-wrap items-center gap-x-5 gap-y-2"
                     >
                         <Link
-                            href="/#how-it-works"
+                            href={ROUTES.HOW_IT_WORKS_SECTION}
                             className="caption text-neutral-300 transition-colors hover:text-neutral-0"
                         >
                             How It Works
                         </Link>
 
                         <Link
-                            href="/faq"
+                            href={ROUTES.FAQ}
                             className="caption text-neutral-300 transition-colors hover:text-neutral-0"
                         >
                             Support
                         </Link>
 
                         <Link
-                            href="/privacy"
+                            href={ROUTES.PRIVACY}
                             className="caption text-neutral-300 transition-colors hover:text-neutral-0"
                         >
                             Privacy
                         </Link>
 
                         <Link
-                            href="/terms"
+                            href={ROUTES.TERMS}
                             className="caption text-neutral-300 transition-colors hover:text-neutral-0"
                         >
                             Terms

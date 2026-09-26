@@ -67,7 +67,7 @@ export const registerConfig: AuthConfig = {
     title: "Join Porate Chai",
     description: "Start your learning journey today",
 
-    image: "assets/welcomeSplash.png",
+    image: "/assets/welcomeSplash.png",
 
     features: [
       {

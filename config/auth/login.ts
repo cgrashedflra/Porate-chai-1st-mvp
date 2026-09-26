@@ -43,7 +43,7 @@ export const loginConfig: AuthConfig = {
     description:
       "তোমার শেখার যাত্রায়, বিশ্বস্ত শিক্ষক এখন হাতের কাছে।",
 
-    image: "assets/Hero-splash.jpeg",
+    image: "/assets/Hero-splash.jpeg",
 
     features: [
       {

@@ -28,7 +28,7 @@ export const recoveryConfig: AuthConfig = {
         description:
             "Enter your email and we'll send you a secure link to reset your password.",
 
-        image: "assets/assurance.png",
+        image: "/assets/assurance.png",
 
         features: [
             {
