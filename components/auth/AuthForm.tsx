@@ -1,8 +1,6 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { cn } from "@/lib/cn";
 import { AuthConfig } from "@/types/auth/auth.types";
 import { AuthBrandPanel } from "./AuthBrandPanel";
 import { AuthField } from "./AuthField";
@@ -15,29 +13,6 @@ interface AuthFormProps {
 
 export function AuthForm({ config }: AuthFormProps) {
     const isRecovery = config.mode === "recovery";
-
-    const [activeRole, setActiveRole] = useState<string>(
-        () => config.roleOptions?.[0]?.value ?? ""
-    );
-
-    // Controlled values keyed by field name — drives the progressive reveal.
-    const [values, setValues] = useState<Record<string, string>>({});
-
-    // How many fields have been filled so far (drives the reveal transition).
-    const [revealedCount, setRevealedCount] = useState(1);
-
-    const handleChange = (name: string, value: string) => {
-        setValues((prev) => ({ ...prev, [name]: value }));
-
-        // Reveal the next field as soon as this one has content.
-        const index = config.fields.findIndex((f) => f.name === name);
-
-        if (index >= 0 && value.trim() !== "" && index + 1 >= revealedCount) {
-            setRevealedCount((prev) =>
-                Math.min(prev + 1, config.fields.length)
-            );
-        }
-    };
 
     const switchHref =
         isRecovery || config.mode === "register"
@@ -76,68 +51,14 @@ export function AuthForm({ config }: AuthFormProps) {
                                 )}
                             </header>
 
-                            {/* Social login — always visible first, above the fields. */}
-                            {config.showSocialLogin &&
-                                config.socialProviders &&
-                                config.socialProviders.length > 0 && (
-                                    <div className="flex flex-col gap-2">
-                                        <AuthSocialButtons providers={config.socialProviders} />
-                                    </div>
-                                )}
-
-                            {/* Role toggle (register only). */}
-                            {config.roleOptions &&
-                                config.roleOptions.length > 0 &&
-                                !isRecovery && (
-                                    <div
-                                        role="group"
-                                        aria-label="Select account type"
-                                        className="flex gap-1.5 rounded-2xl bg-primary-50 p-1.5"
-                                    >
-                                        {config.roleOptions.map((role) => (
-                                            <button
-                                                key={role.value}
-                                                type="button"
-                                                onClick={() => setActiveRole(role.value)}
-                                                aria-pressed={activeRole === role.value}
-                                                className={cn(
-                                                    "flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl px-3 py-2.5 label-md transition-all",
-                                                    activeRole === role.value
-                                                        ? "gradient-primary text-white shadow-pc-sm"
-                                                        : "text-primary-500 hover:bg-white hover:text-primary-600"
-                                                )}
-                                            >
-                                                <span aria-hidden="true" className="text-base leading-none">
-                                                    {role.icon}
-                                                </span>
-                                                {role.label}
-                                            </button>
-                                        ))}
-                                    </div>
-                                )}
-
                             <form className="flex flex-col gap-5">
                                 <div className="flex flex-col gap-4">
-                                    {config.fields.map((field, index) => {
-                                        const revealed = isRecovery || index < revealedCount;
-
-                                        return (
-                                            <div
-                                                key={field.name}
-                                                data-field={field.name}
-                                                className={cn(
-                                                    "transition-[opacity,transform] duration-300 ease-out",
-                                                    !revealed && "opacity-40 translate-y-1"
-                                                )}
-                                            >
-                                                <AuthField
-                                                    field={field}
-                                                    value={values[field.name] ?? ""}
-                                                    onChange={(value) => handleChange(field.name, value)}
-                                                />
-                                            </div>
-                                        );
-                                    })}
+                                    {config.fields.map((field) => (
+                                        <AuthField
+                                            key={field.name}
+                                            field={field}
+                                        />
+                                    ))}
                                 </div>
 
                                 {!isRecovery &&
@@ -192,6 +113,13 @@ export function AuthForm({ config }: AuthFormProps) {
                                         →
                                     </span>
                                 </button>
+
+                                {/* Social login — alternative method, below the fields. */}
+                                {config.showSocialLogin &&
+                                    config.socialProviders &&
+                                    config.socialProviders.length > 0 && (
+                                        <AuthSocialButtons providers={config.socialProviders} />
+                                    )}
                             </form>
 
                             {(config.switchText || config.switchLabel) && (

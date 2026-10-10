@@ -1,9 +1,13 @@
-import React from 'react'
+type PageProps = {
+    params: Promise<{ id: string }>
+}
 
-const page = () => {
+const Page = async ({ params }: PageProps) => {
+    const { id } = await params
+
     return (
-        <div>page</div>
+        <div>educator no: {id}</div>
     )
 }
 
-export default page
+export default Page

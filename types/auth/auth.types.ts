@@ -29,12 +29,6 @@ export interface AuthConfig {
   title: string;
   subtitle?: string;
 
-  roleOptions?: {
-    value: string;
-    label: string;
-    icon?: string;
-  }[];
-
   fields: AuthFieldConfig[];
 
   submitLabel: string;

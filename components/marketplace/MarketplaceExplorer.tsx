@@ -19,6 +19,8 @@ import {
   type SortKey,
   type ViewMode,
 } from "./types";
+import { MentorCard } from "../MentorCard";
+import { Mentors } from "@/data/home/mentors";
 
 type FilterChip = { id: string; label: string; remove: () => void };
 
@@ -58,7 +60,7 @@ const buildListings = (): MarketplaceListing[] => [
       price: c.price,
       rating: c.rating,
       description: c.description,
-      href: ROUTES.LIVE_BATCH(c.id),
+      href: ROUTES.EDUCATOR_PROFILE(c.id),
       schedule: c.schedule[0],
       seatsLeft: c.maxStudents - c.enrolledStudents,
       image: c.image,
@@ -195,16 +197,10 @@ export function MarketplaceExplorer() {
           resultCount={results.length}
         />
 
-        <div className="min-w-0">
-          <MarketplaceList
-            className="md:mt-0"
-            items={results}
-            total={allListings.length}
-            view={view}
-            page={page}
-            pageSize={PAGE_SIZE}
-            onPageChange={setPage}
-          />
+        <div className="min-w-0 flex flex-col gap-2">
+          {Mentors.map((mentor) => (
+            <MentorCard key={mentor.id} {...mentor} orientation="horizontal" />
+          ))}
 
           {/* Active filter chips */}
           {chips.length > 0 && (

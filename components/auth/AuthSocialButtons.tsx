@@ -54,7 +54,13 @@ export function AuthSocialButtons({ providers }: AuthSocialButtonsProps) {
     return (
         <div className="flex flex-col gap-4">
 
-            {/* Compact horizontal row — buttons first, divider below. */}
+            {/* Divider first, then buttons — this block sits below the fields. */}
+            <div className="flex items-center gap-3">
+                <span className="h-px flex-1 bg-primary-100" />
+                <span className="overline text-primary-500">or continue with</span>
+                <span className="h-px flex-1 bg-primary-100" />
+            </div>
+
             <div className="grid grid-cols-2 gap-3">
                 {providers.map((provider) => {
                     const meta = PROVIDER_META[provider];
@@ -74,12 +80,6 @@ export function AuthSocialButtons({ providers }: AuthSocialButtonsProps) {
                         </button>
                     );
                 })}
-            </div>
-
-            <div className="flex items-center gap-3">
-                <span className="h-px flex-1 bg-primary-100" />
-                <span className="overline text-primary-500">or continue with</span>
-                <span className="h-px flex-1 bg-primary-100" />
             </div>
         </div>
     );

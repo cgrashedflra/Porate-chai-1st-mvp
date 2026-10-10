@@ -1,6 +1,6 @@
 export type HomeBatchStatus = 'Live Batch' | 'Upcoming' | 'Ongoing' | 'New';
 
-export interface HomeMentor {
+export interface Mentor {
     id: string;
     name: string;
     image: string;
@@ -14,6 +14,7 @@ export interface HomeMentor {
     extraSubjectsCount?: number;
     bio: string;
     pricePerSession: number;
+    orientation?: 'vertical' | 'horizontal';
 }
 
 export interface HomeBatchMentor {

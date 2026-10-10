@@ -78,7 +78,7 @@ export const ClassCard = ({
             <ArrowRight className="w-3.5 h-3.5" />
         </button>
     ) : (
-        <Link href={ROUTES.LIVE_BATCH(id)} className={actionClassName}>
+        <Link href={ROUTES.EDUCATOR_PROFILE(id)} className={actionClassName}>
             {primaryButtonText}
             <ArrowRight className="w-3.5 h-3.5" />
         </Link>
@@ -116,7 +116,7 @@ export const ClassCard = ({
 
             <div className="flex flex-1 flex-col p-4">
                 <div>
-                    <Link href={ROUTES.LIVE_BATCH(id)} className="block">
+                    <Link href={ROUTES.EDUCATOR_PROFILE(id)} className="block">
                         <h3 className="mb-2 line-clamp-2 text-base font-bold leading-snug text-neutral-900 transition-colors group-hover:text-primary-500">
                             {title}
                         </h3>

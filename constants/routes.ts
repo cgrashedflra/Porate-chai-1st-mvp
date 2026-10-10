@@ -51,7 +51,6 @@ const ROUTES = {
   },
 
   EDUCATOR_PROFILE: (id: string) => `/educator-profile/${id}`,
-  LIVE_BATCH: (id: string) => `/live-batch/${id}`,
 } as const;
 
 export default ROUTES;

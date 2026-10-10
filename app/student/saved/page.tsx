@@ -121,7 +121,7 @@ export default function SavedPage() {
                                 <span aria-hidden>🗓</span> {b.when}
                             </p>
                             <Link
-                                href={ROUTES.LIVE_BATCH(b.id)}
+                                href={ROUTES.EDUCATOR_PROFILE(b.id)}
                                 className="rounded-lg bg-primary-500 px-3 py-1.5 text-center text-sm font-medium text-neutral-0 transition-colors hover:bg-primary-600"
                             >
                                 Join Batch

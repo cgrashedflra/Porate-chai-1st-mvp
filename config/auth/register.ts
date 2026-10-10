@@ -2,24 +2,24 @@
 
 import { AuthConfig } from "@/types/auth/auth.types";
 
+export type RegisterFieldName =
+  | "fullName"
+  | "email"
+  | "password";
+
+export interface AuthField {
+  name: RegisterFieldName;
+  label: string;
+  type: "text" | "email" | "password";
+  placeholder?: string;
+  required?: boolean;
+}
+
 export const registerConfig: AuthConfig = {
   mode: "register",
 
   title: "Create Your Account",
   subtitle: "Join thousands of students and mentors",
-
-  roleOptions: [
-    {
-      value: "student",
-      label: "Student",
-      icon: "🎓",
-    },
-    {
-      value: "mentor",
-      label: "Mentor",
-      icon: "♙",
-    },
-  ],
 
   fields: [
     {
@@ -34,13 +34,6 @@ export const registerConfig: AuthConfig = {
       label: "Email Address",
       type: "email",
       placeholder: "Enter your email address",
-      required: true,
-    },
-    {
-      name: "phone",
-      label: "Phone Number",
-      type: "tel",
-      placeholder: "Enter your phone number",
       required: true,
     },
     {
