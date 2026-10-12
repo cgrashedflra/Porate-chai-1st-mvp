@@ -1,40 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import { Filter } from "lucide-react";
 import ROUTES from "@/constants/routes";
 import { Logo } from "@/components/ui/Logo";
 import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/lib/cn";
-import type { MarketplaceFilters, SortKey } from "./types";
-import { FilterMenu } from "./FilterMenu";
+import { SearchBar } from "../ui/SearchBar";
 
 type Props = {
-  query: string;
-  onQueryChange: (query: string) => void;
-  sort: SortKey;
-  onSortChange: (sort: SortKey) => void;
-  filters: MarketplaceFilters;
-  onFiltersChange: (next: MarketplaceFilters) => void;
-  subjects: string[];
-  levels: string[];
-  resultCount: number;
+  /** Opens the filter drawer — only used below `lg`, where the panel is hidden. */
+  onOpenFilters: () => void;
+  activeFilterCount: number;
   className?: string;
 };
 
 /**
  * Marketplace page header — breadcrumb route, heading, and the big
- * search bar (brand logo + live search input + filter/sort dropdown).
+ * search bar (brand logo + live search input + filter toggle).
+ * Below `lg` the filter icon opens the slide-in filter drawer.
  */
 export function MarketplaceHeader({
-  query,
-  onQueryChange,
-  sort,
-  onSortChange,
-  filters,
-  onFiltersChange,
-  subjects,
-  levels,
-  resultCount,
+  onOpenFilters,
+  activeFilterCount,
   className,
 }: Props) {
   return (
@@ -62,11 +50,10 @@ export function MarketplaceHeader({
         </p>
       </div>
 
-      {/* Big search bar — logo · input · sort */}
-      <form
+      {/* Big search bar — logo · input · filter */}
+      <div
         role="search"
-        onSubmit={(e) => e.preventDefault()} /* results filter live — no page navigation */
-        className="mt-6 flex flex-col gap-2.5 rounded-2xl border border-neutral-30 bg-neutral-0 p-2.5 shadow-pc-lg sm:flex-row sm:items-center sm:p-3"
+        className="mt-6 flex items-center gap-2.5 rounded-2xl border border-neutral-30 bg-neutral-0 p-2.5 shadow-pc-lg sm:p-3"
       >
         {/* Brand logo block */}
         <div className="hidden items-center gap-3 pl-2 pr-3 sm:flex">
@@ -74,37 +61,26 @@ export function MarketplaceHeader({
           <span className="ml-1 h-9 w-px bg-neutral-30" aria-hidden="true" />
         </div>
 
-        {/* Search input */}
-        <div className="flex min-w-0 flex-1 items-center gap-2.5 px-2 sm:px-1">
-          <Icon name="search" size={20} className="shrink-0 text-primary-500" />
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => onQueryChange(e.target.value)}
-            placeholder="Search gigs, batch classes & subjects — e.g. HSC Physics, IELTS, Web Development"
-            aria-label="Search the marketplace"
-            className="h-12 min-w-0 flex-1 bg-transparent body-sm text-neutral-900 outline-none placeholder:text-neutral-100"
-          />
+        {/* Search input — grows to fill the row, shrinks when space is tight */}
+        <SearchBar className="min-w-0 flex-1" />
+
+        <div className="flex items-center gap-2.5">
           <button
-            type="submit"
-            className="inline-flex h-12 items-center gap-2 rounded-xl bg-primary-500 px-5 text-sm font-semibold text-neutral-0 shadow-sm shadow-primary-500/25 transition-colors hover:bg-primary-700"
+            type="button"
+            onClick={onOpenFilters}
+            aria-label={activeFilterCount > 0 ? `Open filters (${activeFilterCount} active)` : "Open filters"}
+            className="inline-flex h-12 items-center gap-2 rounded-xl border border-neutral-30 bg-neutral-0 px-3.5 text-sm font-semibold text-neutral-600 transition-colors hover:border-primary-300 hover:text-primary-500 lg:hidden"
           >
-            <Icon name="search" size={16} />
-            <span className="hidden sm:inline">Search</span>
+            <Filter className="h-4 w-4 text-primary-500" />
+            {activeFilterCount > 0 && (
+              <span className="grid h-5 min-w-5 place-items-center rounded-full bg-primary-500 px-1.5 text-[11px] font-semibold text-neutral-0">
+                {activeFilterCount}
+              </span>
+            )}
           </button>
         </div>
 
-        <FilterMenu
-          sort={sort}
-          onSortChange={onSortChange}
-          filters={filters}
-          onFiltersChange={onFiltersChange}
-          subjects={subjects}
-          levels={levels}
-          resultCount={resultCount}
-        />
-
-      </form>
+      </div>
     </header>
   );
 }

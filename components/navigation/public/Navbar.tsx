@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useId, useState } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
 import { getNavConfig } from "@/config/nav";
@@ -74,12 +73,14 @@ export function Navbar({ user = null, items = PublicNav.items }: Props) {
             </ul>
           </nav>
 
-          <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
-            <SearchBar className="hidden w-64 xl:flex" placeholder="Search gigs, classes, educators..." shortcut="slash" />
-            <Link href="/search" aria-label="Search" className={cn(iconBtn, "xl:hidden")}>
-              <Icon name="search" size={21} />
-            </Link>
+          {/* Search — always visible; grows to fill free space and shrinks on small screens */}
+          <SearchBar
+            className="min-w-0 max-w-xl flex-1"
+            placeholder="Search gigs, classes, educators..."
+            shortcut="slash"
+          />
 
+          <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
             {user && <NotificationBell viewAllHref={getNavConfig(user.role).notificationsHref} />}
 
             {user ? (

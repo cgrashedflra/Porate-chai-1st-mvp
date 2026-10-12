@@ -3,13 +3,13 @@
 // ============================================================
 
 export * from "./types";
-export * from "./buildListings";
-export * from "./filterListings";
-export * from "./sortListings";
+export * from "./getMentors";
+export * from "./filterMentors";
+export * from "./sortMentors";
 export * from "./getFilterOptions";
-export { default as buildListings } from "./buildListings";
-export { default as filterListings } from "./filterListings";
-export { default as sortListings } from "./sortListings";
+export { default as getMentors } from "./getMentors";
+export { default as filterMentors } from "./filterMentors";
+export { default as sortMentors } from "./sortMentors";
 export { default as getFilterOptions } from "./getFilterOptions";
 export { default as countActiveFilters } from "./countActiveFilters";
 export { default as formatBDT } from "./formatBDT";

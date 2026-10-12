@@ -93,13 +93,13 @@ export const MentorCard = ({
         <div className={`glass-card flex shadow-md shadow-primary-500/10 transition-shadow duration-300 hover:shadow-lg hover:shadow-primary-500/20 ${isHorizontal ? 'w-full flex-col gap-4 rounded-2xl p-4 lg:flex-row lg:items-stretch' : 'h-full flex-col justify-between rounded-3xl p-6'}`}>
             {isHorizontal ? (
                 <>
-                    <div className="flex min-w-0 flex-1 flex-col gap-4 lg:flex-row">
+                    <div className="flex min-w-0 flex-1 flex-row gap-3 sm:gap-4">
                         <Image
                             src={image}
                             alt={name}
                             width={192}
                             height={192}
-                            className="size-40 shrink-0 self-center rounded-xl object-cover object-center lg:size-48"
+                            className="size-24 shrink-0 self-start rounded-xl object-cover object-center sm:size-40 lg:size-48"
                         />
                         <div className="flex min-w-0 flex-1 flex-col justify-between gap-3">
                             {identity}

@@ -23,7 +23,7 @@ export function NewsletterForm() {
           id="newsletter"
           type="email"
           placeholder="you@example.com"
-          className="flex-1 bg-transparent text-sm text-white placeholder:text-white/40 focus:outline-none py-2"
+          className="min-w-0 flex-1 bg-transparent text-sm text-white placeholder:text-white/40 focus:outline-none py-2"
         />
         <button
           type="submit"

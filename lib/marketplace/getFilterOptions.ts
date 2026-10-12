@@ -1,20 +1,16 @@
 // ============================================================
-// MARKETPLACE — derive filter options from listings
+// MARKETPLACE — derive filter options from mentors
 // ============================================================
 
-import type { MarketplaceListing } from "@/types/types";
+import type { Mentor } from "@/data/home/types";
 
-export const getFilterOptions = (listings: MarketplaceListing[]) => {
+/** Subjects are collected from every mentor so the filter list can never drift. */
+export const getFilterOptions = (mentors: Mentor[]) => {
   const subjects = new Set<string>();
-  const levels = new Set<string>();
-  for (const item of listings) {
-    subjects.add(item.subject);
-    levels.add(item.level);
+  for (const mentor of mentors) {
+    for (const subject of mentor.subjects) subjects.add(subject);
   }
-  return {
-    subjects: [...subjects].sort(),
-    levels: [...levels].sort(),
-  };
+  return { subjects: [...subjects].sort() };
 };
 
 export default getFilterOptions;
