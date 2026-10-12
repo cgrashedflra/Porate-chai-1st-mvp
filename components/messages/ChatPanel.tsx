@@ -1,12 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "@/lib/cn";
-import { ChatHeader } from "./ChatHeader";
 import { MessageBubble } from "./MessageBubble";
 import { MessageComposer } from "./MessageComposer";
 import { initialMessages } from "./data";
-import { CARD } from "./styles";
 import type { Conversation, Message } from "./types";
 
 export function ChatPanel({ contact }: { contact: Conversation }) {
@@ -23,9 +20,7 @@ export function ChatPanel({ contact }: { contact: Conversation }) {
   }
 
   return (
-    <section className={cn(CARD, "flex min-h-0 flex-col")}>
-      <ChatHeader contact={contact} />
-
+    <section className="flex min-h-0 flex-col">
       <div className="min-h-0 flex-1 space-y-5 overflow-y-auto p-5">
         <div className="flex justify-center">
           <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs text-slate-500">Today, Apr 26</span>
