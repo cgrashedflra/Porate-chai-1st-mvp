@@ -1,9 +1,9 @@
-const MessagesPage = () => {
-    return (
-        <div>
-            <h1>Student Messages</h1>
-        </div>
-    )
-}
+import MessagesPage from "@/components/messages/MessagesPage";
 
-export default MessagesPage
+const StudentMessagesPage = () => {
+  return (
+    <MessagesPage />
+  );
+};
+
+export default StudentMessagesPage

@@ -17,6 +17,7 @@ export const adminNav: RoleNavConfig = {
       { label: "Booking Overview", href: ROUTES.ADMIN.BOOKING_OVERVIEW, icon: "calendar", badge: 8 },
       { label: "Reports & Disputes", href: ROUTES.ADMIN.REPORTS_DISPUTES, icon: "fileText" },
       { label: "Audit Log", href: ROUTES.ADMIN.AUDIT_LOG, icon: "activity" },
+      { label: "Messages", href: ROUTES.ADMIN.MESSAGES, icon: "message", badge: 3 },
       { label: "Settings", href: ROUTES.ADMIN.SETTINGS, icon: "settings" },
     ],
     footer: { kind: "promo", title: "Guardians of Learning", body: "Keep the platform safe, fair, and thriving for every learner." },

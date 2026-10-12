@@ -1,6 +1,12 @@
 import { cn } from "@/lib/cn";
 
-const sizes = { sm: "h-8 w-8 text-xs", md: "h-10 w-10 text-sm", lg: "h-12 w-12 text-base" };
+const sizes = {
+  xs: "h-9 w-9 text-xs",
+  sm: "h-8 w-8 text-xs",
+  md: "h-10 w-10 text-sm",
+  lg: "h-12 w-12 text-base",
+  xl: "h-20 w-20 text-xl",
+};
 
 type Props = { name: string; src?: string | null; size?: keyof typeof sizes; className?: string };
 

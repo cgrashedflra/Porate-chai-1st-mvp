@@ -45,6 +45,7 @@ const ROUTES = {
     BOOKING_OVERVIEW: "/admin/booking-overview",
     REPORTS_DISPUTES: "/admin/reports-disputes",
     AUDIT_LOG: "/admin/audit-log",
+    MESSAGES: "/admin/messages",
     SETTINGS: "/admin/settings",
     PROFILE: "/admin/profile",
     NOTIFICATIONS: "/admin/notifications",
