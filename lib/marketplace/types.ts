@@ -1,12 +1,10 @@
 // ============================================================
 // MARKETPLACE — shared filter / sort types & constants.
-// Consumed by the header, filter card, list and explorer so
+// Consumed by the header, filter menu and explorer so
 // every piece speaks the same "filter language".
 // ============================================================
 
 export type SortKey = 'relevance' | 'rating' | 'price-asc' | 'price-desc';
-
-export type ViewMode = 'grid' | 'list';
 
 export type GigFormat = 'Online' | 'In-person';
 
