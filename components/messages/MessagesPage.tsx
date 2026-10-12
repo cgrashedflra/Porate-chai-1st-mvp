@@ -35,7 +35,7 @@ export default function MessagesPage() {
   }
 
   return (
-    <section className={cn(CARD, "flex h-[calc(100vh-8rem)] min-h-[520px] flex-col overflow-hidden")}>
+    <section className={cn(CARD, "flex h-[calc(100vh-8rem)] min-h-130 flex-col overflow-hidden")}>
       {/* Toolbar bar — hide list + chat header (when a conversation is open) */}
       <div className="flex items-center gap-3 border-b border-indigo-50 p-3">
         <IconButton

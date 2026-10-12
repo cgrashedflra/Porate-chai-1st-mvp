@@ -9,7 +9,7 @@ import { SubjectBadge } from "@/components/SubjectBadge";
 import { getSubjectVariant } from "@/constants/subjects";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import type { MarketplaceListing } from "@/types/types";
-import { formatBDT, type ViewMode } from "./types";
+import { formatBDT, type ViewMode } from "@/lib/marketplace";
 
 type Props = {
   items: MarketplaceListing[];

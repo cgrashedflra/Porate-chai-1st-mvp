@@ -11,7 +11,7 @@ import {
   formatBDT,
   type ContentType,
   type MarketplaceFilters,
-} from "./types";
+} from "@/lib/marketplace";
 
 type Props = {
   type: ContentType;
@@ -72,21 +72,7 @@ export function MarketplaceFilterCard({ type, onTypeChange, filters, onChange, s
           />
         </section>
 
-        {/* Content type */}
-        <section className="border-b border-neutral-20 pb-4">
-          <SectionTitle>Content type</SectionTitle>
-          <div className="space-y-1.5 text-xs">
-            {CONTENT_TYPES.map((option) => (
-              <RadioRow
-                key={option.value}
-                name="content-type"
-                label={option.label}
-                checked={type === option.value}
-                onChange={() => onTypeChange(option.value)}
-              />
-            ))}
-          </div>
-        </section>
+
 
         {/* Price range */}
         <section className="border-b border-neutral-20 pb-4">
@@ -144,22 +130,6 @@ export function MarketplaceFilterCard({ type, onTypeChange, filters, onChange, s
                 label={level}
                 checked={filters.levels.includes(level)}
                 onChange={() => set({ levels: toggleValue(filters.levels, level) })}
-              />
-            ))}
-          </div>
-        </section>
-
-        {/* Teaching format */}
-        <section className="border-b border-neutral-20 pb-4">
-          <SectionTitle>Format</SectionTitle>
-          <div className="space-y-1.5 text-xs">
-            {FORMAT_OPTIONS.map((option) => (
-              <RadioRow
-                key={option}
-                name="format"
-                label={option === "all" ? "All formats" : option}
-                checked={filters.format === option}
-                onChange={() => set({ format: option })}
               />
             ))}
           </div>

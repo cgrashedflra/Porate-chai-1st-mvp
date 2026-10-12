@@ -3,10 +3,6 @@
 import { useMemo, useState } from "react";
 import { SlidersHorizontal, X } from "lucide-react";
 import { cn } from "@/lib/cn";
-import ROUTES from "@/constants/routes";
-import { initialGigs } from "@/data/gigs";
-import { initialClasses } from "@/data/classes";
-import type { MarketplaceListing } from "@/types/types";
 import { MarketplaceHeader } from "./MarketplaceHeader";
 import { MarketplaceFilterCard } from "./MarketplaceFilterCard";
 import { MarketplaceList } from "./MarketplaceList";
@@ -14,60 +10,21 @@ import {
   DEFAULT_FILTERS,
   PRICE_CAP,
   formatBDT,
+  buildListings,
+  filterListings,
+  sortListings,
+  getFilterOptions,
   type ContentType,
   type MarketplaceFilters,
   type SortKey,
   type ViewMode,
-} from "./types";
+} from "@/lib/marketplace";
 import { MentorCard } from "../MentorCard";
 import { Mentors } from "@/data/home/mentors";
 
 type FilterChip = { id: string; label: string; remove: () => void };
 
-/** Normalize gigs + approved batch classes into one sortable/filterable list. */
-const buildListings = (): MarketplaceListing[] => [
-  ...initialGigs.map((gig) => ({
-    kind: "gig" as const,
-    id: gig.id,
-    title: gig.title,
-    educatorId: gig.educatorId,
-    educatorName: gig.educatorName,
-    educatorAvatar: gig.educatorAvatar,
-    educatorVerified: gig.educatorVerified,
-    subject: gig.subject,
-    level: gig.level,
-    format: gig.format,
-    price: gig.pricePerHour,
-    rating: gig.rating,
-    description: gig.description,
-    href: ROUTES.EDUCATOR_PROFILE(gig.educatorId),
-    reviewCount: gig.reviewCount,
-    availableThisWeek: gig.availableThisWeek,
-  })),
-  ...initialClasses
-    .filter((c) => c.moderationStatus === undefined || c.moderationStatus === "approved")
-    .map((c) => ({
-      kind: "class" as const,
-      id: c.id,
-      title: c.title,
-      educatorId: c.educatorId,
-      educatorName: c.educatorName,
-      educatorAvatar: c.educatorAvatar,
-      educatorVerified: c.educatorVerified,
-      subject: c.subject,
-      level: c.level,
-      format: "Online" as const,
-      price: c.price,
-      rating: c.rating,
-      description: c.description,
-      href: ROUTES.EDUCATOR_PROFILE(c.id),
-      schedule: c.schedule[0],
-      seatsLeft: c.maxStudents - c.enrolledStudents,
-      image: c.image,
-      status: c.status,
-    })),
-];
-
+/** MarketplaceExplorer: displays and filters marketplace listings */
 export function MarketplaceExplorer() {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("relevance");
@@ -78,8 +35,9 @@ export function MarketplaceExplorer() {
   const [page, setPage] = useState(1);
 
   /** Any change to search / sort / filters restarts from page 1 (adjust during render). */
-  const filterKey = `${query}|${sort}|${type}|${JSON.stringify(filters)}`;
+  const filterKey = `${query}:${sort}:${type}:${filters.subjects.join(",")}:${filters.levels.join(",")}:${filters.format}:${filters.maxPrice}:${filters.minRating}:${filters.availableThisWeek}:${filters.verifiedOnly}`;
   const [lastFilterKey, setLastFilterKey] = useState(filterKey);
+
   if (lastFilterKey !== filterKey) {
     setLastFilterKey(filterKey);
     setPage(1);
@@ -90,52 +48,11 @@ export function MarketplaceExplorer() {
   const allListings = useMemo(() => buildListings(), []);
 
   /** Option lists derived from real data so filters can never drift. */
-  const options = useMemo(() => {
-    const subjects = new Set<string>();
-    const levels = new Set<string>();
-    for (const item of allListings) {
-      subjects.add(item.subject);
-      levels.add(item.level);
-    }
-    return { subjects: [...subjects].sort(), levels: [...levels].sort() };
-  }, [allListings]);
+  const options = useMemo(() => getFilterOptions(allListings), [allListings]);
 
   const results = useMemo(() => {
-    const q = query.trim().toLowerCase();
-
-    const filtered = allListings.filter((item) => {
-      if (type === "gigs" && item.kind !== "gig") return false;
-      if (type === "classes" && item.kind !== "class") return false;
-
-      if (q) {
-        const haystack = `${item.title} ${item.educatorName} ${item.subject} ${item.level} ${item.description}`.toLowerCase();
-        if (!haystack.includes(q)) return false;
-      }
-      if (filters.subjects.length > 0 && !filters.subjects.includes(item.subject)) return false;
-      if (filters.levels.length > 0 && !filters.levels.includes(item.level)) return false;
-      if (filters.format !== "all" && item.format !== filters.format) return false;
-      if (item.price > filters.maxPrice) return false;
-      if (item.rating < filters.minRating) return false;
-      if (filters.availableThisWeek) {
-        if (item.kind === "gig" && !item.availableThisWeek) return false;
-        if (item.kind === "class" && (item.seatsLeft === undefined || item.seatsLeft <= 0)) return false;
-      }
-      if (filters.verifiedOnly && !item.educatorVerified) return false;
-      return true;
-    });
-
-    return [...filtered].sort((a, b) => {
-      switch (sort) {
-        case "rating":
-          return b.rating - a.rating;
-        case "price-asc":
-          return a.price - b.price;
-        case "price-desc":
-          return b.price - a.price;
-        default:
-          return 0; // relevance — keep the original stable order
-      }
-    });
+    const filtered = filterListings(allListings, { query, type, filters });
+    return sortListings(filtered, sort);
   }, [allListings, query, sort, type, filters]);
 
   const chips = useMemo<FilterChip[]>(() => {
@@ -199,7 +116,7 @@ export function MarketplaceExplorer() {
 
         <div className="min-w-0 flex flex-col gap-2">
           {Mentors.map((mentor) => (
-            <MentorCard key={mentor.id} {...mentor} orientation="horizontal" />
+            <MentorCard key={mentor.id} {...mentor} />
           ))}
 
           {/* Active filter chips */}
