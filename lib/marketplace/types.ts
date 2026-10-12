@@ -4,8 +4,6 @@
 // every piece speaks the same "filter language".
 // ============================================================
 
-export type ContentType = 'all' | 'gigs' | 'classes';
-
 export type SortKey = 'relevance' | 'rating' | 'price-asc' | 'price-desc';
 
 export type ViewMode = 'grid' | 'list';
@@ -37,12 +35,6 @@ export const DEFAULT_FILTERS: MarketplaceFilters = {
   availableThisWeek: false,
   verifiedOnly: false,
 };
-
-export const CONTENT_TYPES: readonly { value: ContentType; label: string }[] = [
-  { value: 'all', label: 'All' },
-  { value: 'gigs', label: 'Gigs' },
-  { value: 'classes', label: 'Batch classes' },
-];
 
 export const FORMAT_OPTIONS: readonly ('all' | GigFormat)[] = ['all', 'Online', 'In-person'];
 

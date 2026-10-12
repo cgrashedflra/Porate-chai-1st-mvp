@@ -1,12 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { LayoutGrid, List } from "lucide-react";
 import ROUTES from "@/constants/routes";
 import { Logo } from "@/components/ui/Logo";
 import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/lib/cn";
-import type { ContentType, MarketplaceFilters, SortKey, ViewMode } from "./types";
+import type { MarketplaceFilters, SortKey } from "./types";
 import { FilterMenu } from "./FilterMenu";
 
 type Props = {
@@ -14,12 +13,8 @@ type Props = {
   onQueryChange: (query: string) => void;
   sort: SortKey;
   onSortChange: (sort: SortKey) => void;
-  view: ViewMode;
-  onViewChange: (view: ViewMode) => void;
   filters: MarketplaceFilters;
   onFiltersChange: (next: MarketplaceFilters) => void;
-  type: ContentType;
-  onTypeChange: (type: ContentType) => void;
   subjects: string[];
   levels: string[];
   resultCount: number;
@@ -35,12 +30,8 @@ export function MarketplaceHeader({
   onQueryChange,
   sort,
   onSortChange,
-  view,
-  onViewChange,
   filters,
   onFiltersChange,
-  type,
-  onTypeChange,
   subjects,
   levels,
   resultCount,
@@ -106,8 +97,6 @@ export function MarketplaceHeader({
         <FilterMenu
           sort={sort}
           onSortChange={onSortChange}
-          type={type}
-          onTypeChange={onTypeChange}
           filters={filters}
           onFiltersChange={onFiltersChange}
           subjects={subjects}
@@ -117,35 +106,5 @@ export function MarketplaceHeader({
 
       </form>
     </header>
-  );
-}
-
-/** Compact grid / list view switcher. */
-function ViewToggle({ value, onChange }: { value: ViewMode; onChange: (view: ViewMode) => void }) {
-  const options = [
-    { value: "grid" as const, label: "Grid view", IconCmp: LayoutGrid },
-    { value: "list" as const, label: "List view", IconCmp: List },
-  ];
-
-  return (
-    <div role="group" aria-label="Results view" className="inline-flex h-12 items-center gap-0.5 rounded-xl border border-neutral-30 bg-neutral-0 p-1">
-      {options.map(({ value: optionValue, label, IconCmp }) => (
-        <button
-          key={optionValue}
-          type="button"
-          aria-label={label}
-          aria-pressed={value === optionValue}
-          onClick={() => onChange(optionValue)}
-          className={cn(
-            "grid h-10 w-10 place-items-center rounded-lg transition-colors",
-            value === optionValue
-              ? "bg-primary-500 text-neutral-0 shadow-sm shadow-primary-500/25"
-              : "text-neutral-500 hover:text-primary-500"
-          )}
-        >
-          <IconCmp className="h-4 w-4" />
-        </button>
-      ))}
-    </div>
   );
 }

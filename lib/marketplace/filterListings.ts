@@ -3,22 +3,18 @@
 // ============================================================
 
 import type { MarketplaceListing } from "@/types/types";
-import type { ContentType, MarketplaceFilters } from "./types";
+import type { MarketplaceFilters } from "./types";
 
 export interface FilterOptions {
   query: string;
-  type: ContentType;
   filters: MarketplaceFilters;
 }
 
 export const filterListings = (listings: MarketplaceListing[], options: FilterOptions): MarketplaceListing[] => {
-  const { query, type, filters } = options;
+  const { query, filters } = options;
   const q = query.trim().toLowerCase();
 
   return listings.filter((item) => {
-    if (type === "gigs" && item.kind !== "gig") return false;
-    if (type === "classes" && item.kind !== "class") return false;
-
     if (q) {
       const haystack = `${item.title} ${item.educatorName} ${item.subject} ${item.level} ${item.description}`.toLowerCase();
       if (!haystack.includes(q)) return false;

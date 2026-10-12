@@ -4,14 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { Check, ChevronDown, RotateCcw, SlidersHorizontal } from "lucide-react";
 import { cn } from "@/lib/cn";
 import {
-  CONTENT_TYPES,
   DEFAULT_FILTERS,
   PRICE_CAP,
   RATING_OPTIONS,
   SORT_OPTIONS,
   countActiveFilters,
   formatBDT,
-  type ContentType,
   type MarketplaceFilters,
   type SortKey,
 } from "@/lib/marketplace";
@@ -19,8 +17,6 @@ import {
 type Props = {
   sort: SortKey;
   onSortChange: (sort: SortKey) => void;
-  type: ContentType;
-  onTypeChange: (type: ContentType) => void;
   filters: MarketplaceFilters;
   onFiltersChange: (next: MarketplaceFilters) => void;
   subjects: string[];
@@ -40,8 +36,6 @@ const toggleValue = (list: string[], value: string) =>
 export function FilterMenu({
   sort,
   onSortChange,
-  type,
-  onTypeChange,
   filters,
   onFiltersChange,
   subjects,
@@ -117,31 +111,6 @@ export function FilterMenu({
                   );
                 })}
               </ul>
-            </Section>
-
-            {/* Content type */}
-            <Section title="Content type">
-              <div className="grid grid-cols-3 gap-1.5">
-                {CONTENT_TYPES.map((ct) => {
-                  const active = type === ct.value;
-                  return (
-                    <button
-                      key={ct.value}
-                      type="button"
-                      aria-pressed={active}
-                      onClick={() => onTypeChange(ct.value)}
-                      className={cn(
-                        "cursor-pointer rounded-lg px-2 py-2 text-[11px] font-semibold leading-tight transition",
-                        active
-                          ? "bg-primary-500 text-neutral-0 shadow-sm shadow-primary-500/25"
-                          : "border border-neutral-30 bg-neutral-20 text-neutral-600 hover:bg-neutral-30"
-                      )}
-                    >
-                      {ct.label}
-                    </button>
-                  );
-                })}
-              </div>
             </Section>
 
             {/* Availability */}

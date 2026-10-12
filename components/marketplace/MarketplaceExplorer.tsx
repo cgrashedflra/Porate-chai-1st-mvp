@@ -11,10 +11,8 @@ import {
   filterListings,
   sortListings,
   getFilterOptions,
-  type ContentType,
   type MarketplaceFilters,
   type SortKey,
-  type ViewMode,
 } from "@/lib/marketplace";
 import { MentorCard } from "../MentorCard";
 import { Mentors } from "@/data/home/mentors";
@@ -25,8 +23,6 @@ type FilterChip = { id: string; label: string; remove: () => void };
 export function MarketplaceExplorer() {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("relevance");
-  const [view, setView] = useState<ViewMode>("list");
-  const [type, setType] = useState<ContentType>("all");
   const [filters, setFilters] = useState<MarketplaceFilters>(DEFAULT_FILTERS);
 
   const allListings = useMemo(() => buildListings(), []);
@@ -35,9 +31,9 @@ export function MarketplaceExplorer() {
   const options = useMemo(() => getFilterOptions(allListings), [allListings]);
 
   const results = useMemo(() => {
-    const filtered = filterListings(allListings, { query, type, filters });
+    const filtered = filterListings(allListings, { query, filters });
     return sortListings(filtered, sort);
-  }, [allListings, query, sort, type, filters]);
+  }, [allListings, query, sort, filters]);
 
   const chips = useMemo<FilterChip[]>(() => {
     const out: FilterChip[] = [];
@@ -72,12 +68,8 @@ export function MarketplaceExplorer() {
         onQueryChange={setQuery}
         sort={sort}
         onSortChange={setSort}
-        view={view}
-        onViewChange={setView}
         filters={filters}
         onFiltersChange={setFilters}
-        type={type}
-        onTypeChange={setType}
         subjects={options.subjects}
         levels={options.levels}
         resultCount={results.length}
