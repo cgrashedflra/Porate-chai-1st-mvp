@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { LayoutGrid, List } from "lucide-react";
 import ROUTES from "@/constants/routes";
 import { Logo } from "@/components/ui/Logo";
 import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/lib/cn";
-import { SORT_OPTIONS, type SortKey, type ViewMode } from "./types";
+import type { ContentType, MarketplaceFilters, SortKey, ViewMode } from "./types";
+import { FilterMenu } from "./FilterMenu";
 
 type Props = {
   query: string;
@@ -16,14 +16,36 @@ type Props = {
   onSortChange: (sort: SortKey) => void;
   view: ViewMode;
   onViewChange: (view: ViewMode) => void;
+  filters: MarketplaceFilters;
+  onFiltersChange: (next: MarketplaceFilters) => void;
+  type: ContentType;
+  onTypeChange: (type: ContentType) => void;
+  subjects: string[];
+  levels: string[];
+  resultCount: number;
   className?: string;
 };
 
 /**
  * Marketplace page header — breadcrumb route, heading, and the big
- * search bar (brand logo + live search input + sort dropdown + view toggle).
+ * search bar (brand logo + live search input + filter/sort dropdown).
  */
-export function MarketplaceHeader({ query, onQueryChange, sort, onSortChange, view, onViewChange, className }: Props) {
+export function MarketplaceHeader({
+  query,
+  onQueryChange,
+  sort,
+  onSortChange,
+  view,
+  onViewChange,
+  filters,
+  onFiltersChange,
+  type,
+  onTypeChange,
+  subjects,
+  levels,
+  resultCount,
+  className,
+}: Props) {
   return (
     <header className={cn("pt-6 sm:pt-8", className)}>
       {/* Breadcrumb — small nav route */}
@@ -72,12 +94,6 @@ export function MarketplaceHeader({ query, onQueryChange, sort, onSortChange, vi
             aria-label="Search the marketplace"
             className="h-12 min-w-0 flex-1 bg-transparent body-sm text-neutral-900 outline-none placeholder:text-neutral-100"
           />
-        </div>
-
-        {/* Sort dropdown + view toggle + submit */}
-        <div className="flex items-center gap-2.5">
-          <SortDropdown value={sort} onChange={onSortChange} />
-          <ViewToggle value={view} onChange={onViewChange} />
           <button
             type="submit"
             className="inline-flex h-12 items-center gap-2 rounded-xl bg-primary-500 px-5 text-sm font-semibold text-neutral-0 shadow-sm shadow-primary-500/25 transition-colors hover:bg-primary-700"
@@ -86,77 +102,21 @@ export function MarketplaceHeader({ query, onQueryChange, sort, onSortChange, vi
             <span className="hidden sm:inline">Search</span>
           </button>
         </div>
+
+        <FilterMenu
+          sort={sort}
+          onSortChange={onSortChange}
+          type={type}
+          onTypeChange={onTypeChange}
+          filters={filters}
+          onFiltersChange={onFiltersChange}
+          subjects={subjects}
+          levels={levels}
+          resultCount={resultCount}
+        />
+
       </form>
     </header>
-  );
-}
-
-function SortDropdown({ value, onChange }: { value: SortKey; onChange: (sort: SortKey) => void }) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  const selected = SORT_OPTIONS.find((o) => o.value === value);
-
-  useEffect(() => {
-    if (!open) return;
-    const onPointerDown = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    document.addEventListener("mousedown", onPointerDown);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("mousedown", onPointerDown);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [open]);
-
-  return (
-    <div ref={ref} className="relative">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-haspopup="listbox"
-        aria-expanded={open}
-        className="inline-flex h-12 items-center gap-2 rounded-xl border border-neutral-30 bg-neutral-0 px-3.5 text-sm font-semibold text-neutral-600 transition-colors hover:border-primary-300 hover:text-primary-500"
-      >
-        <Icon name="layers" size={16} className="text-primary-500" />
-        <span className="hidden sm:inline">Sort: {selected?.label}</span>
-        <span className="sm:hidden">Sort</span>
-        <Icon name="chevronDown" size={16} className={cn("transition-transform duration-200", open && "rotate-180")} />
-      </button>
-
-      {open && (
-        <ul
-          role="listbox"
-          aria-label="Sort results"
-          className="absolute right-0 top-full z-30 mt-2 w-56 rounded-xl border border-neutral-30 bg-neutral-0 p-1.5 shadow-pc-lg"
-        >
-          {SORT_OPTIONS.map((option) => {
-            const active = value === option.value;
-            return (
-              <li key={option.value}>
-                <button
-                  type="button"
-                  role="option"
-                  aria-selected={active}
-                  onClick={() => {
-                    onChange(option.value);
-                    setOpen(false);
-                  }}
-                  className={cn(
-                    "flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm transition-colors",
-                    active ? "bg-primary-50 font-semibold text-primary-600" : "text-neutral-600 hover:bg-neutral-20"
-                  )}
-                >
-                  {option.label}
-                  {active && <Icon name="check" size={15} />}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </div>
   );
 }
 
