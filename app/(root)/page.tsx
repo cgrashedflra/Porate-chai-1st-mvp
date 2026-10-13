@@ -1,5 +1,4 @@
 import CTASection from "@/components/home/CTASection";
-import { TopBatches } from "@/components/home/TopBatches";
 import TopMentors from "@/components/home/TopMentors";
 import ForMentorsSection from "@/components/home/ForMentorsSection";
 import HeroSection from "@/components/home/HeroSection";
@@ -18,7 +17,6 @@ export default function Home() {
       <Testimonials />
       <HowItWorks />
       <TopMentors />
-      <TopBatches />
       <TrustAndSafety />
       <ForMentorsSection />
       <CTASection />
