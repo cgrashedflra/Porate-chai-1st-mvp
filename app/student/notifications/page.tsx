@@ -1,8 +1,15 @@
+import NotificationsPage from "@/components/notifications/NotificationsPage";
+import ROUTES from "@/constants/routes";
 
-const page = () => {
-    return (
-        <div>page</div>
-    )
-}
+const StudentNotificationsPage = () => {
+  return (
+    <NotificationsPage
+      filterLabels={{ earning: "Payments" }}
+      typeOverrides={{
+        earning: { action: "View payments", href: ROUTES.STUDENT.PAYMENTS },
+      }}
+    />
+  );
+};
 
-export default page
+export default StudentNotificationsPage;

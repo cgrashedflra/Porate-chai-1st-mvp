@@ -1,8 +1,7 @@
+import NotificationsPage from "@/components/notifications/NotificationsPage";
 
-const page = () => {
-    return (
-        <div>page</div>
-    )
-}
+const EducatorNotificationsPage = () => {
+  return <NotificationsPage />;
+};
 
-export default page
+export default EducatorNotificationsPage;
