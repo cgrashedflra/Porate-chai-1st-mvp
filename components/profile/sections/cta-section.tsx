@@ -34,7 +34,7 @@ export function CTASection({ className }: CTASectionProps) {
                 </>
             }
             title="Ready to start learning?"
-            description="Send a message or book your first class with this mentor"
+            description="Send a message or book your first class with this educator"
             actions={actions}
         />
     );

@@ -1,6 +1,6 @@
 export type HomeBatchStatus = 'Live Batch' | 'Upcoming' | 'Ongoing' | 'New';
 
-export interface Mentor {
+export interface EducatorCardData {
     id: string;
     name: string;
     image: string;
@@ -14,10 +14,9 @@ export interface Mentor {
     extraSubjectsCount?: number;
     bio: string;
     pricePerSession: number;
-    orientation?: 'vertical' | 'horizontal';
 }
 
-export interface HomeBatchMentor {
+export interface HomeBatchEducator {
     id: string;
     name: string;
     image: string;
@@ -30,8 +29,8 @@ export interface HomeBatch {
     title: string;
     description: string;
     tags: string[];
-    mentors: HomeBatchMentor[];
-    mentorsCountText: string;
+    educators: HomeBatchEducator[];
+    educatorsCountText: string;
     startDate: string;
     duration: string;
     filledSeats: number;

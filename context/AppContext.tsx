@@ -85,7 +85,6 @@ const defaultEducatorUser: UserSession = {
     role: 'educator',
     id: 'ahsan-rahman',
     name: 'Ahsan Rahman',
-    professionalName: 'Ahsan Rahman (Concept Physics)',
     email: 'ahsan.rahman@piratechai.com',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
     phone: '+880 1819 876543',
@@ -503,7 +502,6 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
             setUser(prev => ({
                 ...prev,
                 name: updates.name || prev.name,
-                professionalName: updates.professionalName || prev.professionalName,
                 bio: updates.bio || prev.bio,
                 startingPrice: updates.priceMin || prev.startingPrice
             }));

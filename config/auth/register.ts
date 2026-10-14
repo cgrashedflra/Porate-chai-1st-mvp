@@ -19,7 +19,7 @@ export const registerConfig: AuthConfig = {
   mode: "register",
 
   title: "Create Your Account",
-  subtitle: "Join thousands of students and mentors",
+  subtitle: "Join thousands of students and educators",
 
   fields: [
     {
@@ -64,7 +64,7 @@ export const registerConfig: AuthConfig = {
 
     features: [
       {
-        title: "Find the right mentor",
+        title: "Find the right educator",
         description: "From 1000+ verified teachers",
         icon: "userCheck",
       },

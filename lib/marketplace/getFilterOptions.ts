@@ -1,14 +1,14 @@
 // ============================================================
-// MARKETPLACE — derive filter options from mentors
+// MARKETPLACE — derive filter options from educators
 // ============================================================
 
-import type { Mentor } from "@/data/home/types";
+import type { EducatorCardData } from "@/data/home/types";
 
-/** Subjects are collected from every mentor so the filter list can never drift. */
-export const getFilterOptions = (mentors: Mentor[]) => {
+/** Subjects are collected from every educator so the filter list can never drift. */
+export const getFilterOptions = (educators: EducatorCardData[]) => {
   const subjects = new Set<string>();
-  for (const mentor of mentors) {
-    for (const subject of mentor.subjects) subjects.add(subject);
+  for (const educator of educators) {
+    for (const subject of educator.subjects) subjects.add(subject);
   }
   return { subjects: [...subjects].sort() };
 };

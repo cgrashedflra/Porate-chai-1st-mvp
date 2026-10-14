@@ -70,7 +70,7 @@ export function Footer() {
                         </Link>
 
                         <p className="body-sm mt-4 max-w-sm text-neutral-100">
-                            Connect with qualified educators and academic mentors for
+                            Connect with qualified educators and academic experts for
                             personalized 1-on-1 tutoring, syllabus guidance, and
                             structured cohort classes.
                         </p>

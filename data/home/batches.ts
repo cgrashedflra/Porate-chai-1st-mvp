@@ -10,12 +10,12 @@ export const homeBatches: HomeBatch[] = [
         title: 'Full Stack Web Development',
         description: 'Learn modern web development with React, Next.js, Node.js, and PostgreSQL. Build real projects and get job-ready.',
         tags: ['Next.js', 'React', 'Node.js', 'PostgreSQL'],
-        mentors: [
+        educators: [
             { id: 'm1', name: 'Rahat', image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80' },
             { id: 'm2', name: 'Tanvir', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80' },
             { id: 'm3', name: 'Sabbir', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80' },
         ],
-        mentorsCountText: 'Expert Mentors',
+        educatorsCountText: 'Expert Educators',
         startDate: 'Apr 28, 2025',
         duration: '12 Weeks',
         filledSeats: 24,
@@ -33,11 +33,11 @@ export const homeBatches: HomeBatch[] = [
         title: 'Data Science with Python',
         description: 'Master data analysis, visualization, and machine learning with Python. Work on real datasets and build your portfolio.',
         tags: ['Python', 'Pandas', 'NumPy', 'ML'],
-        mentors: [
+        educators: [
             { id: 'm4', name: 'Asif', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80' },
             { id: 'm5', name: 'Farhan', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80' },
         ],
-        mentorsCountText: 'Expert Mentors',
+        educatorsCountText: 'Expert Educators',
         startDate: 'May 10, 2025',
         duration: '10 Weeks',
         filledSeats: 20,
@@ -55,11 +55,11 @@ export const homeBatches: HomeBatch[] = [
         title: 'UI/UX Design Fundamentals',
         description: 'Learn design thinking, Figma, and modern UI/UX principles. Create beautiful and user-friendly digital experiences.',
         tags: ['Figma', 'Wireframing', 'Prototyping', 'UX'],
-        mentors: [
+        educators: [
             { id: 'm6', name: 'Naim', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80' },
             { id: 'm7', name: 'Siam', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80' },
         ],
-        mentorsCountText: 'Expert Mentors',
+        educatorsCountText: 'Expert Educators',
         startDate: 'Apr 15, 2025',
         duration: '8 Weeks',
         filledSeats: 15,
@@ -77,11 +77,11 @@ export const homeBatches: HomeBatch[] = [
         title: 'Spoken English (Confidence Building)',
         description: 'Improve your speaking, listening and communication skills with practical sessions and real-life conversations.',
         tags: ['Speaking', 'Listening', 'Grammar', 'Fluency'],
-        mentors: [
+        educators: [
             { id: 'm8', name: 'Ayesha', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80' },
             { id: 'm9', name: 'Sadia', image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80' },
         ],
-        mentorsCountText: 'Expert Mentors',
+        educatorsCountText: 'Expert Educators',
         startDate: 'May 5, 2025',
         duration: '6 Weeks',
         filledSeats: 18,

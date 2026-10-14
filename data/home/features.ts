@@ -1,6 +1,6 @@
 import { HomeFeature } from './types';
 
-export const mentorFeatures: HomeFeature[] = [
+export const educatorFeatures: HomeFeature[] = [
     {
         icon: 'users',
         color: 'indigo',
@@ -27,7 +27,7 @@ export const mentorFeatures: HomeFeature[] = [
     },
 ];
 
-export const mentorSubjects = [
+export const educatorSubjects = [
     { name: 'Physics', icon: 'atom', color: 'blue' },
     { name: 'Mathematics', icon: 'book', color: 'emerald' },
     { name: 'Chemistry', icon: 'atom', color: 'amber' },

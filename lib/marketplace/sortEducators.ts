@@ -1,12 +1,12 @@
 // ============================================================
-// MARKETPLACE — sort mentors
+// MARKETPLACE — sort educators
 // ============================================================
 
-import type { Mentor } from "@/data/home/types";
+import type { EducatorCardData } from "@/data/home/types";
 import type { SortKey } from "./types";
 
-export const sortMentors = (mentors: Mentor[], sort: SortKey): Mentor[] => {
-  return [...mentors].sort((a, b) => {
+export const sortEducators = (educators: EducatorCardData[], sort: SortKey): EducatorCardData[] => {
+  return [...educators].sort((a, b) => {
     switch (sort) {
       case "rating":
         return b.rating - a.rating;
@@ -20,4 +20,4 @@ export const sortMentors = (mentors: Mentor[], sort: SortKey): Mentor[] => {
   });
 };
 
-export default sortMentors;
+export default sortEducators;

@@ -1,13 +1,13 @@
 import { initialEducators } from '@/data/educators';
 import type { Educator } from '@/types/types';
-import type { Mentor } from './types';
+import type { EducatorCardData } from './types';
 
 /**
- * Mentor cards are a projection of the single educator dataset
- * (`data/educators.tsx`). The app has no separate mentor list — the
+ * Educator cards are a projection of the single educator dataset
+ * (`data/educators.tsx`). The app has no separate list — the
  * marketplace and the home page both read from the same educators.
  */
-export function educatorToMentor(educator: Educator): Mentor {
+export function educatorToCard(educator: Educator): EducatorCardData {
     return {
         id: educator.id,
         name: educator.name,
@@ -29,8 +29,8 @@ const listedEducators = initialEducators.filter(
     (educator) => educator.verificationStatus !== 'suspended'
 );
 
-/** Every publicly listed educator, as a marketplace mentor card. */
-export const Mentors: Mentor[] = listedEducators.map(educatorToMentor);
+/** Every publicly listed educator, as a marketplace educator card. */
+export const educators: EducatorCardData[] = listedEducators.map(educatorToCard);
 
-/** Featured subset shown in the home page "Top Mentors" section. */
-export const homeMentors: Mentor[] = Mentors.slice(0, 6);
+/** Featured subset shown in the home page "Top Educators" section. */
+export const homeEducators: EducatorCardData[] = educators.slice(0, 6);

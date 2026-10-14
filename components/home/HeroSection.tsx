@@ -21,7 +21,7 @@ const HeroSection = () => {
                         </div>
 
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-deep-blue-800 tracking-tight leading-[1.12]">
-                            Find the Right Mentor.{' '}
+                            Find the Right Educator.{' '}
                             <span className="text-primary-500">
                                 Learn Your Way.
                             </span>
@@ -46,7 +46,7 @@ const HeroSection = () => {
                                     icon="arrowRight"
                                     className="h-11"
                                 >
-                                    Find a Mentor
+                                    Find an Educator
                                 </ButtonLink>
                             </div>
 
@@ -71,7 +71,7 @@ const HeroSection = () => {
                                 id="hero-primary-cta"
                                 icon="arrowRight"
                             >
-                                Find a Mentor
+                                Find an Educator
                             </ButtonLink>
                             <ButtonLink
                                 href={ROUTES.MARKETPLACE}
@@ -91,7 +91,7 @@ const HeroSection = () => {
                                 <Image
                                     fill
                                     src="/assets/Hero-splash.jpeg"
-                                    alt="Students collaborating with mentor in live session"
+                                    alt="Students collaborating with an educator in live session"
                                     sizes="(min-width: 1024px) 40vw, 90vw"
                                     className="object-cover"
                                     priority
@@ -117,7 +117,7 @@ const HeroSection = () => {
 
                             </div>
 
-                            {/* Floating Mentor Card badge */}
+                            {/* Floating Educator Card badge */}
                             <div className="glass-card absolute -top-3 -left-3 sm:-left-5 p-3 rounded-xl shadow-lg shadow-primary-500/20 flex items-center gap-2.5 animate-in fade-in zoom-in-95 duration-300">
                                 <Image
                                     src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"

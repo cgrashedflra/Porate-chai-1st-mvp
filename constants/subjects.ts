@@ -1,7 +1,7 @@
 // ============================================================
 // SUBJECT → BADGE VARIANT — subject-wise colors, location-agnostic.
 // The SAME subject always renders the SAME variant no matter
-// where it appears (hero, mentor card, popular subjects, ...).
+// where it appears (hero, educator card, popular subjects, ...).
 // ============================================================
 
 import type { BadgeVariant } from './badge';

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CTASection, TeacherProfilePage, getTeacherById } from "@/components/profile";
+import { TeacherProfilePage } from "@/components/profile/teacher-profile-page";
+import { CTASection } from "@/components/profile/sections/cta-section";
+import { getTeacherById } from "@/components/profile/data/mock-data";
 import ROUTES from "@/constants/routes";
 
 interface EducatorProfilePageProps {

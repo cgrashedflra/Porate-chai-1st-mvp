@@ -20,7 +20,7 @@ export function AboutTab({ teacher }: AboutTabProps) {
     return (
         <div className="grid gap-5 lg:grid-cols-2">
             <div className="space-y-5">
-                <SectionCard icon={UserCheck} title="About Me" onEdit="Edit about me" className="border-0 p-0! shadow-none">
+                <SectionCard icon={UserCheck} title="About Me" className="border-0 p-0! shadow-none">
                     <p className="text-sm leading-7 text-slate-600">{teacher.about}</p>
                     <div className="mt-5 grid gap-3 sm:grid-cols-3">
                         {teacher.facts.map(({ icon, value, label }) => (
@@ -35,7 +35,7 @@ export function AboutTab({ teacher }: AboutTabProps) {
                     </div>
                 </SectionCard>
 
-                <SectionCard icon={GraduationCap} title="Qualifications" onEdit="Edit qualifications">
+                <SectionCard icon={GraduationCap} title="Qualifications">
                     <ul className="space-y-4">
                         {teacher.qualifications.map((q) => (
                             <li key={q.title} className="flex items-center gap-3">

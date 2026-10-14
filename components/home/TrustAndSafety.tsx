@@ -103,7 +103,7 @@ export const TrustAndSafety = () => {
                                 {/* Floating Badge - Middle Right */}
                                 <div className="glass-card absolute top-20 right-0 z-20 px-3 py-1.5 rounded-full shadow-md shadow-primary-500/15 flex items-center gap-1.5 text-xs font-medium text-primary-500">
                                     <ShieldCheck className="w-3.5 h-3.5 text-primary-500" />
-                                    <span>Verified Mentor</span>
+                                    <span>Verified Educator</span>
                                 </div>
 
                                 {/* Floating Badge - Bottom Left */}

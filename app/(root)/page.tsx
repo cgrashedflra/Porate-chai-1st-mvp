@@ -1,6 +1,6 @@
 import CTASection from "@/components/home/CTASection";
-import TopMentors from "@/components/home/TopMentors";
-import ForMentorsSection from "@/components/home/ForMentorsSection";
+import TopEducators from "@/components/home/TopEducators";
+import ForEducatorsSection from "@/components/home/ForEducatorsSection";
 import HeroSection from "@/components/home/HeroSection";
 import HowItWorks from "@/components/home/HowItWorks";
 import PopularSubjects from "@/components/home/PopularSubjects";
@@ -16,9 +16,9 @@ export default function Home() {
       <PopularSubjects />
       <Testimonials />
       <HowItWorks />
-      <TopMentors />
+      <TopEducators />
       <TrustAndSafety />
-      <ForMentorsSection />
+      <ForEducatorsSection />
       <CTASection />
     </div>
   );

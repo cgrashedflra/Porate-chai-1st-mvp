@@ -1,8 +1,8 @@
 # Porate Chai
 
-> **An online learning platform connecting students, tutors, and mentors through live video-based learning from home.**
+> **An online learning platform connecting students, tutors, and educators through live video-based learning from home.**
 
-Porate Chai is an e-learning platform designed to make online education more accessible by connecting **students with tutors and mentors** for live, interactive learning sessions.
+Porate Chai is an e-learning platform designed to make online education more accessible by connecting **students with tutors and educators** for live, interactive learning sessions.
 
 This repository contains the **frontend application** of Porate Chai.
 
@@ -21,7 +21,7 @@ This repository contains the **frontend application** of Porate Chai.
 * [ ] Authentication UI
 * [ ] Student experience
 * [ ] Tutor experience
-* [ ] Mentor experience
+* [ ] Educator experience
 * [ ] Live class experience
 * [ ] Messaging
 * [ ] Dashboards
@@ -62,13 +62,13 @@ Porate Chai connects three primary user types:
 
 Students can:
 
-* Discover tutors and mentors
+* Discover tutors and educators
 * Search and filter instructors
 * View instructor profiles
 * Explore subjects and courses
 * Book learning sessions
 * Join live video classes
-* Chat with tutors/mentors
+* Chat with tutors/educators
 * Track upcoming and previous classes
 * Manage their learning activity
 
@@ -85,15 +85,15 @@ Tutors can:
 * Communicate with students
 * Track their teaching activity
 
-### 🧑‍💼 Mentor
+### 🧑‍💼 Educator
 
-Mentors provide higher-level guidance such as:
+Educators provide higher-level guidance such as:
 
 * Career guidance
 * Academic guidance
 * Skill development
-* Personal mentorship
-* One-to-one mentoring sessions
+* Personal guidance
+* One-to-one guidance sessions
 
 ---
 
@@ -179,7 +179,7 @@ Mentors provide higher-level guidance such as:
 * [ ] Search
 * [ ] How Porate Chai works
 * [ ] Featured tutors
-* [ ] Featured mentors
+* [ ] Featured educators
 * [ ] Popular subjects
 * [ ] Benefits
 * [ ] Testimonials
@@ -191,7 +191,7 @@ Mentors provide higher-level guidance such as:
 * [ ] About
 * [ ] How it works
 * [ ] Tutors
-* [ ] Mentors
+* [ ] Educators
 * [ ] Subjects
 * [ ] Pricing
 * [ ] Contact
@@ -211,7 +211,7 @@ Mentors provide higher-level guidance such as:
 * [ ] Register
 * [ ] Student registration
 * [ ] Tutor registration
-* [ ] Mentor registration
+* [ ] Educator registration
 * [ ] Forgot password
 * [ ] Reset password
 * [ ] Email verification
@@ -225,14 +225,14 @@ Mentors provide higher-level guidance such as:
 
 ---
 
-# Checkpoint 05 — Tutor & Mentor Discovery
+# Checkpoint 05 — Tutor & Educator Discovery
 
 **Goal:** Allow students to find the right instructor.
 
 ### Discovery
 
 * [ ] Tutor listing
-* [ ] Mentor listing
+* [ ] Educator listing
 * [ ] Search
 * [ ] Subject filter
 * [ ] Location filter
@@ -273,7 +273,7 @@ Mentors provide higher-level guidance such as:
 * [ ] Previous classes
 * [ ] Active bookings
 * [ ] Recommended tutors
-* [ ] Recommended mentors
+* [ ] Recommended educators
 * [ ] Notifications
 * [ ] Learning activity
 
@@ -340,12 +340,12 @@ Mentors provide higher-level guidance such as:
 
 ---
 
-# Checkpoint 08 — Mentor Experience
+# Checkpoint 08 — Educator Experience
 
-**Goal:** Support the mentor-specific workflow.
+**Goal:** Support the educator-specific workflow.
 
-* [ ] Mentor dashboard
-* [ ] Mentor profile
+* [ ] Educator dashboard
+* [ ] Educator profile
 * [ ] Expertise
 * [ ] Availability
 * [ ] Session management
@@ -357,7 +357,7 @@ Mentors provide higher-level guidance such as:
 
 **Checkpoint:**
 
-> Mentors have a complete workflow appropriate for one-to-one mentorship.
+> Educators have a complete workflow appropriate for one-to-one guidance.
 
 ---
 
@@ -413,7 +413,7 @@ Mentors provide higher-level guidance such as:
 
 **Checkpoint:**
 
-> Students, tutors, and mentors can communicate before and around their sessions.
+> Students, tutors, and educators can communicate before and around their sessions.
 
 ---
 
@@ -445,7 +445,7 @@ Mentors provide higher-level guidance such as:
 * [ ] Users
 * [ ] Students
 * [ ] Tutors
-* [ ] Mentors
+* [ ] Educators
 * [ ] Sessions
 * [ ] Bookings
 * [ ] Payments
@@ -552,7 +552,7 @@ Test every major screen at:
 * [ ] Booking flow
 * [ ] Student flow
 * [ ] Tutor flow
-* [ ] Mentor flow
+* [ ] Educator flow
 * [ ] Messaging flow
 * [ ] Live class flow
 * [ ] Responsive testing
@@ -594,7 +594,7 @@ The primary student journey should work like this:
 ```text
 Landing Page
      ↓
-Discover Tutors / Mentors
+Discover Tutors / Educators
      ↓
 Search / Filter
      ↓
@@ -650,7 +650,7 @@ src/
 │   ├── (auth)/
 │   ├── student/
 │   ├── tutor/
-│   ├── mentor/
+│   ├── educator/
 │   ├── admin/
 │   ├── classroom/
 │   └── api/
@@ -667,7 +667,7 @@ src/
 │   ├── auth/
 │   ├── students/
 │   ├── tutors/
-│   ├── mentors/
+│   ├── educators/
 │   ├── bookings/
 │   ├── classroom/
 │   ├── messaging/
@@ -697,7 +697,7 @@ Update this section as development progresses.
 | Tutor Discovery      | 🟡 In Progress |
 | Student Experience   | ⬜ Not Started |
 | Tutor Experience     | ⬜ Not Started |
-| Mentor Experience    | ⬜ Not Started |
+| Educator Experience  | ⬜ Not Started |
 | Live Classroom       | ⬜ Not Started |
 | Messaging            | ⬜ Not Started |
 | Notifications        | ⬜ Not Started |

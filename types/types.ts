@@ -37,7 +37,6 @@ export interface DaySchedule {
 export interface Educator {
   id: string;
   name: string;
-  professionalName: string;
   avatar: string;
   verified: boolean;
   verificationStatus?: 'pending' | 'approved' | 'rejected' | 'suspended';
@@ -58,14 +57,12 @@ export interface Educator {
   qualifications: string[];
   teachingFormats: ('1-on-1' | 'Batch classes')[];
   priceMin: number;
-  priceMax: number;
   availableThisWeek: boolean;
   description: string;
   bio: string;
   teachingPhilosophy?: string;
   whoITeach?: string;
   timeline: TimelineItem[];
-  portfolio: string[];
   schedule: DaySchedule[];
   reviews: Review[];
 }
@@ -195,7 +192,6 @@ export interface UserSession {
   educationLevel?: string;
   subjects?: string[];
   // For educator
-  professionalName?: string;
   experience?: number;
   startingPrice?: number;
   bio?: string;

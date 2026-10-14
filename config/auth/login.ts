@@ -52,7 +52,7 @@ export const loginConfig: AuthConfig = {
         icon: "shield",
       },
       {
-        title: "Verified Mentors",
+        title: "Verified Educators",
         description: "Only qualified & trusted teachers",
         icon: "userCheck",
       },

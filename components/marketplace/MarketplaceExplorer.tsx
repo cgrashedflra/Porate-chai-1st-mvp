@@ -9,32 +9,32 @@ import {
   PRICE_CAP,
   countActiveFilters,
   formatBDT,
-  getMentors,
-  filterMentors,
-  sortMentors,
+  getEducators,
+  filterEducators,
+  sortEducators,
   getFilterOptions,
   type MarketplaceFilters,
   type SortKey,
 } from "@/lib/marketplace";
-import { MentorGrid } from "./MentorGrid";
+import { EducatorGrid } from "./EducatorGrid";
 
 type FilterChip = { id: string; label: string; remove: () => void };
 
-/** MarketplaceExplorer: displays and filters marketplace mentors */
+/** MarketplaceExplorer: displays and filters marketplace educators */
 export function MarketplaceExplorer() {
   const [sort, setSort] = useState<SortKey>("relevance");
   const [filters, setFilters] = useState<MarketplaceFilters>(DEFAULT_FILTERS);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
-  const allMentors = useMemo(() => getMentors(), []);
+  const allEducators = useMemo(() => getEducators(), []);
 
   /** Option lists derived from real data so filters can never drift. */
-  const options = useMemo(() => getFilterOptions(allMentors), [allMentors]);
+  const options = useMemo(() => getFilterOptions(allEducators), [allEducators]);
 
   const results = useMemo(() => {
-    const filtered = filterMentors(allMentors, { query: "", filters });
-    return sortMentors(filtered, sort);
-  }, [allMentors, sort, filters]);
+    const filtered = filterEducators(allEducators, { query: "", filters });
+    return sortEducators(filtered, sort);
+  }, [allEducators, sort, filters]);
 
   const chips = useMemo<FilterChip[]>(() => {
     const out: FilterChip[] = [];
@@ -92,7 +92,7 @@ export function MarketplaceExplorer() {
 
         {/* Results */}
         <div className="flex min-w-0 flex-col gap-3">
-          <MentorGrid mentors={results} />
+          <EducatorGrid educators={results} />
 
           {/* Active filter chips */}
           {chips.length > 0 && (

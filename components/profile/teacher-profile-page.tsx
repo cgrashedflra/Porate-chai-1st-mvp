@@ -7,7 +7,6 @@ import { ProfileHero } from "./sections/profile-hero";
 import { StatCard } from "./sections/stat-card";
 import { AboutTab } from "./sections/about-tab";
 import { ComingSoon } from "./sections/coming-soon";
-import { cardClass } from "./shared/card-class";
 import type { TeacherProfile } from "./types/teacher";
 
 interface TeacherProfilePageProps {
@@ -99,7 +98,7 @@ export function TeacherProfilePage({
                 />
             </div>
 
-            <section className={cn(cardClass, "p-5")}>
+            <section className="rounded-2xl border border-indigo-100/80 bg-white p-5 shadow-[0_4px_20px_-8px_rgba(99,102,241,0.18)]">
                 <div
                     role="tablist"
                     aria-label="Profile sections"

@@ -1,6 +1,6 @@
 // ============================================================
 // MARKETPLACE — shared filter / sort types & constants.
-// The marketplace lists mentors only, so these speak the mentor
+// The marketplace lists educators only, so these speak the educator
 // filter language: subjects, price, rating and verified status.
 // ============================================================
 
@@ -12,7 +12,7 @@ export interface MarketplaceFilters {
   maxPrice: number;
   /** Minimum rating; 0 = any rating. */
   minRating: number;
-  /** Only show verified mentors. */
+  /** Only show verified educators. */
   verifiedOnly: boolean;
 }
 

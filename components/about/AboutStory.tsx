@@ -61,8 +61,8 @@ export function AboutStory() {
               <div className="relative aspect-4/3 overflow-hidden rounded-3xl border border-neutral-30 bg-neutral-0 shadow-pc-lg">
                 <Image
                   fill
-                  src="/assets/mentor.png"
-                  alt="Mentors guiding students through a Porate Chai online session"
+                  src="/assets/educators.png"
+                  alt="Educators guiding students through a Porate Chai online session"
                   sizes="(min-width: 1024px) 45vw, 92vw"
                   className="object-cover"
                 />

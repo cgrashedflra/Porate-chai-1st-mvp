@@ -89,7 +89,7 @@ function toTeacherProfile(educator: Educator): TeacherProfile {
         ],
         qualifications: educator.qualifications.map((title) => ({ title, place: "", years: "" })),
         highlights: [
-            `${educator.experience}+ years of mentoring experience`,
+            `${educator.experience}+ years of teaching experience`,
             `${educator.reviewCount} verified student reviews`,
             educator.availableThisWeek ? "Available for booking this week" : "Waitlist only this week",
             `Sessions: ${formats}`,

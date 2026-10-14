@@ -1,7 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { ArrowUp } from "lucide-react";
 import { cn } from "@/lib/cn";
-import { cardClass } from "../shared/card-class";
 
 interface StatCardProps {
     icon: LucideIcon;
@@ -14,7 +13,7 @@ interface StatCardProps {
 
 export function StatCard({ icon: Icon, label, value, trend, note, tile }: StatCardProps) {
     return (
-        <div className={cn(cardClass, "flex items-start gap-4 p-5")}>
+        <div className={cn("rounded-2xl border border-indigo-100/80 bg-white shadow-[0_4px_20px_-8px_rgba(99,102,241,0.18)]", "flex items-start gap-4 p-5")}>
             <div className={cn("grid size-12 shrink-0 place-items-center rounded-full", tile)}>
                 <Icon className="size-5" />
             </div>

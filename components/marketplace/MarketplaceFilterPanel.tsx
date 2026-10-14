@@ -30,7 +30,7 @@ const toggleValue = (list: string[], value: string) =>
   list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
 
 /**
- * MarketplaceFilterPanel — every mentor filter grouped into sections
+ * MarketplaceFilterPanel — every educator filter grouped into sections
  * (verified, price, rating & subjects). Rendered in the sticky left
  * column on large screens and inside the slide-in drawer below `lg`.
  */
