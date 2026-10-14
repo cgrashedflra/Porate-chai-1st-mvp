@@ -16,6 +16,7 @@ import Image from 'next/image';
 import ROUTES from '@/constants/routes';
 import { ButtonLink } from '@/components/ui/ButtonLink';
 import { mentorFeatures, mentorSubjects } from '@/data/home/features';
+import { homeMentors } from '@/data/home/mentors';
 
 const featureIcons = {
     users: Users,
@@ -45,6 +46,9 @@ const subjectColors = {
 } as const;
 
 export default function ForMentorsSection() {
+    /** Sample profile shown in the hero visual — pulled from the shared educator data. */
+    const sampleMentor = homeMentors[0];
+
     return (
         <section className="relative w-full overflow-hidden bg-neutral-20/50 py-12 lg:py-20 font-sans">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,25 +156,27 @@ export default function ForMentorsSection() {
                                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                                         <div>
                                             <div className="flex items-center gap-1.5">
-                                                <h2 className="font-bold text-neutral-800 text-base">Rafid Hasan</h2>
-                                                <CheckCircle className="w-4 h-4 fill-primary-500 text-neutral-0" />
+                                                <h2 className="font-bold text-neutral-800 text-base">{sampleMentor.name}</h2>
+                                                {sampleMentor.isVerified && (
+                                                    <CheckCircle className="w-4 h-4 fill-primary-500 text-neutral-0" />
+                                                )}
                                             </div>
-                                            <p className="text-xs text-neutral-500 mt-0.5">Physics Teacher | B.Sc in Physics</p>
+                                            <p className="text-xs text-neutral-500 mt-0.5">{sampleMentor.role} | {sampleMentor.qualification}</p>
 
                                             <div className="flex items-center gap-3 mt-2 text-xs">
                                                 <div className="flex items-center gap-1 text-orange-500 font-semibold">
                                                     <Star className="w-3.5 h-3.5 fill-orange-400 text-orange-400" />
-                                                    <span>4.9</span>
-                                                    <span className="text-neutral-400 font-normal">(320 reviews)</span>
+                                                    <span>{sampleMentor.rating.toFixed(1)}</span>
+                                                    <span className="text-neutral-400 font-normal">({sampleMentor.reviewsCount} reviews)</span>
                                                 </div>
                                                 <span className="text-neutral-300">|</span>
                                                 <div className="font-bold text-neutral-800">
-                                                    ৳400 <span className="text-neutral-400 font-normal">/ session</span>
+                                                    ৳{sampleMentor.pricePerSession} <span className="text-neutral-400 font-normal">/ session</span>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <ButtonLink href={ROUTES.EDUCATOR_PROFILE('rafid-hasan')} size="sm" icon="arrowRight" className="w-full sm:w-auto">
+                                        <ButtonLink href={ROUTES.EDUCATOR_PROFILE(sampleMentor.id)} size="sm" icon="arrowRight" className="w-full sm:w-auto">
                                             View Profile
                                         </ButtonLink>
                                     </div>

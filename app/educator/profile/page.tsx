@@ -1,9 +1,11 @@
-const ProfilePage = () => {
-    return (
-        <div>
-            <h1>Educator Profile</h1>
-        </div>
-    )
-}
+import { TeacherProfilePage, teacher } from "@/components/profile";
 
-export default ProfilePage
+export default function Profile() {
+    return (
+        <TeacherProfilePage
+            teacher={teacher}
+            tabs={["About", "Classes", "Availability", "Reviews"]}
+            maxWidthClassName="max-w-5xl"
+        />
+    );
+}

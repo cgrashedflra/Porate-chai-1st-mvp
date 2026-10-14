@@ -7,7 +7,7 @@ import type { RoleNavConfig } from "./types";
  * Every `href` comes from the canonical `ROUTES` map — never a hardcoded
  * path string, never a phantom top-level key. The public navbar has NO
  * personal links here (those are role-scoped); role personal routes
- * (Saved, Messages, Profile, Settings) live only in this role config.
+ * (Messages, Profile, Settings) live only in this role config.
  */
 export const studentNav: RoleNavConfig = {
   role: "student",
@@ -20,7 +20,6 @@ export const studentNav: RoleNavConfig = {
       { label: "Dashboard", href: ROUTES.STUDENT.DASHBOARD, icon: "layoutDashboard", exact: true },
       { label: "My Classes", href: ROUTES.STUDENT.MY_CLASSES, icon: "calendar", badge: 2 },
       { label: "My Educators", href: ROUTES.STUDENT.MY_EDUCATORS, icon: "user" },
-      { label: "Saved", href: ROUTES.STUDENT.SAVED, icon: "bookmark" },
       { label: "Messages", href: ROUTES.STUDENT.MESSAGES, icon: "message", badge: 3 },
       { label: "Payments", href: ROUTES.STUDENT.PAYMENTS, icon: "creditCard" },
       { label: "Profile", href: ROUTES.STUDENT.PROFILE, icon: "userCheck" },
