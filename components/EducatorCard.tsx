@@ -10,7 +10,6 @@ export interface EducatorCardProps {
     id: string;
     name: string;
     image: string;
-    role: string;
     qualification: string;
     rating: number;
     reviewsCount: number;
@@ -20,7 +19,6 @@ export interface EducatorCardProps {
     extraSubjectsCount?: number;
     bio: string;
     pricePerSession: number;
-    classType?: string;
 }
 
 /**
@@ -32,7 +30,6 @@ export const EducatorCard = ({
     id,
     name,
     image,
-    role,
     qualification,
     rating,
     reviewsCount,
@@ -42,7 +39,6 @@ export const EducatorCard = ({
     extraSubjectsCount,
     bio,
     pricePerSession,
-    classType = '1 on 1',
 }: EducatorCardProps) => {
     const identity = (
         <div className="flex min-w-0 flex-col gap-2">
@@ -53,7 +49,7 @@ export const EducatorCard = ({
                 )}
             </div>
             <p className="text-xs text-deep-blue-300">
-                {role} <span>|</span> {qualification}
+                {qualification}
             </p>
         </div>
     );
@@ -94,13 +90,13 @@ export const EducatorCard = ({
     return (
         <div className="glass-card flex h-full min-w-0 flex-col justify-between gap-4 rounded-3xl p-6 shadow-md shadow-primary-500/10 transition-shadow duration-300 hover:shadow-lg hover:shadow-primary-500/20">
             <div>
-                <div className="mb-2.5 flex items-start gap-4">
+                <div className="mb-2.5 flex flex-col items-start gap-4 sm:flex-row">
                     <Image
                         src={image}
                         alt={name}
                         width={84}
                         height={84}
-                        className="size-21 shrink-0 rounded-xl object-cover object-center"
+                        className="h-48 w-full shrink-0 rounded-xl object-cover object-center sm:size-21"
                     />
                     <div className="flex min-w-0 flex-1 flex-col justify-center gap-2">
                         {identity}
@@ -110,17 +106,14 @@ export const EducatorCard = ({
                 {subjectList}
                 <div className="mb-6">{bioContent}</div>
             </div>
-            <div className="mt-auto flex flex-col gap-3 border-t border-neutral-30 pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-1">
-                <div className="flex items-center justify-between gap-3 sm:justify-start sm:gap-1">
-                    <div className="whitespace-nowrap">
-                        <span className="text-base font-extrabold text-primary-900">৳{pricePerSession}</span>
-                        <span className="text-xs font-normal text-deep-blue-700"> / session</span>
-                    </div>
-                    <div className="mt-0.5 flex items-center gap-3 text-[11px] text-neutral-500">
-                        <Video className="h-6 w-6 shrink-0 text-primary-500" />
-                        <span>{classType}</span>
-                    </div>
+            <div className="mt-auto flex flex-col items-center gap-5 border-t border-neutral-30 pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-1">
+                <div className="whitespace-nowrap">
+                    <span className="text-lg font-extrabold text-primary-900 sm:text-base">৳{pricePerSession}</span>
+                    <span className="text-sm font-normal text-deep-blue-700 sm:text-xs"> / session</span>
                 </div>
+
+                <Video className="hidden h-6 w-6 shrink-0 text-primary-500 sm:block" />
+
                 <ButtonLink
                     href={ROUTES.EDUCATOR_PROFILE(id)}
                     size="md"

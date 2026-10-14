@@ -13,7 +13,7 @@ export function educatorToCard(educator: Educator): EducatorCardData {
         name: educator.name,
         image: educator.avatar,
         role: educator.subjects[0] ? `${educator.subjects[0]} Teacher` : 'Educator',
-        qualification: educator.qualifications[0] ?? 'Verified educator',
+        qualification: educator.qualifications[0]?.degree ?? 'Verified educator',
         rating: educator.rating,
         reviewsCount: educator.reviewCount,
         experienceYears: educator.experience,

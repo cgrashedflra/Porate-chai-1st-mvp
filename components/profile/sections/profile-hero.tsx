@@ -5,7 +5,6 @@ import type { TeacherProfile } from "../types/teacher";
 
 interface ProfileHeroProps {
     teacher: TeacherProfile;
-    /** When provided, shows the "Send a message" action linking to this route. */
     messageHref?: string;
 }
 
@@ -39,7 +38,7 @@ export function ProfileHero({ teacher, messageHref }: ProfileHeroProps) {
                         )}
                     </h1>
                     <p className="mt-1 text-sm text-slate-600">
-                        {teacher.title} <span className="mx-1 text-indigo-400">•</span> {teacher.level}
+                        {teacher.title}
                     </p>
                     <div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-1 text-xs text-slate-500">
                         <span className="flex items-center gap-1.5">

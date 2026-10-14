@@ -5,7 +5,6 @@ export default function Profile() {
     return (
         <TeacherProfilePage
             teacher={teacher}
-            tabs={["About", "Availability", "Reviews"]}
             maxWidthClassName="max-w-5xl"
         />
     );

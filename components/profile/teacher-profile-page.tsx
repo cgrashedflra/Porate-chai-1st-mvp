@@ -1,18 +1,27 @@
 "use client";
 
 import * as React from "react";
-import { CalendarDays, Star, Users } from "lucide-react";
+import {
+    Users, BookOpen,
+    CalendarDays,
+    Check,
+    GraduationCap,
+    Sparkles,
+    Star,
+    UserCheck,
+    History,
+    School2,
+    MailBadge,
+} from "lucide-react";
 import { cn } from "@/lib/cn";
+import { SubjectBadge } from "@/components/SubjectBadge";
 import { ProfileHero } from "./sections/profile-hero";
 import { StatCard } from "./sections/stat-card";
-import { AboutTab } from "./sections/about-tab";
-import { ComingSoon } from "./sections/coming-soon";
 import type { TeacherProfile } from "./types/teacher";
+import { SectionCard } from "./shared/section-card";
 
 interface TeacherProfilePageProps {
     teacher: TeacherProfile;
-    /** Ordered tab labels. The first tab is selected initially. */
-    tabs: readonly string[];
     /** Tailwind max-width utility for the page container. */
     maxWidthClassName?: string;
     /** Passed to the hero; omit to hide the "Send a message" action. */
@@ -23,55 +32,20 @@ interface TeacherProfilePageProps {
 
 export function TeacherProfilePage({
     teacher,
-    tabs,
     maxWidthClassName = "max-w-5xl",
     messageHref,
     cta,
 }: TeacherProfilePageProps) {
-    const [tab, setTab] = React.useState(tabs[0]);
-    const baseId = React.useId().replace(/:/g, "");
-    const tabRefs = React.useRef<Array<HTMLButtonElement | null>>([]);
-    const { students, classes, rating } = teacher.stats;
+    const { students, classes, rating, experience } = teacher.stats;
 
-    const firstTab = tabs[0] ?? "";
 
-    const selectTab = (index: number) => {
-        const next = tabs[index];
-        if (next === undefined) return;
-        setTab(next);
-        tabRefs.current[index]?.focus();
-    };
 
-    const onTabListKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-        const current = tabs.indexOf(tab);
-        switch (event.key) {
-            case "ArrowRight":
-                event.preventDefault();
-                selectTab((current + 1) % tabs.length);
-                break;
-            case "ArrowLeft":
-                event.preventDefault();
-                selectTab((current - 1 + tabs.length) % tabs.length);
-                break;
-            case "Home":
-                event.preventDefault();
-                selectTab(0);
-                break;
-            case "End":
-                event.preventDefault();
-                selectTab(tabs.length - 1);
-                break;
-        }
-    };
-
-    const panelId = `${baseId}-panel`;
-    const activeTabId = `${baseId}-tab-${tab}`;
 
     return (
         <div className={cn("mx-auto w-full space-y-5 p-6", maxWidthClassName)}>
             <ProfileHero teacher={teacher} messageHref={messageHref} />
 
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-4">
                 <StatCard
                     icon={Users}
                     label="Total Students"
@@ -96,52 +70,114 @@ export function TeacherProfilePage({
                     trend={rating.trend}
                     note={rating.note}
                 />
+                <StatCard
+                    icon={Sparkles}
+                    label="Experience"
+                    tile="bg-amber-50 text-amber-500"
+                    value={experience.value}
+                    trend={experience.trend}
+                    note={experience.note}
+                />
             </div>
 
             <section className="rounded-2xl border border-indigo-100/80 bg-white p-5 shadow-[0_4px_20px_-8px_rgba(99,102,241,0.18)]">
-                <div
-                    role="tablist"
-                    aria-label="Profile sections"
-                    onKeyDown={onTabListKeyDown}
-                    className="mb-5 flex gap-8 overflow-x-auto border-b border-indigo-100"
-                >
-                    {tabs.map((t, index) => {
-                        const selected = tab === t;
-                        return (
-                            <button
-                                key={t}
-                                ref={(el) => {
-                                    tabRefs.current[index] = el;
-                                }}
-                                type="button"
-                                role="tab"
-                                id={`${baseId}-tab-${t}`}
-                                aria-selected={selected}
-                                aria-controls={panelId}
-                                tabIndex={selected ? 0 : -1}
-                                onClick={() => setTab(t)}
-                                className={cn(
-                                    "-mb-px whitespace-nowrap border-b-2 px-1 py-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400",
-                                    selected
-                                        ? "border-indigo-500 text-indigo-600"
-                                        : "border-transparent text-slate-500 hover:text-slate-700"
-                                )}
-                            >
-                                {t}
-                            </button>
-                        );
-                    })}
-                </div>
-                <div
-                    role="tabpanel"
-                    id={panelId}
-                    aria-labelledby={activeTabId}
-                    tabIndex={0}
-                    className="focus-visible:outline-none"
-                >
-                    {tab === firstTab ? <AboutTab teacher={teacher} /> : <ComingSoon tab={tab} />}
+                <div className="grid gap-5 lg:grid-cols-2">
+                    <div className="space-y-5">
+                        <SectionCard icon={UserCheck} title="About Me" className="border-0 p-0! shadow-none">
+                            <p className="text-sm leading-7 text-slate-600">
+                                {teacher.about || "No profile description provided."}
+                            </p>
+                        </SectionCard>
+
+                        <SectionCard icon={GraduationCap} title="Education & Credentials">
+                            {teacher.qualifications.length > 0 ? (
+                                <ul className="space-y-4">
+                                    {teacher.qualifications.map((q) => (
+                                        <li key={`${q.degree}-${q.institute}-${q.passingYear}`} className="flex items-center gap-3">
+                                            <div className="grid size-10 shrink-0 place-items-center rounded-full bg-indigo-50 text-indigo-500">
+                                                <MailBadge className="size-5" />
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-medium text-slate-800">{q.degree}</p>
+                                                {(q.institute || q.passingYear) && (
+                                                    <p className="text-xs text-slate-500">
+                                                        {[q.institute, q.passingYear].filter(Boolean).join(" • ")}
+                                                    </p>
+                                                )}
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p className="text-sm text-slate-500">No education or credentials listed.</p>
+                            )}
+                        </SectionCard>
+
+                        <SectionCard icon={History} title="Work History">
+                            {teacher.workHistory.length > 0 ? (
+                                <ul className="space-y-3">
+                                    {teacher.workHistory.map((q) => (
+                                        <li key={q.role} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-shadow hover:shadow-sm">
+                                            <div className="grid size-10 shrink-0 place-items-center rounded-lg bg-indigo-50 text-indigo-600">
+                                                <School2 className="size-5" />
+                                            </div>
+                                            <div className="min-w-0 flex-1">
+                                                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+                                                    <p className="text-sm font-semibold text-slate-800">{q.role}</p>
+                                                    <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">{q.period}</span>
+                                                </div>
+                                                <p className="mt-1 text-sm font-medium text-indigo-600">{q.institution}</p>
+                                                <p className="mt-2 text-sm leading-6 text-slate-500">{q.description}</p>
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p className="text-sm text-slate-500">No work history listed.</p>
+                            )}
+                        </SectionCard>
+                    </div>
+
+                    <div className="space-y-5">
+                        <SectionCard icon={Star} title="Profile Highlights">
+                            <ul className="space-y-2.5">
+                                {teacher.highlights.map((h) => (
+                                    <li key={h} className="flex items-center gap-3 text-sm text-slate-600">
+                                        <Check className="size-4 shrink-0 text-indigo-500" /> {h}
+                                    </li>
+                                ))}
+                            </ul>
+                        </SectionCard>
+
+                        <SectionCard icon={BookOpen} title="Subjects">
+                            {teacher.subjects.length > 0 ? (
+                                <div className="flex flex-wrap gap-2">
+                                    {teacher.subjects.map((s, i) => {
+                                        const variants = ["blue", "purple", "green", "orange"] as const;
+                                        const variant = variants[i % variants.length];
+                                        return <SubjectBadge key={s.name} label={s.name} variant={variant} size="md" />;
+                                    })}
+                                </div>
+                            ) : (
+                                <p className="text-sm text-slate-500">No subjects listed.</p>
+                            )}
+                        </SectionCard>
+
+                        <SectionCard icon={Sparkles} title="Teaching Philosophy">
+                            <p className="text-sm leading-7 text-slate-600">
+                                {teacher.teachingPhilosophy || "Not provided."}
+                            </p>
+                        </SectionCard>
+                        <SectionCard icon={Sparkles} title="Who I Teach">
+                            <p className="text-sm leading-7 text-slate-600">
+                                {teacher.whoITeach || "Not provided."}
+                            </p>
+                        </SectionCard>
+                    </div>
                 </div>
             </section>
+
+
 
             {cta}
         </div>

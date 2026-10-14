@@ -1,11 +1,5 @@
 import type { IconName } from "@/components/ui/Icon";
-
-export type SocialLinks = {
-    linkedin?: string;
-    youtube?: string;
-    facebook?: string;
-    website?: string;
-};
+import type { EducationalQualification, WorkHistory } from "@/types/types";
 
 export type Stat = {
     value: string;
@@ -19,12 +13,6 @@ export type Fact = {
     label: string;
 };
 
-export type Qualification = {
-    title: string;
-    place: string;
-    years: string;
-};
-
 export type Subject = {
     name: string;
 };
@@ -34,21 +22,21 @@ export type TeacherProfile = {
     avatar?: string;
     verified: boolean;
     title: string;
-    level: string;
     location: string;
     joined: string;
     headline: string;
     quote: string;
-    social: SocialLinks;
     stats: {
         students: Stat;
         classes: Stat;
         rating: Stat;
+        experience: Stat;
     };
     about: string;
-    facts: Fact[];
-    qualifications: Qualification[];
+    qualifications: EducationalQualification[];
     highlights: string[];
     subjects: Subject[];
-    style: string[];
+    teachingPhilosophy: string;
+    whoITeach: string;
+    workHistory: WorkHistory[];
 };

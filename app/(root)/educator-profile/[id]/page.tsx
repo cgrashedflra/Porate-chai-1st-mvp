@@ -34,7 +34,6 @@ export default async function Profile({ params }: EducatorProfilePageProps) {
     return (
         <TeacherProfilePage
             teacher={teacher}
-            tabs={["About", "Availability", "Reviews"]}
             maxWidthClassName="max-w-7xl"
             messageHref={ROUTES.STUDENT.MESSAGES}
             cta={<CTASection />}

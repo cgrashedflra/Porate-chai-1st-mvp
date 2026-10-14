@@ -21,11 +21,17 @@ export interface Review {
   subject?: string;
 }
 
-export interface TimelineItem {
+export interface WorkHistory {
   period: string;
   role: string;
   institution: string;
   description: string;
+}
+
+export interface EducationalQualification {
+  degree: string;
+  institute: string;
+  passingYear: string;
 }
 
 export interface DaySchedule {
@@ -54,15 +60,14 @@ export interface Educator {
   location: string;
   experience: number;
   subjects: string[];
-  qualifications: string[];
-  teachingFormats: ('1-on-1' | 'Batch classes')[];
+  qualifications: EducationalQualification[];
   priceMin: number;
   availableThisWeek: boolean;
   description: string;
   bio: string;
-  teachingPhilosophy?: string;
-  whoITeach?: string;
-  timeline: TimelineItem[];
+  teachingPhilosophy: string;
+  whoITeach: string;
+  workHistory: WorkHistory[];
   schedule: DaySchedule[];
   reviews: Review[];
 }

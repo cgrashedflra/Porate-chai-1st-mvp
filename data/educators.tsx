@@ -19,15 +19,16 @@ export const initialEducators: Educator[] = [
     location: 'Dhaka (Dhanmondi / Online)',
     experience: 7,
     subjects: ['Physics', 'Mathematics', 'Calculus', 'Mechanics', 'HSC Preparation', 'Admission Preparation'],
-    qualifications: ['BSc in Electrical & Electronic Engineering (BUET)', 'Former Teaching Fellow, Prep Academy'],
-    teachingFormats: ['1-on-1', 'Batch classes'],
+    qualifications: [
+      { degree: 'BSc in Electrical & Electronic Engineering', institute: 'BUET', passingYear: '2020' },
+    ],
     priceMin: 600,
     availableThisWeek: true,
     description: 'Specializes in HSC physics and mathematics with a concept-first teaching approach. Over 700 students guided to public universities.',
     bio: 'I believe rote memorization is the enemy of true physics mastery. Over 7 years of full-time teaching, I have designed structured intuitive frameworks for Newtonian mechanics, electrodynamics, and differential calculus that break down even the most daunting admission problems into manageable visual first-principles.',
     teachingPhilosophy: 'Concepts before equations. I use interactive simulations, physical models, and structured derivation pathways so students understand the "why" before tackling the "how".',
     whoITeach: 'High school students (HSC 1st & 2nd year), Engineering aspirants (BUET / CKET), and college students wanting rock-solid foundations.',
-    timeline: [
+    workHistory: [
       {
         period: '2021 — Present',
         role: 'Lead Educator & Academic Consultant',
@@ -93,15 +94,17 @@ export const initialEducators: Educator[] = [
     location: 'Dhaka (Gulshan / Online)',
     experience: 8,
     subjects: ['Biology', 'Chemistry', 'Medical Admission', 'Organic Chemistry', 'HSC Preparation'],
-    qualifications: ['MBBS (Dhaka Medical College)', 'Gold Medalist in Biochemistry & Physiology'],
-    teachingFormats: ['1-on-1', 'Batch classes'],
+    qualifications: [
+      { degree: 'MBBS', institute: 'Dhaka Medical College', passingYear: '' },
+      { degree: 'Gold Medalist in Biochemistry & Physiology', institute: 'Dhaka Medical College', passingYear: '' },
+    ],
     priceMin: 800,
     availableThisWeek: true,
     description: 'DMC graduate specializing in Medical Admission Biology and Chemistry. Focuses on memory retention systems and diagram mastery.',
     bio: 'Cracking medical admission tests requires both conceptual clarity and high-speed recall. Having gone through DMC myself with top marks, I teach students active recall systems, mnemonics that actually stick, and how to conquer botanical taxonomy and human physiology effortlessly.',
     teachingPhilosophy: 'Visual memory triggers combined with rigorous question-bank drills. Every class ends with a 10-minute speed quiz to reinforce retainability.',
     whoITeach: 'Aspiring medical college candidates, HSC students aiming for A+ in Biology/Chemistry.',
-    timeline: [
+    workHistory: [
       {
         period: '2020 — Present',
         role: 'Faculty Educator in Medical Sciences',
@@ -145,15 +148,18 @@ export const initialEducators: Educator[] = [
     location: 'Dhaka (Uttara / Online)',
     experience: 6,
     subjects: ['English', 'IELTS', 'Writing', 'Speaking', 'University Admission'],
-    qualifications: ['MA in Applied Linguistics (University of Dhaka)', 'IELTS Overall Band 8.5 (L9, R9, W8, S8.5)', 'CELTA Certified'],
-    teachingFormats: ['1-on-1', 'Batch classes'],
+    qualifications: [
+      { degree: 'MA in Applied Linguistics', institute: 'University of Dhaka', passingYear: '' },
+      { degree: 'IELTS Overall Band 8.5 (L9, R9, W8, S8.5)', institute: 'IELTS', passingYear: '' },
+      { degree: 'CELTA Certified', institute: 'Cambridge English', passingYear: '' },
+    ],
     priceMin: 700,
     availableThisWeek: true,
     description: 'Certified IELTS instructor specializing in Academic Writing Task 2 and Fluency & Pronunciation for Band 7.5+ aspirants.',
     bio: 'Too many candidates get stuck at Band 6.5 because of template-based answers. In my sessions, we discard robotic formulas and build authentic, coherent academic arguments with natural lexical variety and cohesive phrasing.',
     teachingPhilosophy: 'Live personalized writing surgery and mock oral assessments with immediate criterion-by-criterion breakdown.',
     whoITeach: 'Graduates aiming for overseas scholarships, immigration applicants, and university students.',
-    timeline: [
+    workHistory: [
       {
         period: '2019 — Present',
         role: 'Senior IELTS Trainer',
@@ -191,15 +197,17 @@ export const initialEducators: Educator[] = [
     location: 'Dhaka (Mirpur / Online)',
     experience: 5,
     subjects: ['Mathematics', 'HSC Preparation', 'SSC', 'Calculus', 'Trigonometry'],
-    qualifications: ['BSc & MSc in Mathematics (University of Dhaka, First Class 1st)', 'National Math Olympiad Alumni Trainer'],
-    teachingFormats: ['1-on-1', 'Batch classes'],
+    qualifications: [
+      { degree: 'BSc in Mathematics', institute: 'University of Dhaka', passingYear: '' },
+      { degree: 'MSc in Mathematics', institute: 'University of Dhaka', passingYear: '' },
+    ],
     priceMin: 500,
     availableThisWeek: true,
     description: 'Renowned for demystifying Calculus, Coordinate Geometry, and Trigonometry for SSC & HSC board toppers.',
     bio: 'Mathematics is an art of seeing patterns. I specialize in taking students who are genuinely frightened of calculus and algebra, and giving them the structural intuition that turns math into their highest-scoring paper.',
     teachingPhilosophy: 'Step-by-step logic without shortcuts until the baseline intuition is crystalline.',
     whoITeach: 'SSC, HSC, and first-year university mathematics students.',
-    timeline: [
+    workHistory: [
       {
         period: '2020 — Present',
         role: 'Math Specialist & Educator',
@@ -237,15 +245,17 @@ export const initialEducators: Educator[] = [
     location: 'Dhaka (Banani / Online)',
     experience: 9,
     subjects: ['Programming', 'ICT', 'Python', 'Web Development', 'Computer Science', 'Data Structures'],
-    qualifications: ['BSc in CSE (BUET)', 'Senior Software Engineer at leading tech multinational', 'ICPC Regional Finalist'],
-    teachingFormats: ['1-on-1', 'Batch classes'],
+    qualifications: [
+      { degree: 'BSc in Computer Science and Engineering', institute: 'BUET', passingYear: '' },
+      { degree: 'ICPC Regional Finalist', institute: 'International Collegiate Programming Contest', passingYear: '' },
+    ],
     priceMin: 800,
     availableThisWeek: true,
     description: 'Industry engineer teaching clean code, practical Python, modern Web Development, and HSC ICT with interactive labs.',
     bio: 'Computer science should be taught through code you can actually run and build with. Whether you need an A+ in HSC ICT or want to build production full-stack web applications and land tech internships, I teach real-world programming fundamentals.',
     teachingPhilosophy: 'No theoretical lecturing without building something that compiles. Pair programming and clean architecture from day one.',
     whoITeach: 'HSC ICT students, college coders, career switchers, and university freshmen in CSE.',
-    timeline: [
+    workHistory: [
       {
         period: '2022 — Present',
         role: 'Tech Lead & Educator',
@@ -289,15 +299,17 @@ export const initialEducators: Educator[] = [
     location: 'Dhaka (Online)',
     experience: 5,
     subjects: ['Economics', 'Accounting', 'Mathematics', 'University Admission', 'SAT'],
-    qualifications: ['BBA (IBA, University of Dhaka)', 'Chartered Accountancy Finalist'],
-    teachingFormats: ['1-on-1', 'Batch classes'],
+    qualifications: [
+      { degree: 'BBA', institute: 'Institute of Business Administration, University of Dhaka', passingYear: '' },
+      { degree: 'Chartered Accountancy Finalist', institute: '', passingYear: '' },
+    ],
     priceMin: 700,
     availableThisWeek: false,
     description: 'IBA graduate with deep expertise in BBA/MBA admission test preparation, business analytics, and microeconomics.',
     bio: 'Cracking IBA requires lightning-fast mental math and analytical rigor. My program trains students in speed techniques, data sufficiency, and critical reasoning that give an unmatched competitive edge.',
     teachingPhilosophy: 'Targeted timing drills and cognitive shortcuts for high-stakes business school tests.',
     whoITeach: 'IBA aspirants, BBA students, and students preparing for SAT Quant & Verbal.',
-    timeline: [
+    workHistory: [
       {
         period: '2021 — Present',
         role: 'Admission Strategist',
@@ -335,15 +347,17 @@ export const initialEducators: Educator[] = [
     location: 'Dhaka (Mohammadpur / Online)',
     experience: 6,
     subjects: ['Chemistry', 'HSC Preparation', 'Organic Chemistry', 'SSC', 'Admission Preparation'],
-    qualifications: ['BSc & MS in Applied Chemistry (DU)', 'Research Fellow, BCSIR'],
-    teachingFormats: ['1-on-1', 'Batch classes'],
+    qualifications: [
+      { degree: 'BSc in Applied Chemistry', institute: 'University of Dhaka', passingYear: '' },
+      { degree: 'MS in Applied Chemistry', institute: 'University of Dhaka', passingYear: '' },
+    ],
     priceMin: 550,
     availableThisWeek: true,
     description: 'Simplifies organic reaction mechanisms and periodic properties using modular flashcards and problem-solving flowcharts.',
     bio: 'Many students treat organic chemistry like a phonebook to memorize. Once you understand electron density, leaving groups, and nucleophilic attack pathways, organic chemistry becomes as logical as geometry.',
     teachingPhilosophy: 'Electron-pushing arrow formalism and mechanism-driven problem solving.',
     whoITeach: 'HSC examinees, university admission test candidates, and O/A Level Chemistry students.',
-    timeline: [
+    workHistory: [
       {
         period: '2020 — Present',
         role: 'Lead Chemistry Educator',
@@ -381,15 +395,17 @@ export const initialEducators: Educator[] = [
     location: 'Dhaka (Online)',
     experience: 10,
     subjects: ['SAT', 'Mathematics', 'Economics', 'University Admission'],
-    qualifications: ['MSc in Financial Mathematics (LSE)', 'SAT Math 800/800 Scorer', '10 Years Teaching Experience'],
-    teachingFormats: ['1-on-1'],
+    qualifications: [
+      { degree: 'MSc in Financial Mathematics', institute: 'London School of Economics', passingYear: '' },
+      { degree: 'SAT Math 800/800', institute: 'College Board', passingYear: '' },
+    ],
     priceMin: 1200,
     availableThisWeek: true,
     description: 'Top-tier SAT Quant & Advanced Mathematics coach for students targeting Ivy League and US Top 50 universities.',
     bio: 'Achieving a perfect 800 on Digital SAT Math requires zero careless errors and the ability to immediately recognize Desmos-assisted speed opportunities. I coach serious college-bound students on speed, trap avoidance, and advanced functions.',
     teachingPhilosophy: 'Pristine error-log analysis. We catalog every single miss into knowledge gap vs trap vs calculation error.',
     whoITeach: 'High school students taking Digital SAT, ACT, and undergraduate math.',
-    timeline: [
+    workHistory: [
       {
         period: '2016 — Present',
         role: 'Global Test Prep Consultant',
@@ -427,15 +443,17 @@ export const initialEducators: Educator[] = [
     location: 'Chittagong / Online',
     experience: 4,
     subjects: ['Biology', 'SSC', 'HSC Preparation'],
-    qualifications: ['BSc in Biotechnology & Genetic Engineering (SUST)', 'Gold Medalist'],
-    teachingFormats: ['1-on-1', 'Batch classes'],
+    qualifications: [
+      { degree: 'BSc in Biotechnology and Genetic Engineering', institute: 'SUST', passingYear: '' },
+      { degree: 'Gold Medalist', institute: 'SUST', passingYear: '' },
+    ],
     priceMin: 500,
     availableThisWeek: true,
     description: 'Passionate about Genetics, Molecular Biology, and Botany. Uses 3D cell models and concise exam revision notes.',
     bio: 'Biology is the code of life. I help young scholars grasp difficult botanical classifications and animal diversity with vivid visual aids and easy diagram sketching techniques needed for board exams.',
     teachingPhilosophy: 'Active drawing and diagram mastery. If you can sketch it accurately in 60 seconds, you own the concept.',
     whoITeach: 'SSC and HSC science group students.',
-    timeline: [
+    workHistory: [
       {
         period: '2022 — Present',
         role: 'Biology Instructor',
@@ -473,15 +491,18 @@ export const initialEducators: Educator[] = [
     location: 'Dhaka (Online)',
     experience: 5,
     subjects: ['Accounting', 'Economics', 'HSC Preparation', 'SSC'],
-    qualifications: ['BBA & MBA in Accounting & Information Systems (DU)', 'ACCA Affiliate'],
-    teachingFormats: ['1-on-1', 'Batch classes'],
+    qualifications: [
+      { degree: 'BBA in Accounting and Information Systems', institute: 'University of Dhaka', passingYear: '' },
+      { degree: 'MBA in Accounting and Information Systems', institute: 'University of Dhaka', passingYear: '' },
+      { degree: 'ACCA Affiliate', institute: 'ACCA', passingYear: '' },
+    ],
     priceMin: 500,
     availableThisWeek: true,
     description: 'Accounting made systematic through double-entry flowcharts, cash flow mastery, and financial statement analysis.',
     bio: 'Accounting is not about blindly cramming rules; it is the universal language of commerce. I break down balance sheets, depreciation equations, and cost accounting so students get full 100/100 marks on board papers.',
     teachingPhilosophy: 'Ledger debit-credit intuition first, followed by speed solving past papers under timed conditions.',
     whoITeach: 'Commerce stream students of SSC, HSC, and first-year BBA.',
-    timeline: [
+    workHistory: [
       {
         period: '2021 — Present',
         role: 'Commerce Lead Educator',
@@ -519,15 +540,17 @@ export const initialEducators: Educator[] = [
     location: 'Dhaka (Baridhara / Online)',
     experience: 4,
     subjects: ['Physics', 'Mathematics', 'HSC Preparation'],
-    qualifications: ['BSc in Mechanical Engineering (IUT)', 'Edexcel A* Star in Physics & Further Maths'],
-    teachingFormats: ['1-on-1'],
+    qualifications: [
+      { degree: 'BSc in Mechanical Engineering', institute: 'IUT', passingYear: '' },
+      { degree: 'Edexcel A* in Physics and Further Mathematics', institute: 'Pearson Edexcel', passingYear: '' },
+    ],
     priceMin: 700,
     availableThisWeek: true,
     description: 'Specializes in Cambridge & Edexcel O/A Level Physics and HSC mechanics with past paper surgery.',
     bio: 'Physics is intuitive when demonstrated through mechanical models. I provide rigorous past-paper topical drills with exact mark scheme guidelines so no marks are lost on vague wording.',
     teachingPhilosophy: 'Targeting mark-scheme phrasing and experimental physics questions.',
     whoITeach: 'O Level, A Level, and English Medium HSC students.',
-    timeline: [
+    workHistory: [
       {
         period: '2022 — Present',
         role: 'Physics Tutor',
@@ -565,15 +588,17 @@ export const initialEducators: Educator[] = [
     location: 'Dhaka (Online)',
     experience: 7,
     subjects: ['English', 'Writing', 'HSC Preparation', 'SSC', 'University Admission'],
-    qualifications: ['BA & MA in English Literature (DU)', 'Ex-Faculty, Scholastica'],
-    teachingFormats: ['1-on-1', 'Batch classes'],
+    qualifications: [
+      { degree: 'BA in English Literature', institute: 'University of Dhaka', passingYear: '' },
+      { degree: 'MA in English Literature', institute: 'University of Dhaka', passingYear: '' },
+    ],
     priceMin: 600,
     availableThisWeek: true,
     description: 'Transforming HSC English 1st & 2nd paper prep into engaging literature discussions and flawless grammatical writing.',
     bio: 'Most students struggle with HSC English modifiers, preposition collocations, and essay composition because grammar is taught as detached rules. I teach grammar through active sentence rewriting, rhythm, and clarity.',
     teachingPhilosophy: 'Sentence architecture and rhetorical clarity. Every lesson features live composition critique.',
     whoITeach: 'School and college examinees preparing for board exams and DU "D" / "B" Unit admission tests.',
-    timeline: [
+    workHistory: [
       {
         period: '2019 — Present',
         role: 'English Academic Director',
@@ -619,15 +644,17 @@ export const initialEducators: Educator[] = [
     location: 'Palashi, Dhaka',
     experience: 3,
     subjects: ['Physics', 'Mathematics', 'HSC Preparation', 'Electrodynamics'],
-    qualifications: ['BSc in EEE, BUET (Graduated 2023)', 'Former Physics Olympiad National Finalist'],
-    teachingFormats: ['1-on-1', 'Batch classes'],
+    qualifications: [
+      { degree: 'BSc in Electrical and Electronic Engineering', institute: 'BUET', passingYear: '2023' },
+      { degree: 'Former Physics Olympiad National Finalist', institute: 'National Physics Olympiad', passingYear: '' },
+    ],
     priceMin: 500,
     availableThisWeek: true,
     description: 'Recent BUET EEE graduate offering structured problem solving for HSC board exams and engineering admission candidates.',
     bio: 'Fresh perspective on university admission test patterns. I focus on vector-based calculus shortcuts, electromagnetic theory visualization, and building exam endurance.',
     teachingPhilosophy: 'Targeted drill practice with immediate error post-mortem analysis.',
     whoITeach: 'HSC 1st and 2nd year students and BUET aspirants.',
-    timeline: [
+    workHistory: [
       {
         period: '2023 — Present',
         role: 'Independent Physics Coach',
@@ -660,15 +687,18 @@ export const initialEducators: Educator[] = [
     location: 'Banani, Dhaka',
     experience: 5,
     subjects: ['IELTS', 'English', 'Spoken English'],
-    qualifications: ['MA in Applied Linguistics (University of Dhaka)', 'British Council Certified Trainer', 'IELTS Band 8.5'],
-    teachingFormats: ['1-on-1', 'Batch classes'],
+    qualifications: [
+      { degree: 'MA in Applied Linguistics', institute: 'University of Dhaka', passingYear: '' },
+      { degree: 'British Council Certified IELTS Instructor', institute: 'British Council', passingYear: '' },
+      { degree: 'IELTS Band 8.5', institute: 'British Council', passingYear: '' },
+    ],
     priceMin: 700,
     availableThisWeek: true,
     description: 'Certified IELTS educator with specialized accent reduction and Task 2 writing band 7+ frameworks.',
     bio: 'Dedicated to helping test-takers break the 6.5 plateau in Speaking and Writing through lexical resource expansion and structured argument architecture.',
     teachingPhilosophy: 'Rapid feedback loops with simulated 1-on-1 British Council examiner conditions.',
     whoITeach: 'Higher education applicants, immigration candidates, and corporate professionals.',
-    timeline: [
+    workHistory: [
       {
         period: '2021 — Present',
         role: 'Lead IELTS Trainer',
@@ -702,15 +732,16 @@ export const initialEducators: Educator[] = [
     location: 'Uttara, Dhaka',
     experience: 4,
     subjects: ['Mathematics', 'Calculus', 'Algebra'],
-    qualifications: ['BSc in Mathematics (DU)'],
-    teachingFormats: ['1-on-1'],
+    qualifications: [
+      { degree: 'BSc in Mathematics', institute: 'University of Dhaka', passingYear: '' },
+    ],
     priceMin: 450,
     availableThisWeek: false,
     description: 'HSC Higher Mathematics formula tricks and coordinate geometry.',
     bio: 'Formula shortcuts and calculator techniques for fast MCQ solving.',
     teachingPhilosophy: 'Memorize patterns to gain test speed.',
     whoITeach: 'College students.',
-    timeline: [],
+    workHistory: [],
     schedule: [],
     reviews: []
   }
