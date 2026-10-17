@@ -7,17 +7,30 @@ import { Icon } from "./Icon";
 
 type Props = {
   placeholder?: string;
-  /** slash = press "/" (marketing) · mod-k = Ctrl/Cmd + K (app) */
-  shortcut?: "slash" | "mod-k";
+  shortcut?: "slash" | "mod-k" | "none";
   searchHref?: string;
   className?: string;
+  /** Controlled value. Provide together with `onChange` for a local, non-navigating search. */
+  value?: string;
+  /** Called on every keystroke in controlled mode; disables navigation. */
+  onChange?: (value: string) => void;
 };
 
-export function SearchBar({ placeholder = "Search...", shortcut = "slash", searchHref = "/search", className }: Props) {
+export function SearchBar({
+  placeholder = "Search...",
+  shortcut = "slash",
+  searchHref = "/search",
+  className,
+  value,
+  onChange,
+}: Props) {
   const ref = useRef<HTMLInputElement>(null);
   const router = useRouter();
+  /** Controlled mode: filter locally instead of navigating to `searchHref`. */
+  const isLocal = onChange !== undefined;
 
   useEffect(() => {
+    if (shortcut === "none") return;
     const onKey = (e: KeyboardEvent) => {
       const t = e.target as HTMLElement | null;
       const typing = !!t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable);
@@ -39,6 +52,7 @@ export function SearchBar({ placeholder = "Search...", shortcut = "slash", searc
       role="search"
       onSubmit={(e) => {
         e.preventDefault();
+        if (isLocal) return;
         const q = ref.current?.value.trim();
         if (q) router.push(`${searchHref}?q=${encodeURIComponent(q)}`);
       }}
@@ -53,18 +67,22 @@ export function SearchBar({ placeholder = "Search...", shortcut = "slash", searc
         type="search"
         aria-label={placeholder}
         placeholder={placeholder}
+        value={isLocal ? value : undefined}
+        onChange={isLocal ? (e) => onChange?.(e.target.value) : undefined}
         className="min-w-0 flex-1 bg-transparent text-sm text-neutral-900 outline-none placeholder:text-neutral-100"
       />
-      <span className="hidden shrink-0 items-center gap-1 sm:flex" aria-hidden="true">
-        {shortcut === "slash" ? (
-          <kbd className="rounded-md bg-primary-50 px-2 py-0.5 text-xs font-medium text-primary-600">/</kbd>
-        ) : (
-          <>
-            <kbd className="rounded-md border border-neutral-30 bg-neutral-0 px-1.5 py-0.5 text-[11px] text-neutral-400">Ctrl</kbd>
-            <kbd className="rounded-md border border-neutral-30 bg-neutral-0 px-1.5 py-0.5 text-[11px] text-neutral-400">K</kbd>
-          </>
-        )}
-      </span>
+      {shortcut !== "none" && (
+        <span className="hidden shrink-0 items-center gap-1 sm:flex" aria-hidden="true">
+          {shortcut === "slash" ? (
+            <kbd className="rounded-md bg-primary-50 px-2 py-0.5 text-xs font-medium text-primary-600">/</kbd>
+          ) : (
+            <>
+              <kbd className="rounded-md border border-neutral-30 bg-neutral-0 px-1.5 py-0.5 text-[11px] text-neutral-400">Ctrl</kbd>
+              <kbd className="rounded-md border border-neutral-30 bg-neutral-0 px-1.5 py-0.5 text-[11px] text-neutral-400">K</kbd>
+            </>
+          )}
+        </span>
+      )}
     </form>
   );
 }

@@ -4,7 +4,7 @@ import type { Ref } from "react";
 import { CalendarDays } from "lucide-react";
 
 import { cn } from "@/lib/cn";
-import { card } from "../shared/card";
+import { CARD_SURFACE } from "@/components/ui/Card";
 import { DAYS } from "../constants";
 
 interface DatePickerProps {
@@ -22,7 +22,7 @@ interface DatePickerProps {
 /** Horizontal strip of the next seven days. */
 export function DatePicker({ days, dayIndex, timezone, onPick, sectionRef }: DatePickerProps) {
     return (
-        <section ref={sectionRef} className={cn(card, "p-5")}>
+        <section ref={sectionRef} className={cn(CARD_SURFACE, "p-5")}>
             <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
                 <h2 className="flex items-center gap-3 text-base font-semibold text-slate-900">
                     <CalendarDays className="size-5 text-indigo-500" /> Select a Date

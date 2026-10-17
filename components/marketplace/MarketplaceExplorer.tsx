@@ -4,11 +4,11 @@ import { useEffect, useMemo, useState } from "react";
 import { X } from "lucide-react";
 import { MarketplaceHeader } from "./MarketplaceHeader";
 import { MarketplaceFilterPanel } from "./MarketplaceFilterPanel";
+import { formatTaka } from "@/lib/finance";
 import {
   DEFAULT_FILTERS,
   PRICE_CAP,
   countActiveFilters,
-  formatBDT,
   getEducators,
   filterEducators,
   sortEducators,
@@ -44,7 +44,7 @@ export function MarketplaceExplorer() {
       push(`subject:${s}`, s, () => setFilters((f) => ({ ...f, subjects: f.subjects.filter((v) => v !== s) })))
     );
     if (filters.maxPrice < PRICE_CAP)
-      push("price", `Up to ${formatBDT(filters.maxPrice)}`, () => setFilters((f) => ({ ...f, maxPrice: PRICE_CAP })));
+      push("price", `Up to ${formatTaka(filters.maxPrice)}`, () => setFilters((f) => ({ ...f, maxPrice: PRICE_CAP })));
     if (filters.minRating > 0)
       push("rating", `${filters.minRating}+ ★`, () => setFilters((f) => ({ ...f, minRating: 0 })));
     if (filters.verifiedOnly)

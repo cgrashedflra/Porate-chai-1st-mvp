@@ -8,6 +8,8 @@ import { RatingSummary } from "@/components/profile/sections/rating-summary";
 import { Pagination } from "@/components/ui/Pagination";
 import ROUTES from "@/constants/routes";
 import { Avatar } from "@/components/ui/Avatar";
+import { CARD_BASE, CARD_SURFACE } from "@/components/ui/Card";
+import { cn } from "@/lib/cn";
 
 const REVIEWS_PER_PAGE = 6;
 
@@ -71,7 +73,7 @@ export default async function EducatorReviewsPage({
                 <ArrowLeft className="size-4" aria-hidden /> Back to profile
             </Link>
 
-            <header className="flex flex-col gap-4 rounded-2xl border border-indigo-100/80 bg-gradient-to-br from-indigo-100 via-indigo-50 to-sky-100 p-5 shadow-[0_4px_20px_-8px_rgba(99,102,241,0.18)] sm:flex-row sm:items-center">
+            <header className={cn(CARD_BASE, "flex flex-col gap-4 bg-gradient-to-br from-indigo-100 via-indigo-50 to-sky-100 p-5 sm:flex-row sm:items-center")}>
                 <Avatar
                     name={teacher.name}
                     src={teacher.avatar}
@@ -92,7 +94,7 @@ export default async function EducatorReviewsPage({
 
             <RatingSummary reviews={reviews} />
 
-            <section className="rounded-2xl border border-indigo-100/80 bg-white p-5 shadow-[0_4px_20px_-8px_rgba(99,102,241,0.18)]">
+            <section className={cn(CARD_SURFACE, "p-5")}>
                 <h2 className="flex items-center gap-3 text-base font-semibold text-slate-900">
                     <Star className="size-5 text-indigo-500" aria-hidden />
                     All reviews

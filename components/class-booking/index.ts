@@ -20,9 +20,6 @@ export { QuickSettings } from "./availability/QuickSettings";
 export { EducatorHeader } from "./shared/EducatorHeader";
 export { StatChip } from "./shared/StatChip";
 
-// The shared card surface (previously a broken `import { card } from ""`).
-export { card } from "./shared/card";
-
 // Data + helpers.
 export { DAYS, defaultAvailability, defaultAvailabilitySettings, sampleEducator } from "./constants";
 export { fmtHour, fmtRange, dateKey, buildWeek } from "./lib/format";

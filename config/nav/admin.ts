@@ -13,7 +13,6 @@ export const adminNav: RoleNavConfig = {
       { label: "Dashboard", href: ROUTES.ADMIN.DASHBOARD, icon: "layoutDashboard", exact: true },
       { label: "User Management", href: ROUTES.ADMIN.USER_MANAGEMENT, icon: "userCheck", badge: 2 },
       { label: "Tutor Verification", href: ROUTES.ADMIN.TUTOR_VERIFICATION, icon: "users", badge: 5 },
-      { label: "Gig Moderation", href: ROUTES.ADMIN.GIG_MODERATION, icon: "shield" },
       { label: "Booking Overview", href: ROUTES.ADMIN.BOOKING_OVERVIEW, icon: "calendar", badge: 8 },
       { label: "Reports & Disputes", href: ROUTES.ADMIN.REPORTS_DISPUTES, icon: "fileText" },
       { label: "Audit Log", href: ROUTES.ADMIN.AUDIT_LOG, icon: "activity" },

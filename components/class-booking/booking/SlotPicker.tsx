@@ -4,7 +4,7 @@ import type { Ref } from "react";
 import { Check, Clock } from "lucide-react";
 
 import { cn } from "@/lib/cn";
-import { card } from "../shared/card";
+import { CARD_SURFACE } from "@/components/ui/Card";
 import { fmtRange } from "../lib/format";
 
 interface SlotPickerProps {
@@ -34,7 +34,7 @@ export function SlotPicker({
     sectionRef,
 }: SlotPickerProps) {
     return (
-        <section ref={sectionRef} className={cn(card, "p-5")}>
+        <section ref={sectionRef} className={cn(CARD_SURFACE, "p-5")}>
             <h2 className="mb-4 flex items-center gap-3 text-base font-semibold text-slate-900">
                 <Clock className="size-5 text-indigo-500" /> Available Time Slots
                 <span className="text-sm font-normal text-slate-500">({duration} hour each)</span>

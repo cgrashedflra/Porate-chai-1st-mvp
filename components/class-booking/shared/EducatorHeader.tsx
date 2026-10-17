@@ -3,7 +3,7 @@ import { BadgeCheck, Star } from "lucide-react";
 
 import { Avatar } from "@/components/ui/Avatar";
 import { cn } from "@/lib/cn";
-import { card } from "./card";
+import { CARD_SURFACE } from "@/components/ui/Card";
 
 /** The identity fields the header renders — satisfied by both `Educator` views and `EducatorInfo`. */
 export interface EducatorHeaderInfo {
@@ -28,7 +28,7 @@ export function EducatorHeader({ educator, size = "md", children }: EducatorHead
     const isLarge = size === "lg";
 
     return (
-        <section className={cn(card, "flex flex-wrap items-center gap-5 p-5")}>
+        <section className={cn(CARD_SURFACE, "flex flex-wrap items-center gap-5 p-5")}>
             <Avatar
                 name={educator.name}
                 src={educator.avatar}

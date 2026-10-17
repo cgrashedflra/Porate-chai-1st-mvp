@@ -3,7 +3,7 @@
 import { CalendarCheck, CalendarDays, Clock, Lock } from "lucide-react";
 
 import { cn } from "@/lib/cn";
-import { card } from "../shared/card";
+import { CARD_SURFACE } from "@/components/ui/Card";
 import { fmtRange } from "../lib/format";
 
 interface BookingSummaryProps {
@@ -36,7 +36,7 @@ export function BookingSummary({
     const changeButton = "text-xs font-medium text-indigo-600 hover:underline";
 
     return (
-        <aside className={cn(card, "h-fit space-y-5 p-5 lg:sticky lg:top-6")}>
+        <aside className={cn(CARD_SURFACE, "h-fit space-y-5 p-5 lg:sticky lg:top-6")}>
             <h2 className="text-lg font-semibold text-slate-900">Booking Summary</h2>
 
             <div className="flex items-start gap-3">

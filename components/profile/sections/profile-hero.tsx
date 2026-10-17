@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { BadgeCheck, CalendarDays, MapPin, MessageCircle } from "lucide-react";
 import { Avatar } from "@/components/ui/Avatar";
+import { CARD_BASE } from "@/components/ui/Card";
+import { cn } from "@/lib/cn";
 import type { TeacherProfile } from "../types/teacher";
 
 interface ProfileHeroProps {
@@ -10,7 +12,7 @@ interface ProfileHeroProps {
 
 export function ProfileHero({ teacher, messageHref }: ProfileHeroProps) {
     return (
-        <section className="relative overflow-hidden rounded-2xl border border-indigo-100/80 bg-gradient-to-br from-indigo-100 via-indigo-50 to-sky-100 p-6 shadow-[0_4px_20px_-8px_rgba(99,102,241,0.18)]">
+        <section className={cn(CARD_BASE, "relative overflow-hidden bg-gradient-to-br from-indigo-100 via-indigo-50 to-sky-100 p-6")}>
             {messageHref && (
                 <Link
                     href={messageHref}

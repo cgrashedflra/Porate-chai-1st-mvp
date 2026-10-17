@@ -36,9 +36,6 @@ export const SORT_OPTIONS: readonly { value: SortKey; label: string }[] = [
   { value: 'price-desc', label: 'Price: High to Low' },
 ];
 
-/** Format a BDT amount with ৳ and locale separators. */
-export const formatBDT = (value: number) => `৳${value.toLocaleString('en-US')}`;
-
 /** Count how many filter groups are actively restricting results. */
 export const countActiveFilters = (filters: MarketplaceFilters) =>
   filters.subjects.length +

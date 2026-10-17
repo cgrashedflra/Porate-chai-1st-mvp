@@ -15,14 +15,14 @@ import { FileRow } from "@/components/ui/FileRow";
 import { OnlineStatus } from "@/components/ui/OnlineStatus";
 import { PanelCard } from "@/components/ui/PanelCard";
 import { recentFiles } from "./data";
-import { CARD } from "./styles";
+import { CARD_SURFACE } from "@/components/ui/Card";
 import type { Conversation } from "./types";
 
 /** Contact detail panel — intended for the right sidebar, above the other widgets. */
 export function ProfilePanel({ contact }: { contact: Conversation }) {
   return (
     <div className="flex flex-col gap-4">
-      <div className={cn(CARD, "p-5")}>
+      <div className={cn(CARD_SURFACE, "p-5")}>
         <div className="flex items-center gap-4">
           <Avatar name={contact.name} src={contact.avatar} size="xl" />
           <div>

@@ -1,3 +1,5 @@
+import type { Role } from "./user";
+
 /**
  * A src value that is safe to hand to `next/image`.
  *
@@ -152,7 +154,7 @@ export interface PlatformUser {
   name: string;
   email: string;
   phone: string;
-  role: 'student' | 'educator' | 'admin';
+  role: Role;
   status: 'active' | 'suspended';
   joinedAt: string;
   avatar: string;
@@ -190,7 +192,7 @@ export interface AdminAuditLog {
 
 export interface UserSession {
   isAuthenticated: boolean;
-  role: 'student' | 'educator' | 'admin' | 'guest';
+  role: Role | 'guest';
   id: string;
   name: string;
   email: string;

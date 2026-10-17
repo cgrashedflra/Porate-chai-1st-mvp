@@ -12,7 +12,7 @@ import * as React from "react";
 import { CalendarCheck, Check, Pencil, Users, Wallet } from "lucide-react";
 
 import { cn } from "@/lib/cn";
-import { card } from "../shared/card";
+import { CARD_SURFACE } from "@/components/ui/Card";
 import { StatChip } from "../shared/StatChip";
 import { EducatorHeader } from "../shared/EducatorHeader";
 import { DAYS, defaultAvailabilitySettings, sampleEducator } from "../constants";
@@ -80,7 +80,7 @@ export function AvailabilityEditor({
             </EducatorHeader>
 
             <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_300px]">
-                <section className={cn(card, "p-5")}>
+                <section className={cn(CARD_SURFACE, "p-5")}>
                     <h2 className="text-lg font-semibold text-slate-900">Weekly Availability</h2>
                     <p className="mb-4 text-sm text-slate-500">
                         Select the days you are available and set your time blocks ({settings.duration} hour each).

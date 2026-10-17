@@ -3,7 +3,7 @@
 import { ChevronDown, Info, Settings } from "lucide-react";
 
 import { cn } from "@/lib/cn";
-import { card } from "../shared/card";
+import { CARD_SURFACE } from "@/components/ui/Card";
 import type { AvailabilitySettings } from "../types";
 
 const fieldClass =
@@ -27,7 +27,7 @@ export function QuickSettings({
     onRateChange,
 }: QuickSettingsProps) {
     return (
-        <aside className={cn(card, "h-fit space-y-5 p-5")}>
+        <aside className={cn(CARD_SURFACE, "h-fit space-y-5 p-5")}>
             <h2 className="flex items-center gap-3 text-base font-semibold text-slate-900">
                 <Settings className="size-5 text-indigo-500" /> Quick Settings
             </h2>

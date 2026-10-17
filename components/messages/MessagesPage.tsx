@@ -19,7 +19,7 @@ import { ChatPanel } from "./ChatPanel";
 import { ConversationList } from "./ConversationList";
 import { EmptyChat } from "./EmptyChat";
 import { conversations } from "./data";
-import { CARD } from "./styles";
+import { CARD_SURFACE } from "@/components/ui/Card";
 
 export default function MessagesPage() {
   const router = useRouter();
@@ -35,7 +35,7 @@ export default function MessagesPage() {
   }
 
   return (
-    <section className={cn(CARD, "flex h-[calc(100vh-8rem)] min-h-130 flex-col overflow-hidden")}>
+    <section className={cn(CARD_SURFACE, "flex h-[calc(100vh-8rem)] min-h-130 flex-col overflow-hidden")}>
       {/* Toolbar bar — hide list + chat header (when a conversation is open) */}
       <div className="flex items-center gap-3 border-b border-indigo-50 p-3">
         <IconButton

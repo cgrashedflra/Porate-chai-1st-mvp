@@ -1,3 +1,4 @@
+import { CARD_SURFACE } from "@/components/ui/Card";
 import { cn } from "@/lib/cn";
 import { Star } from "lucide-react";
 import type { Review } from "@/types/types";
@@ -23,7 +24,8 @@ export function RatingSummary({ reviews, className }: RatingSummaryProps) {
     return (
         <section
             className={cn(
-                "rounded-2xl border border-indigo-100/80 bg-white p-5 shadow-[0_4px_20px_-8px_rgba(99,102,241,0.18)]",
+                CARD_SURFACE,
+                "p-5",
                 className,
             )}
         >

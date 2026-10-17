@@ -41,7 +41,6 @@ const ROUTES = {
     DASHBOARD: "/admin/dashboard",
     USER_MANAGEMENT: "/admin/user-management",
     TUTOR_VERIFICATION: "/admin/tutor-verification",
-    GIG_MODERATION: "/admin/gig-moderation",
     BOOKING_OVERVIEW: "/admin/booking-overview",
     REPORTS_DISPUTES: "/admin/reports-disputes",
     AUDIT_LOG: "/admin/audit-log",

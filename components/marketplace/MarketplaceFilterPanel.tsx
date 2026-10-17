@@ -3,13 +3,13 @@
 import type { ReactNode } from "react";
 import { Check, RotateCcw, SlidersHorizontal, X } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { formatTaka } from "@/lib/finance";
 import {
   DEFAULT_FILTERS,
   PRICE_CAP,
   RATING_OPTIONS,
   SORT_OPTIONS,
   countActiveFilters,
-  formatBDT,
   type MarketplaceFilters,
   type SortKey,
 } from "@/lib/marketplace";
@@ -120,7 +120,7 @@ export function MarketplaceFilterPanel({
           <div className="mb-1.5 flex items-center justify-between text-xs">
             <span className="font-medium text-neutral-500">Up to</span>
             <span className="font-bold text-neutral-900">
-              {filters.maxPrice >= PRICE_CAP ? `${formatBDT(PRICE_CAP)}+` : formatBDT(filters.maxPrice)}
+              {filters.maxPrice >= PRICE_CAP ? `${formatTaka(PRICE_CAP)}+` : formatTaka(filters.maxPrice)}
             </span>
           </div>
           <input

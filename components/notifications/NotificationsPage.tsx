@@ -11,8 +11,10 @@ import {
   filterNotifications,
   markAllNotificationsAsRead,
   markNotificationAsRead,
+  searchNotifications,
   type NotificationFilter,
 } from "@/lib/notifications";
+import { SearchBar } from "@/components/ui/SearchBar";
 import { initialNotifications } from "./data";
 import { NotificationEmptyState } from "./NotificationEmptyState";
 import { NotificationList } from "./NotificationList";
@@ -31,9 +33,10 @@ export default function NotificationsPage({
 } = {}) {
   const [items, setItems] = React.useState(initialNotifications);
   const [filter, setFilter] = React.useState<NotificationFilter>("all");
+  const [query, setQuery] = React.useState("");
 
   const unread = countUnread(items);
-  const visible = filterNotifications(items, filter);
+  const visible = searchNotifications(filterNotifications(items, filter), query);
 
   const markRead = (id: string) =>
     setItems((list) => markNotificationAsRead(list, id));
@@ -42,10 +45,23 @@ export default function NotificationsPage({
   return (
     <div className="mx-auto w-full max-w-4xl space-y-6 p-6">
       <NotificationsHeader unread={unread} onMarkAllRead={markAllRead} />
+      <SearchBar
+        placeholder="Search notifications..."
+        shortcut="none"
+        value={query}
+        onChange={setQuery}
+      />
       <NotificationTabs filter={filter} unread={unread} onChange={setFilter} labels={filterLabels} />
 
       {visible.length === 0 ? (
-        <NotificationEmptyState />
+        query.trim() ? (
+          <NotificationEmptyState
+            title="No matches"
+            description={`No notifications match “${query.trim()}”.`}
+          />
+        ) : (
+          <NotificationEmptyState />
+        )
       ) : (
         <NotificationList notifications={visible} onRead={markRead} overrides={typeOverrides} />
       )}
