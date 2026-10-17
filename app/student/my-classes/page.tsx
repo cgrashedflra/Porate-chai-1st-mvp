@@ -1,9 +1,7 @@
+import { MyClassesListPage } from "@/components/my-classes";
+
 const MyClassesPage = () => {
-    return (
-        <div>
-            <h1>Student My Classes</h1>
-        </div>
-    )
+    return <MyClassesListPage />;
 }
 
 export default MyClassesPage

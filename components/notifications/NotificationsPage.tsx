@@ -2,25 +2,16 @@
 
 /**
  * Notifications page — content area only (the app shell already provides the
- * sidebar + top bar). State, data, and pure helpers live in `@/lib/notifications`.
+ * sidebar + top bar). Built on the shared `GenericListPage` so it gets the
+ * same layout/UI as every other list page (My Educators, My Classes, ...);
+ * only the texts, labels, and icons differ per page.
  */
 
-import * as React from "react";
-import {
-  countUnread,
-  filterNotifications,
-  markAllNotificationsAsRead,
-  markNotificationAsRead,
-  searchNotifications,
-  type NotificationFilter,
-} from "@/lib/notifications";
-import { SearchBar } from "@/components/ui/SearchBar";
+import { BellOff, CheckCheck } from "lucide-react";
+import { GenericListPage, type ListTab } from "@/components/listing";
 import { initialNotifications } from "./data";
-import { NotificationEmptyState } from "./NotificationEmptyState";
-import { NotificationList } from "./NotificationList";
-import { NotificationTabs } from "./NotificationTabs";
-import { NotificationsHeader } from "./NotificationsHeader";
-import type { NotificationFilterLabels, NotificationTypeOverrides } from "./config";
+import { NotificationCard } from "./NotificationCard";
+import { getNotificationFilters, type NotificationFilterLabels, type NotificationTypeOverrides } from "./config";
 
 export default function NotificationsPage({
   filterLabels,
@@ -31,40 +22,33 @@ export default function NotificationsPage({
   /** Per-role overrides for a type's card action label / href. */
   typeOverrides?: NotificationTypeOverrides;
 } = {}) {
-  const [items, setItems] = React.useState(initialNotifications);
-  const [filter, setFilter] = React.useState<NotificationFilter>("all");
-  const [query, setQuery] = React.useState("");
-
-  const unread = countUnread(items);
-  const visible = searchNotifications(filterNotifications(items, filter), query);
-
-  const markRead = (id: string) =>
-    setItems((list) => markNotificationAsRead(list, id));
-  const markAllRead = () => setItems(markAllNotificationsAsRead);
+  const tabs: ListTab[] = getNotificationFilters(filterLabels).map((f) => ({
+    id: f.id,
+    label: f.label,
+  }));
 
   return (
-    <div className="mx-auto w-full max-w-4xl space-y-6 p-6">
-      <NotificationsHeader unread={unread} onMarkAllRead={markAllRead} />
-      <SearchBar
-        placeholder="Search notifications..."
-        shortcut="none"
-        value={query}
-        onChange={setQuery}
-      />
-      <NotificationTabs filter={filter} unread={unread} onChange={setFilter} labels={filterLabels} />
-
-      {visible.length === 0 ? (
-        query.trim() ? (
-          <NotificationEmptyState
-            title="No matches"
-            description={`No notifications match “${query.trim()}”.`}
-          />
-        ) : (
-          <NotificationEmptyState />
-        )
-      ) : (
-        <NotificationList notifications={visible} onRead={markRead} overrides={typeOverrides} />
+    <GenericListPage
+      title="Notifications"
+      items={initialNotifications}
+      tabs={tabs}
+      initialFilter="all"
+      searchPlaceholder="Search notifications..."
+      emptyStateIcon={BellOff}
+      emptyStateTitle="Nothing here"
+      emptyStateDescription="New notifications will show up in this list."
+      noMatchTitle="No matches"
+      noMatchDescription={(q) => `No notifications match “${q}”.`}
+      itemName="notification"
+      markAllReadIcon={CheckCheck}
+      markAllReadLabel="Mark all as read"
+      renderCard={(item, handleRead) => (
+        <NotificationCard
+          notification={item}
+          onRead={() => handleRead()}
+          overrides={typeOverrides}
+        />
       )}
-    </div>
+    />
   );
 }

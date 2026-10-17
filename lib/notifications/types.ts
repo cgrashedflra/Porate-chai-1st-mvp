@@ -4,6 +4,9 @@
 // presentational components can both depend on them.
 // ============================================================
 
+import type { ListGroup } from "@/lib/listing";
+import { DEFAULT_LIST_GROUPS } from "@/lib/listing";
+
 export type NotificationType =
   | "message"
   | "class"
@@ -27,7 +30,7 @@ export interface Notification {
 }
 
 /** Recency buckets the list is grouped into. */
-export type NotificationGroup = "Today" | "Yesterday" | "Earlier";
+export type NotificationGroup = ListGroup;
 
 /** A notification plus the bucket it belongs to. */
 export type NotificationItem = Notification & { group: NotificationGroup };
@@ -39,8 +42,5 @@ export type NotificationFilter =
   | Extract<NotificationType, "message" | "class" | "earning">;
 
 /** Order the groups are rendered in. */
-export const NOTIFICATION_GROUPS: readonly NotificationGroup[] = [
-  "Today",
-  "Yesterday",
-  "Earlier",
-];
+export const NOTIFICATION_GROUPS: readonly NotificationGroup[] = DEFAULT_LIST_GROUPS;
+

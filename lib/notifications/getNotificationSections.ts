@@ -1,4 +1,5 @@
 import { NOTIFICATION_GROUPS, type NotificationGroup, type NotificationItem } from "./types";
+import { getListSections } from "@/lib/listing";
 
 export interface NotificationSection {
   group: NotificationGroup;
@@ -10,8 +11,6 @@ export const getNotificationSections = (
   notifications: NotificationItem[],
   groups: readonly NotificationGroup[] = NOTIFICATION_GROUPS
 ): NotificationSection[] =>
-  groups
-    .map((group) => ({ group, items: notifications.filter((n) => n.group === group) }))
-    .filter((section) => section.items.length > 0);
+  getListSections(notifications, groups) as NotificationSection[];
 
 export default getNotificationSections;

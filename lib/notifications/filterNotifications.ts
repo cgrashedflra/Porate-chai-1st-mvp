@@ -1,4 +1,5 @@
 import type { Notification, NotificationFilter } from "./types";
+import { filterItems } from "@/lib/listing";
 
 /**
  * Apply a filter tab to a list of notifications.
@@ -8,10 +9,6 @@ import type { Notification, NotificationFilter } from "./types";
 export const filterNotifications = <T extends Notification>(
   notifications: T[],
   filter: NotificationFilter
-): T[] => {
-  if (filter === "all") return notifications;
-  if (filter === "unread") return notifications.filter((notification) => !notification.read);
-  return notifications.filter((notification) => notification.type === filter);
-};
+): T[] => filterItems(notifications, filter);
 
 export default filterNotifications;
