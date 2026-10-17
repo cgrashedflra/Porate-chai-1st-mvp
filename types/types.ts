@@ -34,11 +34,16 @@ export interface EducationalQualification {
   passingYear: string;
 }
 
+/**
+ * One weekday's bookable availability. A full week is seven entries ordered
+ * Sunday-first (index === `Date.getDay()`). `blocks` are start hours in 24h time.
+ */
 export interface DaySchedule {
-  day: string;
-  status: 'Available' | 'Limited' | 'Unavailable';
-  timeSlots: string[];
+  enabled: boolean;
+  blocks: number[];
 }
+
+export type WeeklyAvailability = DaySchedule[];
 
 export interface Educator {
   id: string;
@@ -68,7 +73,7 @@ export interface Educator {
   teachingPhilosophy: string;
   whoITeach: string;
   workHistory: WorkHistory[];
-  schedule: DaySchedule[];
+  schedule: WeeklyAvailability;
   reviews: Review[];
 }
 

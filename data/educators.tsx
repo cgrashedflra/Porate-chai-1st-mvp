@@ -49,13 +49,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Available', timeSlots: ['4:00 PM', '6:00 PM', '8:00 PM'] },
-      { day: 'Tuesday', status: 'Available', timeSlots: ['5:00 PM', '7:30 PM'] },
-      { day: 'Wednesday', status: 'Available', timeSlots: ['4:00 PM', '8:00 PM'] },
-      { day: 'Thursday', status: 'Limited', timeSlots: ['6:30 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['10:00 AM', '3:00 PM', '7:00 PM'] },
-      { day: 'Saturday', status: 'Available', timeSlots: ['9:00 AM', '4:00 PM', '8:00 PM'] },
-      { day: 'Sunday', status: 'Unavailable', timeSlots: [] }
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [16, 18, 20] },
+      { enabled: true, blocks: [17] },
+      { enabled: true, blocks: [16, 20] },
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [10, 15, 19] },
+      { enabled: true, blocks: [9, 16, 20] }
     ],
     reviews: [
       {
@@ -119,13 +119,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Available', timeSlots: ['7:00 PM', '9:00 PM'] },
-      { day: 'Tuesday', status: 'Available', timeSlots: ['6:00 PM', '8:00 PM'] },
-      { day: 'Wednesday', status: 'Limited', timeSlots: ['8:30 PM'] },
-      { day: 'Thursday', status: 'Available', timeSlots: ['7:00 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['9:30 AM', '3:00 PM', '6:00 PM'] },
-      { day: 'Saturday', status: 'Available', timeSlots: ['11:00 AM', '5:00 PM'] },
-      { day: 'Sunday', status: 'Available', timeSlots: ['7:00 PM'] }
+      { enabled: true, blocks: [19] },
+      { enabled: true, blocks: [19, 21] },
+      { enabled: true, blocks: [18, 20] },
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [19] },
+      { enabled: true, blocks: [15, 18] },
+      { enabled: true, blocks: [11, 17] }
     ],
     reviews: [
       {
@@ -168,13 +168,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Available', timeSlots: ['5:00 PM', '7:00 PM'] },
-      { day: 'Tuesday', status: 'Available', timeSlots: ['6:00 PM', '8:30 PM'] },
-      { day: 'Wednesday', status: 'Available', timeSlots: ['5:00 PM', '7:00 PM'] },
-      { day: 'Thursday', status: 'Available', timeSlots: ['6:00 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['10:00 AM', '4:00 PM', '8:00 PM'] },
-      { day: 'Saturday', status: 'Limited', timeSlots: ['7:00 PM'] },
-      { day: 'Sunday', status: 'Unavailable', timeSlots: [] }
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [17, 19] },
+      { enabled: true, blocks: [18] },
+      { enabled: true, blocks: [17, 19] },
+      { enabled: true, blocks: [18] },
+      { enabled: true, blocks: [10, 16, 20] },
+      { enabled: true, blocks: [19] }
     ],
     reviews: [
       {
@@ -216,13 +216,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Available', timeSlots: ['4:00 PM', '6:00 PM'] },
-      { day: 'Tuesday', status: 'Available', timeSlots: ['5:00 PM', '7:00 PM'] },
-      { day: 'Wednesday', status: 'Available', timeSlots: ['4:00 PM', '6:00 PM'] },
-      { day: 'Thursday', status: 'Available', timeSlots: ['5:00 PM', '8:00 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['9:00 AM', '3:00 PM'] },
-      { day: 'Saturday', status: 'Available', timeSlots: ['10:00 AM', '5:00 PM'] },
-      { day: 'Sunday', status: 'Limited', timeSlots: ['6:00 PM'] }
+      { enabled: true, blocks: [18] },
+      { enabled: true, blocks: [16, 18] },
+      { enabled: true, blocks: [17, 19] },
+      { enabled: true, blocks: [16, 18] },
+      { enabled: true, blocks: [17, 20] },
+      { enabled: true, blocks: [9, 15] },
+      { enabled: true, blocks: [10, 17] }
     ],
     reviews: [
       {
@@ -270,13 +270,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Available', timeSlots: ['8:00 PM', '10:00 PM'] },
-      { day: 'Tuesday', status: 'Available', timeSlots: ['8:00 PM', '10:00 PM'] },
-      { day: 'Wednesday', status: 'Available', timeSlots: ['8:00 PM'] },
-      { day: 'Thursday', status: 'Available', timeSlots: ['9:00 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['4:00 PM', '8:00 PM'] },
-      { day: 'Saturday', status: 'Available', timeSlots: ['11:00 AM', '7:00 PM'] },
-      { day: 'Sunday', status: 'Limited', timeSlots: ['8:00 PM'] }
+      { enabled: true, blocks: [20] },
+      { enabled: true, blocks: [20, 22] },
+      { enabled: true, blocks: [20, 22] },
+      { enabled: true, blocks: [20] },
+      { enabled: true, blocks: [21] },
+      { enabled: true, blocks: [16, 20] },
+      { enabled: true, blocks: [11, 19] }
     ],
     reviews: [
       {
@@ -318,13 +318,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Limited', timeSlots: ['7:00 PM'] },
-      { day: 'Tuesday', status: 'Limited', timeSlots: ['7:00 PM'] },
-      { day: 'Wednesday', status: 'Available', timeSlots: ['6:00 PM', '8:30 PM'] },
-      { day: 'Thursday', status: 'Available', timeSlots: ['7:00 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['10:00 AM', '5:00 PM'] },
-      { day: 'Saturday', status: 'Available', timeSlots: ['2:00 PM', '8:00 PM'] },
-      { day: 'Sunday', status: 'Unavailable', timeSlots: [] }
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [19] },
+      { enabled: true, blocks: [19] },
+      { enabled: true, blocks: [18] },
+      { enabled: true, blocks: [19] },
+      { enabled: true, blocks: [10, 17] },
+      { enabled: true, blocks: [14, 20] }
     ],
     reviews: [
       {
@@ -366,13 +366,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Available', timeSlots: ['5:00 PM', '7:00 PM'] },
-      { day: 'Tuesday', status: 'Available', timeSlots: ['5:00 PM', '7:30 PM'] },
-      { day: 'Wednesday', status: 'Available', timeSlots: ['6:00 PM'] },
-      { day: 'Thursday', status: 'Available', timeSlots: ['4:00 PM', '7:00 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['11:00 AM', '4:00 PM'] },
-      { day: 'Saturday', status: 'Available', timeSlots: ['10:00 AM', '6:00 PM'] },
-      { day: 'Sunday', status: 'Unavailable', timeSlots: [] }
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [17, 19] },
+      { enabled: true, blocks: [17] },
+      { enabled: true, blocks: [18] },
+      { enabled: true, blocks: [16, 19] },
+      { enabled: true, blocks: [11, 16] },
+      { enabled: true, blocks: [10, 18] }
     ],
     reviews: [
       {
@@ -414,13 +414,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Available', timeSlots: ['7:00 PM', '9:00 PM'] },
-      { day: 'Tuesday', status: 'Available', timeSlots: ['8:00 PM'] },
-      { day: 'Wednesday', status: 'Available', timeSlots: ['7:00 PM', '9:00 PM'] },
-      { day: 'Thursday', status: 'Limited', timeSlots: ['8:30 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['3:00 PM', '7:00 PM'] },
-      { day: 'Saturday', status: 'Available', timeSlots: ['10:00 AM', '4:00 PM', '8:00 PM'] },
-      { day: 'Sunday', status: 'Available', timeSlots: ['6:00 PM'] }
+      { enabled: true, blocks: [18] },
+      { enabled: true, blocks: [19, 21] },
+      { enabled: true, blocks: [20] },
+      { enabled: true, blocks: [19, 21] },
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [15, 19] },
+      { enabled: true, blocks: [10, 16, 20] }
     ],
     reviews: [
       {
@@ -462,13 +462,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Available', timeSlots: ['4:00 PM', '6:00 PM'] },
-      { day: 'Tuesday', status: 'Available', timeSlots: ['5:00 PM'] },
-      { day: 'Wednesday', status: 'Available', timeSlots: ['4:00 PM', '6:30 PM'] },
-      { day: 'Thursday', status: 'Available', timeSlots: ['6:00 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['9:00 AM', '3:00 PM'] },
-      { day: 'Saturday', status: 'Available', timeSlots: ['11:00 AM', '5:00 PM'] },
-      { day: 'Sunday', status: 'Unavailable', timeSlots: [] }
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [16, 18] },
+      { enabled: true, blocks: [17] },
+      { enabled: true, blocks: [16] },
+      { enabled: true, blocks: [18] },
+      { enabled: true, blocks: [9, 15] },
+      { enabled: true, blocks: [11, 17] }
     ],
     reviews: [
       {
@@ -511,13 +511,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Available', timeSlots: ['5:00 PM', '7:00 PM'] },
-      { day: 'Tuesday', status: 'Available', timeSlots: ['6:00 PM', '8:00 PM'] },
-      { day: 'Wednesday', status: 'Available', timeSlots: ['5:00 PM', '7:00 PM'] },
-      { day: 'Thursday', status: 'Available', timeSlots: ['6:00 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['10:00 AM', '4:00 PM'] },
-      { day: 'Saturday', status: 'Available', timeSlots: ['9:00 AM', '3:00 PM'] },
-      { day: 'Sunday', status: 'Limited', timeSlots: ['7:00 PM'] }
+      { enabled: true, blocks: [19] },
+      { enabled: true, blocks: [17, 19] },
+      { enabled: true, blocks: [18, 20] },
+      { enabled: true, blocks: [17, 19] },
+      { enabled: true, blocks: [18] },
+      { enabled: true, blocks: [10, 16] },
+      { enabled: true, blocks: [9, 15] }
     ],
     reviews: [
       {
@@ -559,13 +559,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Available', timeSlots: ['4:00 PM', '6:00 PM'] },
-      { day: 'Tuesday', status: 'Available', timeSlots: ['5:00 PM', '7:00 PM'] },
-      { day: 'Wednesday', status: 'Limited', timeSlots: ['6:00 PM'] },
-      { day: 'Thursday', status: 'Available', timeSlots: ['5:00 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['2:00 PM', '6:00 PM'] },
-      { day: 'Saturday', status: 'Available', timeSlots: ['10:00 AM', '4:00 PM'] },
-      { day: 'Sunday', status: 'Unavailable', timeSlots: [] }
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [16, 18] },
+      { enabled: true, blocks: [17, 19] },
+      { enabled: true, blocks: [18] },
+      { enabled: true, blocks: [17] },
+      { enabled: true, blocks: [14, 18] },
+      { enabled: true, blocks: [10, 16] }
     ],
     reviews: [
       {
@@ -607,13 +607,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Available', timeSlots: ['4:00 PM', '6:00 PM'] },
-      { day: 'Tuesday', status: 'Available', timeSlots: ['5:00 PM', '7:00 PM'] },
-      { day: 'Wednesday', status: 'Available', timeSlots: ['4:00 PM', '6:00 PM'] },
-      { day: 'Thursday', status: 'Available', timeSlots: ['5:00 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['10:00 AM', '3:00 PM'] },
-      { day: 'Saturday', status: 'Available', timeSlots: ['11:00 AM', '5:00 PM'] },
-      { day: 'Sunday', status: 'Unavailable', timeSlots: [] }
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [16, 18] },
+      { enabled: true, blocks: [17, 19] },
+      { enabled: true, blocks: [16, 18] },
+      { enabled: true, blocks: [17] },
+      { enabled: true, blocks: [10, 15] },
+      { enabled: true, blocks: [11, 17] }
     ],
     reviews: [
       {
@@ -663,9 +663,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Monday', status: 'Available', timeSlots: ['4:00 PM', '6:00 PM'] },
-      { day: 'Wednesday', status: 'Available', timeSlots: ['4:00 PM', '7:00 PM'] },
-      { day: 'Friday', status: 'Available', timeSlots: ['10:00 AM', '3:00 PM'] }
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [16, 18] },
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [16, 19] },
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [10, 15] },
+      { enabled: false, blocks: [] }
     ],
     reviews: []
   },
@@ -707,9 +711,13 @@ export const initialEducators: Educator[] = [
       }
     ],
     schedule: [
-      { day: 'Tuesday', status: 'Available', timeSlots: ['6:00 PM', '8:00 PM'] },
-      { day: 'Thursday', status: 'Available', timeSlots: ['6:00 PM', '8:00 PM'] },
-      { day: 'Saturday', status: 'Available', timeSlots: ['11:00 AM', '4:00 PM'] }
+      { enabled: false, blocks: [] },
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [18, 20] },
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [18, 20] },
+      { enabled: false, blocks: [] },
+      { enabled: true, blocks: [11, 16] }
     ],
     reviews: []
   },

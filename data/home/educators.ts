@@ -2,11 +2,6 @@ import { initialEducators } from '@/data/educators';
 import type { Educator } from '@/types/types';
 import type { EducatorCardData } from './types';
 
-/**
- * Educator cards are a projection of the single educator dataset
- * (`data/educators.tsx`). The app has no separate list — the
- * marketplace and the home page both read from the same educators.
- */
 export function educatorToCard(educator: Educator): EducatorCardData {
     return {
         id: educator.id,

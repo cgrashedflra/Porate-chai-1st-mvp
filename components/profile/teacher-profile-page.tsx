@@ -1,9 +1,9 @@
 "use client";
 
-import * as React from "react";
 import {
     Users, BookOpen,
     CalendarDays,
+    CalendarCheck,
     Check,
     GraduationCap,
     Sparkles,
@@ -12,29 +12,40 @@ import {
     History,
     School2,
     MailBadge,
+    MessageSquareQuote,
+    ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { SubjectBadge } from "@/components/SubjectBadge";
 import { ProfileHero } from "./sections/profile-hero";
 import { StatCard } from "./sections/stat-card";
+import { CTASection } from "./sections/cta-section";
 import type { TeacherProfile } from "./types/teacher";
+import type { Educator } from "@/types/types";
 import { SectionCard } from "./shared/section-card";
+import { ReviewCard } from "./shared/review-card";
+import { ClassBooking } from "../class-booking";
+import ROUTES from "@/constants/routes";
+import Link from "next/link";
 
 interface TeacherProfilePageProps {
     teacher: TeacherProfile;
+    /** Raw educator record — enables the booking panel (schedule + pricing). */
+    educator?: Educator;
+    /** First day of the booking window (`YYYY-MM-DD`), computed on the server. */
+    startDate?: string;
     /** Tailwind max-width utility for the page container. */
     maxWidthClassName?: string;
     /** Passed to the hero; omit to hide the "Send a message" action. */
     messageHref?: string;
-    /** Optional content rendered below the tabs (e.g. a call to action). */
-    cta?: React.ReactNode;
 }
 
 export function TeacherProfilePage({
     teacher,
+    educator,
+    startDate,
     maxWidthClassName = "max-w-5xl",
     messageHref,
-    cta,
 }: TeacherProfilePageProps) {
     const { students, classes, rating, experience } = teacher.stats;
 
@@ -177,9 +188,39 @@ export function TeacherProfilePage({
                 </div>
             </section>
 
+            <SectionCard icon={MessageSquareQuote} title="Student Reviews">
+                {teacher.reviews.length > 0 ? (
+                    <>
+                        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                            {teacher.reviews.slice(0, 3).map((review) => (
+                                <ReviewCard key={review.id} review={review} />
+                            ))}
+                        </div>
+                        <div className="mt-4 flex justify-center">
+                            <Link
+                                href={ROUTES.EDUCATOR_PROFILE_REVIEWS(teacher.id)}
+                                className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-5 py-2.5 text-sm font-medium text-indigo-600 transition-colors hover:border-indigo-300 hover:bg-indigo-50"
+                            >
+                                See all reviews
+                                <ArrowRight className="size-4" aria-hidden />
+                            </Link>
+                        </div>
+                    </>
+                ) : (
+                    <p className="text-sm text-slate-500">No reviews yet.</p>
+                )}
+            </SectionCard>
 
+            {educator && startDate && (
+                <section className="space-y-5">
+                    <h2 className="flex items-center gap-3 text-base font-semibold text-slate-900">
+                        <CalendarCheck className="size-5 text-indigo-500" /> Book a Class
+                    </h2>
+                    <ClassBooking educator={educator} startDate={startDate} showBackLink={false} />
+                </section>
+            )}
 
-            {cta}
+            <CTASection educatorId={teacher.id} />
         </div>
     );
 }

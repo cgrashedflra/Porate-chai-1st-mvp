@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TeacherProfilePage } from "@/components/profile/teacher-profile-page";
-import { CTASection } from "@/components/profile/sections/cta-section";
 import { getTeacherById } from "@/components/profile/data/mock-data";
+import { initialEducators } from "@/data/educators";
+import { todayInDhaka } from "@/lib/today";
 import ROUTES from "@/constants/routes";
 
 interface EducatorProfilePageProps {
@@ -31,12 +32,15 @@ export default async function Profile({ params }: EducatorProfilePageProps) {
         notFound();
     }
 
+    const educator = initialEducators.find((e) => e.id === id);
+
     return (
         <TeacherProfilePage
             teacher={teacher}
+            educator={educator}
+            startDate={todayInDhaka()}
             maxWidthClassName="max-w-7xl"
             messageHref={ROUTES.STUDENT.MESSAGES}
-            cta={<CTASection />}
         />
     );
 }

@@ -120,7 +120,7 @@ export const EducatorCard = ({
                     icon="arrowRight"
                     className="w-full sm:w-auto"
                 >
-                    Book Session
+                    View Profile
                 </ButtonLink>
             </div>
         </div>

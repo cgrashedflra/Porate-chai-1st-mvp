@@ -1,5 +1,5 @@
 import type { IconName } from "@/components/ui/Icon";
-import type { EducationalQualification, WorkHistory } from "@/types/types";
+import type { EducationalQualification, Review, WorkHistory } from "@/types/types";
 
 export type Stat = {
     value: string;
@@ -18,6 +18,8 @@ export type Subject = {
 };
 
 export type TeacherProfile = {
+    /** Public educator slug — the id used in URLs (e.g. `ahsan-rahman`). */
+    id: string;
     name: string;
     avatar?: string;
     verified: boolean;
@@ -39,4 +41,5 @@ export type TeacherProfile = {
     teachingPhilosophy: string;
     whoITeach: string;
     workHistory: WorkHistory[];
+    reviews: Review[];
 };

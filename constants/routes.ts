@@ -52,6 +52,7 @@ const ROUTES = {
   },
 
   EDUCATOR_PROFILE: (id: string) => `/educator-profile/${id}`,
+  EDUCATOR_PROFILE_REVIEWS: (id: string) => `/educator-profile/${id}/reviews`,
 } as const;
 
 export default ROUTES;
